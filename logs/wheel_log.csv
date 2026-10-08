@@ -1,3 +1,4 @@
 time,event,symbol,contract,kind,strike,expiry,price,cash_after,shares_after,note
 2026-10-08 12:59,dry-run,F,F261120P00010000,put,10.0,2026-11-20,0.09,1000.0,0,"DRY RUN: would sell 1 F261120P00010000 (put 10.0 exp 2026-11-20) at $0.09 (bid 0.08 / ask 0.1, IV 0.4634), stock $12.125"
 2026-10-08 13:00,dry-run,SNAP,SNAP261113P00005000,put,5.0,2026-11-13,0.24,1000.0,0,"DRY RUN: would sell 1 SNAP261113P00005000 (put 5.0 exp 2026-11-13) at $0.24 (bid 0.23 / ask 0.26, IV 0.8237), stock $5.78"
+2026-10-08 14:59,order,AGNC,AGNC261106P00008000,put,8.0,2026-11-06,0.14,1000.0,0,"sell 1 AGNC261106P00008000 (put 8.0 exp 2026-11-06) at $0.14 (bid 0.12 / ask 0.16, IV 0.415), stock $8.655"

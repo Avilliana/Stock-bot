@@ -1,2 +1,2 @@
-{'event': 'dry-run', 'symbol': 'SNAP', 'contract': 'SNAP261113P00005000', 'kind': 'put', 'strike': 5.0, 'expiry': '2026-11-13', 'price': 0.24, 'cash_after': 1000.0, 'shares_after': 0, 'note': 'DRY RUN: would sell 1 SNAP261113P00005000 (put 5.0 exp 2026-11-13) at $0.24 (bid 0.23 / ask 0.26, IV 0.8237), stock $5.78'}
-{"symbol": null, "phase": "cash", "cash": 1000.0, "shares": 0, "equity": 1000.0, "cycles_done": 0}
+{'event': 'order', 'symbol': 'AGNC', 'contract': 'AGNC261106P00008000', 'kind': 'put', 'strike': 8.0, 'expiry': '2026-11-06', 'price': 0.14, 'cash_after': 1000.0, 'shares_after': 0, 'note': 'sell 1 AGNC261106P00008000 (put 8.0 exp 2026-11-06) at $0.14 (bid 0.12 / ask 0.16, IV 0.415), stock $8.655'}
+{"symbol": "AGNC", "phase": "selling put", "cash": 1000.0, "shares": 0, "equity": 1000.0, "cycles_done": 0}
