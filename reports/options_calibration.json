@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08 16:58:04",
+  "updated": "2026-10-08 18:45:39",
   "method": "median of (ATM implied vol from real ~monthly option closes) / (60-day realized vol), first trading day of each month since Feb 2024",
   "pooled": 1.07,
   "pooled_n": 304,
