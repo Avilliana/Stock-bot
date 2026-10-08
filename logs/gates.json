@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08 22:19:17",
+  "updated": "2026-10-08 23:10:37",
   "strategies": {
     "orb": {
       "version": "v1",
@@ -50,71 +50,12 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "no review yet (-):"
+          "detail": "KILL (2026-10-08): Loses money on 3 years of real minute data (5,138 trades, PF 0.88, trailing year PF 0.83) and none of the 10 parameter nudges gets PF above 0.92."
         },
         {
           "gate": "forward",
           "pass": false,
           "detail": "0 paper trades over 0 days (need 30+ over 20+)"
-        }
-      ],
-      "notes": []
-    },
-    "vwap": {
-      "version": "v1",
-      "status": "PAPER",
-      "passed": 3,
-      "total": 10,
-      "gates": [
-        {
-          "gate": "settings",
-          "pass": true,
-          "detail": "slippage 1.5/3.0 bps, fees on, 750 days"
-        },
-        {
-          "gate": "sample",
-          "pass": true,
-          "detail": "13935 closed trades (need 100+)"
-        },
-        {
-          "gate": "quality",
-          "pass": false,
-          "detail": "Sharpe -7.859 (>1.0), PF 0.706 (>1.3)"
-        },
-        {
-          "gate": "pain",
-          "pass": false,
-          "detail": "max drawdown 665.9% of allocation (limit 15.0%)"
-        },
-        {
-          "gate": "benchmark",
-          "pass": false,
-          "detail": "Sharpe -7.859 vs buy-and-hold 1.394"
-        },
-        {
-          "gate": "neutral",
-          "pass": true,
-          "detail": "beta 0.086 (|beta| <= 0.3)"
-        },
-        {
-          "gate": "stress",
-          "pass": false,
-          "detail": "costs x2: PF 0.517, P&L $-134973.18; plateau 0/12 nudges hold up"
-        },
-        {
-          "gate": "recent",
-          "pass": false,
-          "detail": "trailing year: 4706 trades, PF 0.748, P&L $-18768.62"
-        },
-        {
-          "gate": "risk officer",
-          "pass": false,
-          "detail": "no review yet (-):"
-        },
-        {
-          "gate": "forward",
-          "pass": false,
-          "detail": "17 paper trades over 1 days (need 30+ over 20+); avg -1.18R vs backtest -0.36R (floor -1.35R), PF 0.00"
         }
       ],
       "notes": []
@@ -168,7 +109,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "no review yet (-):"
+          "detail": "KILL (2026-10-08): Wins 53% but the losers are bigger: PF 0.73 over 987 trades, worse at costs x2 (0.60), and no nudge reaches PF 0.8."
         },
         {
           "gate": "forward",
@@ -229,7 +170,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "no review yet (-):"
+          "detail": "KILL (2026-10-08): Better Sharpe and a smaller drawdown than 50/50 SPY+QQQ, but 2.8 pts/yr less growth and the edge rests on a handful of bear markets (38 switches in 9.7 years, ~5 regimes) with zero out-of-sample days."
         },
         {
           "gate": "forward",
@@ -288,7 +229,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "no review yet (-):"
+          "detail": "KILL (2026-10-08): Worse than holding SPY on Sharpe (0.63 vs 0.89), growth (-4.1 pts/yr) and drawdown, inconsistent across halves, and 0/3 parameter nudges hold up."
         },
         {
           "gate": "forward",
@@ -347,7 +288,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "no review yet (-):"
+          "detail": "KILL (2026-10-08): Halves the drawdown but gives up 2.4 pts/yr vs SPY, which Andrew already owns as VOO; with zero forward days there is no proof it beats simply holding a bit of cash."
         },
         {
           "gate": "forward",
@@ -408,7 +349,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "no review yet (-):"
+          "detail": "KILL (2026-10-08): Fails the no-edge stress (Sharpe 0.62 vs 0.63 for holding the stocks), earns 5.7%/yr vs 15.2% for $1k in SPY, and the live bot is trading AGNC, a stock the backtest never tested."
         },
         {
           "gate": "forward",
@@ -467,7 +408,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "no review yet (-):"
+          "detail": "KILL (2026-10-08): Its edge is the modeled IV/RV ratio: at a fair 1.0 ratio Sharpe drops from 0.95 to 0.74, at 0.9 to 0.48, and it grows 10 pts/yr slower than SPY."
         },
         {
           "gate": "forward",
@@ -526,7 +467,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "no review yet (-):"
+          "detail": "KILL (2026-10-08): Almost entirely priced-in edge: with fair option prices and doubled spreads it returns 0.6%/yr (Sharpe 0.17) and beats holding in only 50% of stocks."
         },
         {
           "gate": "forward",
