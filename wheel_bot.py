@@ -191,7 +191,9 @@ def run(dry=False):
                     continue
                 cap_strike = min(o["max_strike"], st["cash"] / 100)
                 target = q * (1 - p["put_otm_pct"] / 100)
-                if target < 0.5 or min(target, cap_strike) < target * 0.8:
+                # same rule as the backtest: the ~5%-below strike itself must be <= $10
+                # (no reaching far out of the money just to fit the budget)
+                if target < 0.5 or target > cap_strike + 0.49:
                     continue
                 choice = pick_contract(api, cand, "put", q, round(target, 2), cap_strike, live, today)
                 if choice:
