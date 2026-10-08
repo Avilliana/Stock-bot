@@ -1,6 +1,6 @@
 # Options lane results
 
-Updated 2026-10-08 18:45:09 UTC · 2016-04-15 to 2026-10-07 · $1000 per stock, one contract
+Updated 2026-10-08 23:10:37 UTC · 2016-04-15 to 2026-10-07 · $1000 per stock, one contract
 
 Each strategy runs on every candidate stock separately ($1,000 each), then results are averaged. Option prices are modeled (Black-Scholes); the IV/RV ratio is measured from real option data since Feb 2024 (pooled 1.07, n=304).
 

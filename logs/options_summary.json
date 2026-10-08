@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08 18:45:09",
+  "updated": "2026-10-08 23:10:37",
   "synthetic": false,
   "capital": 1000,
   "period": [
@@ -106,11 +106,22 @@
     }
   },
   "live": {
-    "symbol": null,
-    "phase": null,
-    "equity": null,
-    "cycles_done": null,
-    "started": null,
-    "open": null
+    "symbol": "AGNC",
+    "phase": "selling put",
+    "equity": 1000.0,
+    "cycles_done": 0,
+    "started": "2026-10-08",
+    "open": {
+      "contract": "AGNC261106P00008000",
+      "kind": "put",
+      "strike": 8.0,
+      "expiry": "2026-11-06",
+      "mid": 0.14,
+      "bid": 0.12,
+      "ask": 0.16,
+      "iv": 0.415,
+      "status": "working",
+      "client_id": "wh-20261008-1"
+    }
   }
 }
