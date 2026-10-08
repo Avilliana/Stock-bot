@@ -1,22 +1,21 @@
-# Options screener - 2026-10-08 15:00 ET
+# Options screener - 2026-10-08 15:01 ET
 
 Cash-secured puts ~5% below the price, ~30 days, strike <= $10 (fits $1,000). Sorted by estimated edge. Not financial advice.
 
 | stock | contract | credit | edge vs fair | yield/yr | assign odds | break-even | IV / 60d moves |
 |---|---|---|---|---|---|---|---|
+| SNAP $5.81 | 5.5P 2026-11-06 | $34.35 | $9.9 | 78.6% | 45.0% | $5.15 | 81.1% / 59.8% |
 | AGNC $8.65 | 8.0P 2026-11-06 | $12.35 | $8.17 | 19.4% | 31.0% | $7.87 | 41.8% / 22.6% · div 16.6% |
-| SNAP $5.81 | 5.5P 2026-11-06 | $31.35 | $6.9 | 71.7% | 44.4% | $5.18 | 77.8% / 59.8% |
-| OPEN $2.27 | 2.0P 2026-11-06 | $9.35 | $4.49 | 58.8% | 34.1% | $1.9 | 86.1% / 61.3% |
-| JOBY $5.72 | 5.0P 2026-11-06 | $12.35 | $3.68 | 31.1% | 27.0% | $4.87 | 67.9% / 54.9% |
-| PLUG $1.72 | 1.5P 2026-11-13 | $6.35 | $3.06 | 42.9% | 33.6% | $1.43 | 78.0% / 53.8% |
-| SOUN $5.47 | 5.0P 2026-11-06 | $16.35 | $0.56 | 41.2% | 34.5% | $4.83 | 65.6% / 58.6% |
-| RIG $5.55 | 5.0P 2026-11-20 | $10.35 | $-2.32 | 17.6% | 28.4% | $4.89 | 46.6% / 46.0% |
-| ACHR $4.67 | 4.0P 2026-10-30 | $6.35 | $-2.97 | 26.3% | 20.3% | $3.93 | 68.9% / 76.5% |
-| LCID $3.75 | 3.5P 2026-11-06 | $20.35 | $-3.36 | 73.2% | 43.2% | $3.29 | 83.2% / 85.2% |
-| ITUB $9.84 | 9.0P 2026-11-20 | $22.35 | $-3.63 | 21.1% | 31.5% | $8.77 | 43.4% / 44.0% · div 5.0% |
-| BB $8.65 | 8.0P 2026-11-06 | $27.35 | $-4.1 | 43.0% | 35.0% | $7.72 | 59.5% / 62.5% |
-| BBD $4.25 | 4.0P 2026-11-20 | $13.35 | $-4.88 | 28.3% | 40.3% | $3.86 | 47.6% / 49.5% · div 6.2% |
-| NOK $10.07 | 9.5P 2026-11-06 | $41.35 | $-5.78 | 54.8% | 40.7% | $9.08 | 63.1% / 65.4% · div 1.0% |
-| MARA $9.84 | 9.0P 2026-11-06 | $44.35 | $-15.46 | 62.0% | 38.2% | $8.55 | 77.1% / 90.8% |
+| OPEN $2.27 | 2.0P 2026-11-13 | $13.35 | $7.19 | 67.7% | 39.9% | $1.86 | 99.3% / 61.3% |
+| JOBY $5.72 | 5.0P 2026-11-06 | $12.35 | $3.68 | 31.1% | 27.0% | $4.87 | 67.7% / 54.9% |
+| PLUG $1.72 | 1.5P 2026-11-20 | $7.35 | $3.31 | 41.6% | 36.4% | $1.42 | 80.2% / 53.8% |
+| RIG $5.55 | 5.0P 2026-11-13 | $13.35 | $2.89 | 27.1% | 30.0% | $4.86 | 54.4% / 46.0% |
+| ITUB $9.84 | 8.0P 2026-11-20 | $7.35 | $1.61 | 7.8% | 13.5% | $7.92 | 49.3% / 44.0% · div 5.0% |
+| SOUN $5.46 | 5.0P 2026-11-06 | $16.35 | $0.28 | 41.2% | 35.0% | $4.83 | 65.9% / 58.6% |
+| LCID $3.75 | 3.5P 2026-11-06 | $23.35 | $-0.36 | 84.0% | 44.4% | $3.26 | 89.7% / 85.2% |
+| NOK $10.06 | 9.5P 2026-11-06 | $45.35 | $-1.99 | 60.1% | 41.7% | $9.04 | 66.8% / 65.4% · div 1.0% |
+| BBD $4.25 | 4.0P 2026-11-20 | $13.35 | $-4.88 | 28.3% | 40.4% | $3.86 | 47.9% / 49.5% · div 6.2% |
+| BB $8.64 | 8.0P 2026-11-06 | $22.35 | $-9.55 | 35.2% | 33.7% | $7.77 | 54.8% / 62.5% |
+| MARA $9.82 | 9.0P 2026-11-06 | $40.35 | $-19.78 | 56.4% | 37.4% | $8.59 | 73.4% / 90.8% |
 
-Earnings check: unavailable today - check before trading. Dividends: priced in. Skipped: F ($12.23: 5%-below strike doesn't fit the $10 cap), SOFI ($15.44: 5%-below strike doesn't fit the $10 cap), AAL ($12.75: 5%-below strike doesn't fit the $10 cap), NIO (no put with a usable quote), RIVN ($14.14: 5%-below strike doesn't fit the $10 cap), HOOD ($107.02: 5%-below strike doesn't fit the $10 cap), PLTR ($197.22: 5%-below strike doesn't fit the $10 cap), CCL ($26.05: 5%-below strike doesn't fit the $10 cap), T ($24.89: 5%-below strike doesn't fit the $10 cap), INTC ($106.31: 5%-below strike doesn't fit the $10 cap), GRAB (no put with a usable quote), VALE ($13.46: 5%-below strike doesn't fit the $10 cap), WBD ($30.99: 5%-below strike doesn't fit the $10 cap), CLF ($12.15: 5%-below strike doesn't fit the $10 cap), RIOT ($16.89: 5%-below strike doesn't fit the $10 cap), KGC ($23.18: 5%-below strike doesn't fit the $10 cap), NCLH ($15.43: 5%-below strike doesn't fit the $10 cap), LYFT ($16.09: 5%-below strike doesn't fit the $10 cap), HBAN ($15.30: 5%-below strike doesn't fit the $10 cap), KEY ($20.00: 5%-below strike doesn't fit the $10 cap), PCG ($12.63: 5%-below strike doesn't fit the $10 cap), GOLD ($41.20: 5%-below strike doesn't fit the $10 cap)
+Earnings check: unavailable today - check before trading. Dividends: priced in. Skipped: F ($12.21: 5%-below strike doesn't fit the $10 cap), SOFI ($15.43: 5%-below strike doesn't fit the $10 cap), AAL ($12.75: 5%-below strike doesn't fit the $10 cap), NIO (no put with a usable quote), RIVN ($14.14: 5%-below strike doesn't fit the $10 cap), HOOD ($107.06: 5%-below strike doesn't fit the $10 cap), PLTR ($196.94: 5%-below strike doesn't fit the $10 cap), CCL ($26.05: 5%-below strike doesn't fit the $10 cap), T ($24.89: 5%-below strike doesn't fit the $10 cap), INTC ($106.18: 5%-below strike doesn't fit the $10 cap), GRAB (no put with a usable quote), VALE ($13.46: 5%-below strike doesn't fit the $10 cap), WBD ($30.99: 5%-below strike doesn't fit the $10 cap), CLF ($12.14: 5%-below strike doesn't fit the $10 cap), RIOT ($16.88: 5%-below strike doesn't fit the $10 cap), KGC ($23.19: 5%-below strike doesn't fit the $10 cap), NCLH ($15.43: 5%-below strike doesn't fit the $10 cap), LYFT ($16.09: 5%-below strike doesn't fit the $10 cap), ACHR (no put with a usable quote), HBAN ($15.30: 5%-below strike doesn't fit the $10 cap), KEY ($20.02: 5%-below strike doesn't fit the $10 cap), PCG ($12.63: 5%-below strike doesn't fit the $10 cap), GOLD ($41.20: 5%-below strike doesn't fit the $10 cap)
