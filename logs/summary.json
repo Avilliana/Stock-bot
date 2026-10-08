@@ -1,0 +1,96 @@
+{
+  "updated": "2026-10-08 21:34:31",
+  "last_day": "2026-10-08",
+  "first_day": "2026-10-08",
+  "account_equity": 99811.64,
+  "today": {
+    "trades": 17,
+    "pnl_usd": -192.97,
+    "wins": 0,
+    "win_rate_pct": 0.0,
+    "avg_r": -1.178,
+    "best_usd": -3.68,
+    "worst_usd": -23.77
+  },
+  "all": {
+    "trades": 17,
+    "pnl_usd": -192.97,
+    "wins": 0,
+    "win_rate_pct": 0.0,
+    "avg_r": -1.178,
+    "best_usd": -3.68,
+    "worst_usd": -23.77
+  },
+  "strategies": {
+    "orb": {
+      "version": "v1",
+      "enabled": true,
+      "about": "Opening-range breakout. Trade the first clean break of the first N minutes' high/low.",
+      "current_version": {
+        "trades": 0,
+        "pnl_usd": 0,
+        "wins": 0,
+        "win_rate_pct": 0,
+        "avg_r": null,
+        "best_usd": null,
+        "worst_usd": null
+      },
+      "all_versions": {
+        "trades": 0,
+        "pnl_usd": 0,
+        "wins": 0,
+        "win_rate_pct": 0,
+        "avg_r": null,
+        "best_usd": null,
+        "worst_usd": null
+      }
+    },
+    "vwap": {
+      "version": "v1",
+      "enabled": true,
+      "about": "VWAP mean reversion. Fade stretched moves away from the day's VWAP, target VWAP.",
+      "current_version": {
+        "trades": 17,
+        "pnl_usd": -192.97,
+        "wins": 0,
+        "win_rate_pct": 0.0,
+        "avg_r": -1.178,
+        "best_usd": -3.68,
+        "worst_usd": -23.77
+      },
+      "all_versions": {
+        "trades": 17,
+        "pnl_usd": -192.97,
+        "wins": 0,
+        "win_rate_pct": 0.0,
+        "avg_r": -1.178,
+        "best_usd": -3.68,
+        "worst_usd": -23.77
+      }
+    },
+    "gapfade": {
+      "version": "v1",
+      "enabled": true,
+      "about": "Gap fade. When a stock gaps 0.75-4% and the first 5 minutes move against the gap, trade toward a partial gap fill.",
+      "current_version": {
+        "trades": 0,
+        "pnl_usd": 0,
+        "wins": 0,
+        "win_rate_pct": 0,
+        "avg_r": null,
+        "best_usd": null,
+        "worst_usd": null
+      },
+      "all_versions": {
+        "trades": 0,
+        "pnl_usd": 0,
+        "wins": 0,
+        "win_rate_pct": 0,
+        "avg_r": null,
+        "best_usd": null,
+        "worst_usd": null
+      }
+    }
+  },
+  "open_after_close": []
+}
