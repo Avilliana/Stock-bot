@@ -185,7 +185,17 @@ def run(dry=False):
             choice = pick_contract(api, sym, "call", px, round(target, 2), 1e9, live, today)
         else:
             choice, sym, px = None, None, None
-            for cand in live["priority"]:
+            order = live["priority"]
+            try:                                   # follow today's screener when it ran
+                with open(os.path.join(LOGS, "screener.json"), encoding="utf-8") as f:
+                    scr = json.load(f)
+                if scr.get("date") == str(today):
+                    order = [r["symbol"] for r in scr.get("top", [])]
+                    if not order:
+                        print("screener found no put with positive edge today - not selling")
+            except (OSError, ValueError):
+                pass
+            for cand in order:
                 q = last_price(api, cand, cfg["data_feed"])
                 if not q:
                     continue

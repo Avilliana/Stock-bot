@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
     inputs:
       what:
-        description: "wheel, wheel-dry-run, or backtest"
+        description: "wheel, wheel-dry-run, screen, or backtest"
         default: "wheel-dry-run"
 
 permissions:
@@ -56,6 +56,16 @@ jobs:
           mkdir -p logs
           set -o pipefail
           python options.py 2>&1 | tee logs/options_run.txt
+      - name: Options screener (live quotes)
+        if: steps.what.outputs.what == 'wheel' || steps.what.outputs.what == 'wheel-dry-run' || steps.what.outputs.what == 'screen'
+        continue-on-error: true
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: |
+          mkdir -p logs
+          set -o pipefail
+          python screener.py 2>&1 | tee logs/screener_run.txt
       - name: Paper wheel
         if: steps.what.outputs.what == 'wheel' || steps.what.outputs.what == 'wheel-dry-run'
         env:
@@ -73,7 +83,7 @@ jobs:
           for i in 1 2 3; do
             git pull --rebase --autostash -q || true
             python gate.py || true
-            git add reports OPTIONS.md GATES.md logs 2>/dev/null
+            git add reports OPTIONS.md SCREENER.md GATES.md logs 2>/dev/null
             git diff --cached --quiet && exit 0
             git commit -qm "Options lane $(date -u +%Y-%m-%dT%H:%MZ)"
             git push && exit 0

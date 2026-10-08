@@ -21,7 +21,7 @@ Writes logs/screener.json and SCREENER.md. Run during market hours.
 import json
 import math
 import os
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 import numpy as np
