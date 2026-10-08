@@ -1,0 +1,2 @@
+PICK: sell 1 AGNC261106P00008000 ~$0.13 ($12.35), edge $9.48, assign 27.2%
+15 screened, 0 with earnings before expiry, 21 skipped
