@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08 16:31:08",
+  "updated": "2026-10-08 16:57:56",
   "strategies": {
     "orb": {
       "version": "v1",
@@ -353,6 +353,80 @@
           "gate": "forward",
           "pass": false,
           "detail": "0 out-of-sample days since 2026-10-08 (need 60+)"
+        }
+      ],
+      "notes": []
+    }
+  },
+  "options": {
+    "wheel": {
+      "version": "v1",
+      "status": "PAPER",
+      "passed": 0,
+      "total": 3,
+      "gates": [
+        {
+          "gate": "backtest",
+          "pass": false,
+          "detail": "no backtest report yet - run options.py"
+        },
+        {
+          "gate": "risk officer",
+          "pass": false,
+          "detail": "no review yet (-):"
+        },
+        {
+          "gate": "forward",
+          "pass": false,
+          "detail": "0 completed paper option cycles (need 3+)"
+        }
+      ],
+      "notes": []
+    },
+    "covered_call": {
+      "version": "v1",
+      "status": "PAPER",
+      "passed": 0,
+      "total": 3,
+      "gates": [
+        {
+          "gate": "backtest",
+          "pass": false,
+          "detail": "no backtest report yet - run options.py"
+        },
+        {
+          "gate": "risk officer",
+          "pass": false,
+          "detail": "no review yet (-):"
+        },
+        {
+          "gate": "forward",
+          "pass": false,
+          "detail": "not paper traded (only the wheel runs live)"
+        }
+      ],
+      "notes": []
+    },
+    "csp": {
+      "version": "v1",
+      "status": "PAPER",
+      "passed": 0,
+      "total": 3,
+      "gates": [
+        {
+          "gate": "backtest",
+          "pass": false,
+          "detail": "no backtest report yet - run options.py"
+        },
+        {
+          "gate": "risk officer",
+          "pass": false,
+          "detail": "no review yet (-):"
+        },
+        {
+          "gate": "forward",
+          "pass": false,
+          "detail": "not paper traded (only the wheel runs live)"
         }
       ],
       "notes": []

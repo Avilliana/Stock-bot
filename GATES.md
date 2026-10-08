@@ -1,6 +1,6 @@
 # Gate status
 
-Updated 2026-10-08 16:31:08 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
+Updated 2026-10-08 16:57:56 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
 
 ## orb v1 - PAPER (3/10)
 
@@ -81,3 +81,23 @@ Updated 2026-10-08 16:31:08 UTC. A strategy is **DEPLOYABLE** only when every ga
 - PASS **recent**: last 3 yrs: CAGR 19.19%, Sharpe 1.461 vs 1.462
 - FAIL **risk officer**: no review yet (-):
 - FAIL **forward**: 0 out-of-sample days since 2026-10-08 (need 60+)
+
+# Options lane
+
+## wheel v1 - PAPER (0/3)
+
+- FAIL **backtest**: no backtest report yet - run options.py
+- FAIL **risk officer**: no review yet (-):
+- FAIL **forward**: 0 completed paper option cycles (need 3+)
+
+## covered_call v1 - PAPER (0/3)
+
+- FAIL **backtest**: no backtest report yet - run options.py
+- FAIL **risk officer**: no review yet (-):
+- FAIL **forward**: not paper traded (only the wheel runs live)
+
+## csp v1 - PAPER (0/3)
+
+- FAIL **backtest**: no backtest report yet - run options.py
+- FAIL **risk officer**: no review yet (-):
+- FAIL **forward**: not paper traded (only the wheel runs live)

@@ -1,6 +1,6 @@
 # Slow lane (daily) results
 
-Updated 2026-10-08 16:31:07 UTC · 2017-01-13 to 2026-10-07 (9.71 years)
+Updated 2026-10-08 16:57:56 UTC · 2017-01-13 to 2026-10-07 (9.71 years)
 
 | | CAGR | Sharpe | max drawdown | switches/yr |
 |---|---|---|---|---|
