@@ -1,2 +1,2 @@
-{'event': 'dry-run', 'symbol': 'F', 'contract': 'F261120P00010000', 'kind': 'put', 'strike': 10.0, 'expiry': '2026-11-20', 'price': 0.09, 'cash_after': 1000.0, 'shares_after': 0, 'note': 'DRY RUN: would sell 1 F261120P00010000 (put 10.0 exp 2026-11-20) at $0.09 (bid 0.08 / ask 0.1, IV 0.4634), stock $12.125'}
+{'event': 'dry-run', 'symbol': 'SNAP', 'contract': 'SNAP261113P00005000', 'kind': 'put', 'strike': 5.0, 'expiry': '2026-11-13', 'price': 0.24, 'cash_after': 1000.0, 'shares_after': 0, 'note': 'DRY RUN: would sell 1 SNAP261113P00005000 (put 5.0 exp 2026-11-13) at $0.24 (bid 0.23 / ask 0.26, IV 0.8237), stock $5.78'}
 {"symbol": null, "phase": "cash", "cash": 1000.0, "shares": 0, "equity": 1000.0, "cycles_done": 0}
