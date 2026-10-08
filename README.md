@@ -63,7 +63,7 @@ paper endpoint).
 2. **This repo:** in GitHub, go to Settings → Secrets and variables → Actions and add
    `ALPACA_API_KEY_ID` and `ALPACA_API_SECRET_KEY`.
 3. **Dashboard:** go to Settings → Pages, choose "Deploy from a branch", `main`, `/ (root)`.
-   The page lives at `https://avilliana.github.io/Stock-bot/`. Add it to your
+   The page lives at `https://avilliana.github.io/stock-bot/`. Add it to your
    phone's home screen.
 4. **First backtest:** go to Actions → "Backtest and gauntlet" → Run workflow. The first
    run downloads 3 years of minute bars (~10-20 min).
