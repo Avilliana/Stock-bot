@@ -51,7 +51,7 @@
       }
     },
     "vwap": {
-      "enabled": true,
+      "enabled": false,
       "version": "v1",
       "about": "VWAP mean reversion. Fade stretched moves away from the day's VWAP, target VWAP.",
       "other_side": "Impatient market orders and stop cascades that push price far from where the day's volume actually traded; liquidity providers get paid to absorb them.",
