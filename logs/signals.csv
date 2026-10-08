@@ -1,0 +1,33 @@
+time,strategy,version,symbol,bar,side,ref,stop,target,time_stop,qty,result,note,cid
+2026-10-08 12:26,vwap,v1,AAPL,12:25,short,338.63,339.1722,337.6078,13:26,29,sent,z=2.29,sb-vwap-v1-AAPL-20261008-1-1326
+2026-10-08 12:26,vwap,v1,AMD,12:25,long,632.53,632.519,635.6648,13:26,0,skipped: stop or target too close,z=-3.49,
+2026-10-08 12:27,vwap,v1,AMD,12:24,long,632.88,632.4945,635.6934,13:25,15,sent,z=-3.08,sb-vwap-v1-AMD-20261008-1-1325
+2026-10-08 12:27,vwap,v1,AMD,12:26,long,632.83,632.4806,635.657,13:27,0,skipped: symbol already has a position/order,z=-3.12,
+2026-10-08 12:44,vwap,v1,QQQ,12:43,long,752.64,752.0764,754.1471,13:44,13,sent,z=-2.55,sb-vwap-v1-QQQ-20261008-1-1344
+2026-10-08 12:44,vwap,v1,NVDA,12:43,long,234.84,234.7872,235.4555,13:44,0,skipped: stop or target too close,z=-3.22,
+2026-10-08 12:45,vwap,v1,MSFT,12:44,long,528.86,528.2427,530.6378,13:45,18,sent,z=-2.60,sb-vwap-v1-MSFT-20261008-1-1345
+2026-10-08 12:45,vwap,v1,NVDA,12:44,long,234.755,234.6858,235.4482,13:45,0,skipped: stop or target too close,z=-3.18,
+2026-10-08 12:46,vwap,v1,MSFT,12:45,long,528.555,527.8586,530.619,13:46,18,sent,z=-2.62,sb-vwap-v1-MSFT-20261008-2-1346
+2026-10-08 12:46,vwap,v1,NVDA,12:45,long,234.82,234.6192,235.4458,13:46,42,sent,z=-2.65,sb-vwap-v1-NVDA-20261008-1-1346
+2026-10-08 12:47,vwap,v1,NVDA,12:46,long,234.63,234.53,235.4427,13:47,0,skipped: stop or target too close,z=-3.12,
+2026-10-08 12:48,vwap,v1,QQQ,12:47,long,751.76,751.6352,753.9921,13:48,0,skipped: stop or target too close,z=-3.31,
+2026-10-08 12:49,vwap,v1,AMZN,12:48,long,257.985,257.8422,258.7988,13:49,38,sent,z=-2.98,sb-vwap-v1-AMZN-20261008-1-1349
+2026-10-08 12:50,vwap,v1,SPY,12:49,long,773.24,772.9951,775.112,13:50,0,skipped: stop or target too close,z=-3.10,
+2026-10-08 12:50,vwap,v1,TSLA,12:49,long,371.66,371.4878,372.8527,13:50,0,skipped: stop or target too close,z=-3.06,
+2026-10-08 12:51,vwap,v1,SPY,12:50,long,773.11,772.6327,775.0788,13:51,12,sent,z=-2.82,sb-vwap-v1-SPY-20261008-1-1351
+2026-10-08 12:51,vwap,v1,QQQ,12:50,long,749.6,749.5676,753.6684,13:51,0,skipped: stop or target too close,z=-3.47,
+2026-10-08 12:51,vwap,v1,NVDA,12:50,long,233.455,233.2013,235.3225,13:51,42,sent,z=-3.08,sb-vwap-v1-NVDA-20261008-2-1351
+2026-10-08 12:51,vwap,v1,AMZN,12:50,long,257.46,257.3966,258.7489,13:51,0,skipped: stop or target too close,z=-3.34,
+2026-10-08 12:51,vwap,v1,TSLA,12:50,long,371.675,371.2411,372.8368,13:51,26,sent,z=-2.55,sb-vwap-v1-TSLA-20261008-1-1351
+2026-10-08 12:52,vwap,v1,QQQ,12:51,long,749.82,749.0336,753.5446,13:52,13,sent,z=-2.89,sb-vwap-v1-QQQ-20261008-2-1352
+2026-10-08 12:52,vwap,v1,AMZN,12:51,long,257.62,257.2745,258.7379,13:52,38,sent,z=-2.67,sb-vwap-v1-AMZN-20261008-2-1352
+2026-10-08 12:53,vwap,v1,SPY,12:52,long,772.71,772.0796,775.0222,13:53,12,sent,z=-2.75,sb-vwap-v1-SPY-20261008-2-1353
+2026-10-08 12:54,vwap,v1,META,12:53,long,715.76,715.5314,720.5319,13:54,0,skipped: stop or target too close,z=-3.34,
+2026-10-08 12:54,vwap,v1,TSLA,12:53,long,371.435,370.7434,372.7737,13:54,26,sent,z=-2.31,sb-vwap-v1-TSLA-20261008-2-1354
+2026-10-08 12:55,vwap,v1,META,12:54,long,715.75,715.3315,720.4288,13:55,13,sent,z=-3.21,sb-vwap-v1-META-20261008-1-1355
+2026-10-08 13:02,vwap,v1,META,13:01,long,715.31,715.1213,720.2623,14:02,0,skipped: stop or target too close,z=-3.37,
+2026-10-08 13:03,vwap,v1,AAPL,13:02,short,339.39,339.4117,337.851,14:03,0,skipped: stop or target too close,z=3.45,
+2026-10-08 13:03,vwap,v1,META,13:02,long,715.835,715.2227,720.2269,14:03,0,"rejected: HTTP 422: {""base_price"":""715"",""code"":42210000,""message"":""stop_loss.stop_price must be \u003c= base_price - 0.01""}",z=-3.07,
+2026-10-08 13:04,vwap,v1,AAPL,13:03,short,338.99,339.3719,337.8536,14:04,29,sent,z=2.62,sb-vwap-v1-AAPL-20261008-2-1404
+2026-10-08 13:06,vwap,v1,META,13:05,long,715.625,715.283,720.0669,14:06,0,skipped: stop or target too close,z=-3.25,
+2026-10-08 13:36,vwap,v1,META,13:35,long,716.69,715.4183,719.0602,14:36,13,sent,z=-2.28,sb-vwap-v1-META-20261008-2-1436
