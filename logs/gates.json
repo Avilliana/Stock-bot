@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08 16:29:17",
+  "updated": "2026-10-08 16:31:08",
   "strategies": {
     "orb": {
       "version": "v1",
@@ -183,7 +183,7 @@
     "trend": {
       "version": "v1",
       "status": "PAPER",
-      "passed": 8,
+      "passed": 7,
       "total": 10,
       "gates": [
         {
@@ -199,22 +199,22 @@
         {
           "gate": "quality",
           "pass": true,
-          "detail": "Sharpe 1.095 vs buy-and-hold 0.886"
+          "detail": "Sharpe 1.095 vs holding 50% SPY + 50% QQQ 0.948"
         },
         {
           "gate": "growth",
-          "pass": true,
-          "detail": "CAGR 15.63% vs buy-and-hold 15.28% (allowed 2.0 pts behind)"
+          "pass": false,
+          "detail": "CAGR 15.63% vs buy-and-hold 18.46% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
           "pass": true,
-          "detail": "max drawdown 21.82% vs buy-and-hold 33.79% (need <= 75% of it)"
+          "detail": "max drawdown 21.82% vs buy-and-hold 30.87% (need <= 75% of it)"
         },
         {
           "gate": "consistency",
           "pass": true,
-          "detail": "Sharpe by half: 1.217 vs 0.997, 0.96 vs 0.768 (within 0.25)"
+          "detail": "Sharpe by half: 1.217 vs 1.157, 0.96 vs 0.74 (within 0.25)"
         },
         {
           "gate": "stress",
@@ -224,7 +224,7 @@
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 20.77%, Sharpe 1.397 vs 1.462"
+          "detail": "last 3 yrs: CAGR 20.77%, Sharpe 1.397 vs 1.41"
         },
         {
           "gate": "risk officer",
@@ -258,7 +258,7 @@
         {
           "gate": "quality",
           "pass": false,
-          "detail": "Sharpe 0.63 vs buy-and-hold 0.886"
+          "detail": "Sharpe 0.63 vs holding SPY 0.886"
         },
         {
           "gate": "growth",
@@ -317,7 +317,7 @@
         {
           "gate": "quality",
           "pass": true,
-          "detail": "Sharpe 0.997 vs buy-and-hold 0.886"
+          "detail": "Sharpe 0.997 vs holding SPY 0.886"
         },
         {
           "gate": "growth",

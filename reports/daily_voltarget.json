@@ -9,7 +9,7 @@
     "min_change": 0.1
   },
   "since": "2026-10-08",
-  "updated": "2026-10-08 16:29:16",
+  "updated": "2026-10-08 16:31:07",
   "synthetic": false,
   "slippage_bps": 2.0,
   "base": {
@@ -93,6 +93,7 @@
     "total_return_pct": 88.61
   },
   "benchmark": {
+    "label": "SPY",
     "days": 2446,
     "years": 9.71,
     "cagr_pct": 15.28,

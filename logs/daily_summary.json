@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08 16:29:16",
+  "updated": "2026-10-08 16:31:07",
   "synthetic": false,
   "last_date": "2026-10-07",
   "period": [
@@ -502,7 +502,7 @@
   "strategies": {
     "trend": {
       "version": "v1",
-      "about": "Trend filter. Hold SPY and QQQ (half each) only while each is above its 200-day average; otherwise that half sits in T-bills (BIL).",
+      "about": "Trend filter. Hold SPY and QQQ (half each) only while each is above its 200-day average; otherwise that half sits in T-bills (BIL). Judged against holding the same 50/50 SPY+QQQ mix.",
       "base": {
         "days": 2446,
         "years": 9.71,
@@ -520,6 +520,16 @@
       "holding": {
         "SPY": 0.5,
         "QQQ": 0.5
+      },
+      "benchmark": {
+        "label": "50% SPY + 50% QQQ",
+        "days": 2446,
+        "years": 9.71,
+        "cagr_pct": 18.46,
+        "vol_pct": 19.97,
+        "sharpe": 0.948,
+        "max_dd_pct": 30.87,
+        "total_return_pct": 417.63
       }
     },
     "momentum": {
@@ -541,6 +551,16 @@
       },
       "holding": {
         "QQQ": 1.0
+      },
+      "benchmark": {
+        "label": "SPY",
+        "days": 2446,
+        "years": 9.71,
+        "cagr_pct": 15.28,
+        "vol_pct": 17.87,
+        "sharpe": 0.886,
+        "max_dd_pct": 33.79,
+        "total_return_pct": 297.6
       }
     },
     "voltarget": {
@@ -563,6 +583,16 @@
       "holding": {
         "SPY": 0.907,
         "BIL": 0.093
+      },
+      "benchmark": {
+        "label": "SPY",
+        "days": 2446,
+        "years": 9.71,
+        "cagr_pct": 15.28,
+        "vol_pct": 17.87,
+        "sharpe": 0.886,
+        "max_dd_pct": 33.79,
+        "total_return_pct": 297.6
       }
     }
   }
