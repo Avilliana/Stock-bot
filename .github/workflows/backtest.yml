@@ -42,14 +42,25 @@ jobs:
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
-        run: python backtest.py
+        run: |
+          mkdir -p logs
+          set -o pipefail
+          python backtest.py 2>&1 | tee logs/backtest_run.txt
       - name: Score against the gates
         run: python gate.py
+      - name: Save the error so it can be read without the Actions log
+        if: failure()
+        run: |
+          git config user.name "stockbot"
+          git config user.email "stockbot@users.noreply.github.com"
+          git add -f logs/backtest_run.txt || exit 0
+          git commit -m "Backtest failed $(date -u +%Y-%m-%dT%H:%MZ)" || exit 0
+          git pull --rebase && git push
       - name: Save results to the repo
         run: |
           git config user.name "stockbot"
           git config user.email "stockbot@users.noreply.github.com"
-          git add reports BACKTEST.md GATES.md logs/gates.json
+          git add reports BACKTEST.md GATES.md logs/gates.json logs/backtest_run.txt
           git diff --cached --quiet && exit 0
           git commit -m "Backtest $(date -u +%Y-%m-%d)"
           for i in 1 2 3; do

@@ -31,6 +31,8 @@ jobs:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
         run: |
+          mkdir -p logs
+          exec > >(tee logs/last_eod_output.txt) 2>&1
           if [ -n "${{ github.event.inputs.date }}" ]; then
             python reconcile.py --date "${{ github.event.inputs.date }}"
           else
@@ -39,6 +41,7 @@ jobs:
       - name: Update the scorecard
         run: python gate.py
       - name: Save to the repo
+        if: always()
         run: |
           git config user.name "stockbot"
           git config user.email "stockbot@users.noreply.github.com"

@@ -38,7 +38,11 @@ jobs:
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
-        run: python bot.py --max-minutes "${{ github.event.inputs.minutes || '345' }}"
+        run: |
+          mkdir -p logs
+          set -o pipefail
+          python bot.py --max-minutes "${{ github.event.inputs.minutes || '345' }}" 2>&1 | tail -c 20000 > logs/last_session_output.txt
+          tail -40 logs/last_session_output.txt
       - name: Save logs to the repo
         if: always()
         run: |
