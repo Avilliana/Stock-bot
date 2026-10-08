@@ -1,0 +1,83 @@
+name: Options lane
+
+on:
+  schedule:
+    # 18:35 UTC on weekdays = 2:35 PM New York in summer, 1:35 PM in winter:
+    # mid-afternoon, market open, quotes settled.
+    - cron: "35 18 * * 1-5"
+    # Saturdays: refresh data, re-calibrate, re-run the options backtest.
+    - cron: "30 13 * * 6"
+  push:
+    branches: [main]
+    paths: ["options.py", "config.json"]
+  workflow_dispatch:
+    inputs:
+      what:
+        description: "wheel, wheel-dry-run, or backtest"
+        default: "wheel-dry-run"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: options
+  cancel-in-progress: false
+
+jobs:
+  options:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Decide what to run
+        id: what
+        run: |
+          W="${{ github.event.inputs.what }}"
+          if [ -z "$W" ]; then
+            if [ "${{ github.event_name }}" = "push" ] || [ "${{ github.event.schedule }}" = "30 13 * * 6" ]; then W=backtest; else W=wheel; fi
+          fi
+          echo "what=$W" >> "$GITHUB_OUTPUT"
+          echo "running: $W"
+      - name: Options sanity tests
+        run: python tests/test_options.py
+      - name: Backtest (calibrated to real option prices since Feb 2024)
+        if: steps.what.outputs.what == 'backtest'
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: |
+          mkdir -p logs
+          set -o pipefail
+          python options.py 2>&1 | tee logs/options_run.txt
+      - name: Paper wheel
+        if: steps.what.outputs.what == 'wheel' || steps.what.outputs.what == 'wheel-dry-run'
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: |
+          mkdir -p logs
+          set -o pipefail
+          python wheel_bot.py ${{ steps.what.outputs.what == 'wheel-dry-run' && '--dry-run' || '' }} 2>&1 | tee logs/wheel_run.txt
+      - name: Save results to the repo
+        if: always()
+        run: |
+          git config user.name "stockbot"
+          git config user.email "stockbot@users.noreply.github.com"
+          for i in 1 2 3; do
+            git pull --rebase --autostash -q || true
+            python gate.py || true
+            git add reports OPTIONS.md GATES.md logs 2>/dev/null
+            git diff --cached --quiet && exit 0
+            git commit -qm "Options lane $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push && exit 0
+            git reset -q --soft HEAD~1
+            sleep 5
+          done
+          exit 1

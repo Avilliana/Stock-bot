@@ -50,6 +50,31 @@ what each one would hold today.
 Monthly switching creates short-term gains. If one of these ever earns real money, it fits
 an IRA/Roth better than a taxable account.
 
+## Options lane ($1,000, one contract)
+
+`options.py` tests selling monthly options on stocks cheap enough that 100 shares fit in
+$1,000 (strike $10 or less), on 16 liquid names, each with its own $1,000:
+
+| Strategy | Idea |
+|---|---|
+| `wheel` | Sell a put ~5% below the price; if assigned, sell calls ~5% above (and not below what you paid); when called away, repeat |
+| `covered_call` | Own 100 shares, sell a call ~5% above each month |
+| `csp` | Cash-secured puts only; if assigned, sell the shares and keep selling puts |
+
+Free option price history only goes back to Feb 2024, so option prices are modeled
+with Black-Scholes from the stock price and its recent volatility. The volatility is
+scaled by how expensive the stock's real options were (implied vs realized volatility,
+measured from Alpaca option data since Feb 2024; see `reports/options_calibration.json`).
+Selling options only has an edge if that ratio is above 1, so the "no-edge stress" gate
+re-runs everything with options priced exactly fairly and spreads doubled. Costs are $0.65
+a contract plus selling at the bid side of the spread.
+
+The scorecard checks each strategy against holding the same stocks, and against just putting
+the $1,000 in SPY. The `wheel` also runs for real on the paper account (`wheel_bot.py`, weekdays
+mid-afternoon). It keeps a $1,000 ledger and logs to `logs/wheel_log.csv`. Selected names were
+chosen today, so the list carries some hindsight both ways: it includes collapses (LCID, PLUG,
+NIO) and a giant winner (PLTR).
+
 ## The scorecard for day trading (enforced by `gate.py`)
 
 | Gate | Keep if |
@@ -78,6 +103,8 @@ paper endpoint).
 | After the close | pairs fills into trades, updates logs and gates | `eod.yml` |
 | Weeknights | Claude reviews the day; writes lessons; risk-officer verdict; at most ONE change | Claude scheduled task |
 | Saturdays, and on any strategy/config change | re-downloads data, re-runs backtest + stress + plateau, re-scores | `backtest.yml` |
+| Weekdays mid-afternoon | paper wheel: sells/re-prices options, records assignments | `options.yml` |
+| Saturdays, and on options changes | re-calibrates to real option prices, re-runs the options backtest | `options.yml` |
 | Weekdays after the close, and on slow-lane changes | refreshes daily prices, re-tests the slow lane, extends its forward record | `daily.yml` |
 
 ## One-time setup

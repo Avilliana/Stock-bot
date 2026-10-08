@@ -113,6 +113,12 @@ footer{font-size:12px;color:var(--muted);text-align:center;margin-top:4px}
   </section>
 
   <section class="card">
+    <h2>Options lane · $1k, one contract</h2>
+    <div id="opts"><div class="empty">Waiting for the first options backtest.</div></div>
+    <div class="chart-note" id="optsnote"></div>
+  </section>
+
+  <section class="card">
     <h2>Day-trading strategies vs the scorecard</h2>
     <div id="strats"><div class="empty">Waiting for the first backtest.</div></div>
   </section>
@@ -286,20 +292,56 @@ function renderDaily(d, g){
     " · after costs, dividends included · not a recommendation";
 }
 
+const ONAMES = {wheel: "The wheel", covered_call: "Covered calls", csp: "Cash-secured puts"};
+function renderOptions(d, g){
+  const box = $("opts");
+  if (!d || !d.strategies) return;
+  box.innerHTML = "";
+  const grid = document.createElement("div"); grid.className = "drow";
+  for (const h of ["", "Yearly", "Worst dip", "Gates"]) {
+    const e = document.createElement("div"); e.className = "h"; e.textContent = h; grid.appendChild(e);
+  }
+  const add = (name, cls_, a, b, c) => {
+    for (const [t, k] of [[name, "nm " + cls_], [a, "n " + cls_], [b, "n " + cls_], [c, "n " + cls_]]) {
+      const e = document.createElement("div"); e.className = k; e.textContent = t; grid.appendChild(e);
+    }
+  };
+  add("Hold the same stocks", "bm", pc(d.bh_stocks.cagr_pct), "−" + pc(d.bh_stocks.max_dd_pct), "");
+  add("$1k in SPY instead", "bm", pc(d.spy.cagr_pct), "−" + pc(d.spy.max_dd_pct), "");
+  for (const [n, st] of Object.entries(d.strategies)) {
+    const gs = g && g.options && g.options[n];
+    add((ONAMES[n] || n) + " " + st.version, "", pc(st.base.cagr_pct), "−" + pc(st.base.max_dd_pct),
+        gs ? gs.passed + "/" + gs.total : "—");
+  }
+  box.appendChild(grid);
+  const L = d.live || {};
+  const live = document.createElement("div"); live.className = "line"; live.style.marginTop = "8px";
+  live.textContent = L.symbol || L.equity
+    ? `Paper wheel: ${L.symbol || "cash"} · ${L.phase || ""} · ledger ${usd(L.equity || 0)} · ${L.cycles_done || 0} cycles done`
+    : "Paper wheel: starts at the next weekday run";
+  box.appendChild(live);
+  $("optsnote").textContent = d.period[0] + " to " + d.period[1] + (d.synthetic ? " · SYNTHETIC" : "") +
+    " · option prices modeled, calibrated to real quotes since Feb 2024" +
+    (d.calibration && d.calibration.pooled ? " (IV/RV " + d.calibration.pooled + ")" : "") + " · not advice";
+}
+
 async function load(){
   $("updated").textContent = "Loading…";
-  const [sumText, tradesText, gatesText, dailyText] = await Promise.all([
-    getText("logs/summary.json"), getText("logs/trades.csv"), getText("logs/gates.json"), getText("logs/daily_summary.json")]);
+  const [sumText, tradesText, gatesText, dailyText, optText] = await Promise.all([
+    getText("logs/summary.json"), getText("logs/trades.csv"), getText("logs/gates.json"), getText("logs/daily_summary.json"), getText("logs/options_summary.json")]);
   let s = null, g = null, dl = null;
   try { s = JSON.parse(sumText); } catch (e) {}
   try { g = JSON.parse(gatesText); } catch (e) {}
   try { dl = JSON.parse(dailyText); } catch (e) {}
   renderDaily(dl, g);
+  let op = null;
+  try { op = JSON.parse(optText); } catch (e) {}
+  renderOptions(op, g);
   const trades = parseCSV(tradesText);
 
   const ready = renderStrategies(s, g);
-  const dReady = g && g.daily ? Object.values(g.daily).filter(x => x.status === "DEPLOYABLE").length : 0;
-  const total = g ? Object.keys(g.strategies).length + Object.keys(g.daily || {}).length : 0;
+  const dReady = g ? [g.daily, g.options].flatMap(x => Object.values(x || {})).filter(x => x.status === "DEPLOYABLE").length : 0;
+  const total = g ? Object.keys(g.strategies).length + Object.keys(g.daily || {}).length + Object.keys(g.options || {}).length : 0;
   $("ready").textContent = (g ? (ready + dReady) + " of " + total : "—");
 
   if (!s) {

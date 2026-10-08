@@ -187,5 +187,119 @@
       "plateau_share": 0.75,
       "forward_min_days": 60
     }
+  },
+  "options": {
+    "about": "Options lane: sell monthly options on one liquid stock whose 100 shares cost $1,000 or less (strike <= $10). Option prices are modeled with Black-Scholes from the stock's own recent volatility, scaled by how expensive its real options were (measured from Alpaca option data since Feb 2024).",
+    "capital": 1000,
+    "max_strike": 10.0,
+    "candidates": [
+      "F",
+      "SOFI",
+      "AAL",
+      "NIO",
+      "SNAP",
+      "PLUG",
+      "NOK",
+      "RIVN",
+      "LCID",
+      "HOOD",
+      "PLTR",
+      "CCL",
+      "T",
+      "INTC",
+      "GRAB",
+      "BB"
+    ],
+    "cash": "BIL",
+    "benchmark": "SPY",
+    "start": "2016-01-01",
+    "costs": {
+      "commission_per_contract": 0.65,
+      "min_half_spread": 0.025,
+      "half_spread_frac": 0.1,
+      "stock_slippage_bps": 5.0,
+      "min_premium": 0.05
+    },
+    "vol": {
+      "rv_days": 60,
+      "min_iv": 0.2,
+      "default_iv_ratio": 1.0
+    },
+    "strategies": {
+      "wheel": {
+        "enabled": true,
+        "version": "v1",
+        "since": "2026-10-08",
+        "about": "The wheel. Sell a ~monthly cash-secured put about 5% below the price; if assigned, sell ~monthly covered calls at least 5% above the price and not below what you paid; when called away, start over.",
+        "other_side": "Buyers of crash insurance and lottery-ticket calls, who historically pay more for options than the moves that follow.",
+        "proves_it_wrong": "Collected premium doesn't make up for being stuck holding a falling stock and capping the rebounds.",
+        "params": {
+          "put_otm_pct": 5.0,
+          "call_otm_pct": 5.0,
+          "call_above_basis": true,
+          "min_dte": 20
+        }
+      },
+      "covered_call": {
+        "enabled": true,
+        "version": "v1",
+        "since": "2026-10-08",
+        "about": "Covered calls. Hold 100 shares and sell a ~monthly call about 5% above the price; if called away, buy back in at the next cycle.",
+        "other_side": "Call buyers paying up for upside.",
+        "proves_it_wrong": "Capped rallies cost more than the premiums collected.",
+        "params": {
+          "call_otm_pct": 5.0,
+          "min_dte": 20
+        }
+      },
+      "csp": {
+        "enabled": true,
+        "version": "v1",
+        "since": "2026-10-08",
+        "about": "Cash-secured puts only. Sell a ~monthly put about 5% below the price; if assigned, sell the shares at the next cycle and keep selling puts.",
+        "other_side": "Buyers of downside protection.",
+        "proves_it_wrong": "Assignments on falling stocks lose more than the premiums collected.",
+        "params": {
+          "put_otm_pct": 5.0,
+          "min_dte": 20
+        }
+      }
+    },
+    "scorecard": {
+      "min_cycles": 100,
+      "growth_max_shortfall_pp": 2.0,
+      "max_dd_vs_benchmark": 0.75,
+      "breadth_share": 0.6,
+      "recent_years": 3,
+      "recent_sharpe_tolerance": 0.3,
+      "forward_min_cycles": 3
+    },
+    "live": {
+      "enabled": true,
+      "dry_run": false,
+      "strategy": "wheel",
+      "priority": [
+        "F",
+        "NIO",
+        "SNAP",
+        "AAL",
+        "NOK",
+        "PLUG",
+        "GRAB",
+        "BB",
+        "LCID",
+        "RIVN",
+        "SOFI",
+        "T",
+        "CCL",
+        "INTC",
+        "HOOD",
+        "PLTR"
+      ],
+      "min_dte": 20,
+      "max_dte": 50,
+      "min_bid": 0.05,
+      "max_spread_frac": 0.35
+    }
   }
 }

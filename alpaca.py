@@ -137,6 +137,62 @@ class Alpaca:
             if not token:
                 return out
 
+    # -- options -------------------------------------------------------------
+    def option_bars(self, symbols, start, end, timeframe="1Day"):
+        out, token = {}, None
+        while True:
+            params = {"symbols": ",".join(symbols), "timeframe": timeframe, "start": start,
+                      "end": end, "limit": 10000}
+            if token:
+                params["page_token"] = token
+            page = self._d("/v1beta1/options/bars", params=params)
+            for sym, bs in (page.get("bars") or {}).items():
+                out.setdefault(sym, []).extend(bs)
+            token = page.get("next_page_token")
+            if not token:
+                return out
+
+    def option_chain(self, underlying, **params):
+        """Snapshots (quotes, greeks, IV) for an underlying's contracts. Free plan = indicative feed."""
+        out, token = {}, None
+        while True:
+            q = dict(params, limit=1000)
+            if token:
+                q["page_token"] = token
+            page = self._d(f"/v1beta1/options/snapshots/{underlying}", params=q)
+            out.update(page.get("snapshots") or {})
+            token = page.get("next_page_token")
+            if not token:
+                return out
+
+    def option_contracts(self, **params):
+        out, token = [], None
+        while True:
+            q = dict(params, limit=1000)
+            if token:
+                q["page_token"] = token
+            page = self._t("GET", "/v2/options/contracts", params=q)
+            out.extend(page.get("option_contracts") or [])
+            token = page.get("next_page_token")
+            if not token:
+                return out
+
+    def submit_option(self, symbol, qty, side, limit_price, intent, client_id):
+        body = {"symbol": symbol, "qty": str(qty), "side": side, "type": "limit",
+                "limit_price": f"{limit_price:.2f}", "time_in_force": "day",
+                "position_intent": intent, "client_order_id": client_id}
+        return self._t("POST", "/v2/orders", json=body)
+
+    def submit_stock(self, symbol, qty, side, client_id):
+        body = {"symbol": symbol, "qty": str(qty), "side": side, "type": "market",
+                "time_in_force": "day", "client_order_id": client_id}
+        return self._t("POST", "/v2/orders", json=body)
+
+    def activities(self, kinds, after_iso):
+        return self._t("GET", "/v2/account/activities",
+                       params={"activity_types": ",".join(kinds), "after": after_iso, "direction": "asc",
+                               "page_size": 100})
+
     def snapshots(self, symbols, feed="iex"):
         return self._d("/v2/stocks/snapshots",
                        params={"symbols": ",".join(symbols), "feed": feed})

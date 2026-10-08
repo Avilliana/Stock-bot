@@ -160,6 +160,52 @@ def check_daily(name, cfg, verdicts):
             "passed": passed, "total": len(gates), "gates": gates, "notes": []}
 
 
+def check_options(name, cfg, verdicts):
+    o = cfg["options"]
+    sc = o["scorecard"]
+    strat = o["strategies"][name]
+    rep = _load(os.path.join(HERE, "reports", f"options_{name}.json"), None)
+    gates = []
+
+    def g(label, ok, detail):
+        gates.append({"gate": label, "pass": bool(ok), "detail": detail})
+
+    if rep is None:
+        g("backtest", False, "no backtest report yet - run options.py")
+    else:
+        b, bh, spy = rep["base"], rep["bh_stocks"], rep["spy"]
+        stale = rep.get("version") != strat["version"] or rep.get("params") != strat["params"]
+        g("settings", not rep.get("synthetic") and not stale and rep.get("calibrated"),
+          "synthetic data" if rep.get("synthetic") else "report is for an older version/params" if stale else
+          "option prices not calibrated to real option data" if not rep.get("calibrated") else
+          f"costs on, IV/RV calibrated, {b.get('years')} years")
+        g("sample", b.get("cycles", 0) >= sc["min_cycles"], f"{b.get('cycles', 0)} option cycles across stocks (need {sc['min_cycles']}+)")
+        g("quality", b["sharpe"] > bh["sharpe"], f"Sharpe {b['sharpe']} vs holding the same stocks {bh['sharpe']}")
+        g("growth", b["cagr_pct"] >= spy["cagr_pct"] - sc["growth_max_shortfall_pp"],
+          f"CAGR {b['cagr_pct']}% vs $1k in SPY {spy['cagr_pct']}% (allowed {sc['growth_max_shortfall_pp']} pts behind)")
+        g("pain", b["max_dd_pct"] <= bh["max_dd_pct"] * sc["max_dd_vs_benchmark"],
+          f"worst drop {b['max_dd_pct']}% vs holding the stocks {bh['max_dd_pct']}%")
+        ne = rep["no_edge_stress"]
+        g("no-edge stress", ne["sharpe"] > bh["sharpe"],
+          f"with options priced fairly and spreads x2: Sharpe {ne['sharpe']} vs holding {bh['sharpe']}")
+        g("breadth", rep["breadth_share"] >= sc["breadth_share"],
+          f"beats holding in {int(rep['breadth_share'] * 100)}% of stocks (need {int(sc['breadth_share'] * 100)}%+)")
+        r, rb = rep["recent"], rep["bh_recent"]
+        g("recent", r["cagr_pct"] > 0 and r["sharpe"] >= rb["sharpe"] - sc["recent_sharpe_tolerance"],
+          f"last {sc['recent_years']} yrs: CAGR {r['cagr_pct']}%, Sharpe {r['sharpe']} vs holding {rb['sharpe']}")
+    v = verdicts.get(f"options_{name}", {})
+    g("risk officer", v.get("verdict") == "KEEP" and v.get("version") == strat["version"],
+      f"{v.get('verdict', 'no review yet')} ({v.get('date', '-')}): {v.get('reason', '')}".strip())
+    live = _load(os.path.join(HERE, "logs", "wheel_state.json"), {})
+    done = live.get("cycles_done", 0) if live.get("strategy", "wheel") == name else 0
+    g("forward", done >= sc["forward_min_cycles"] and name == "wheel",
+      f"{done} completed paper option cycles (need {sc['forward_min_cycles']}+)" if name == "wheel"
+      else "not paper traded (only the wheel runs live)")
+    passed = sum(x["pass"] for x in gates)
+    return {"version": strat["version"], "status": "DEPLOYABLE" if passed == len(gates) else "PAPER",
+            "passed": passed, "total": len(gates), "gates": gates, "notes": []}
+
+
 def main():
     with open(os.path.join(HERE, "config.json"), encoding="utf-8") as f:
         cfg = json.load(f)
@@ -189,6 +235,17 @@ def main():
         md += [f"- {'PASS' if x['pass'] else 'FAIL'} **{x['gate']}**: {x['detail']}" for x in res["gates"]]
         md.append("")
         print(f"daily {name}: {res['status']} {res['passed']}/{res['total']}")
+    out["options"] = {}
+    md.append("# Options lane\n")
+    for name, s in cfg.get("options", {}).get("strategies", {}).items():
+        if not s["enabled"]:
+            continue
+        res = check_options(name, cfg, verdicts)
+        out["options"][name] = res
+        md.append(f"## {name} {res['version']} - {res['status']} ({res['passed']}/{res['total']})\n")
+        md += [f"- {'PASS' if x['pass'] else 'FAIL'} **{x['gate']}**: {x['detail']}" for x in res["gates"]]
+        md.append("")
+        print(f"options {name}: {res['status']} {res['passed']}/{res['total']}")
     os.makedirs(os.path.join(HERE, "logs"), exist_ok=True)
     with open(os.path.join(HERE, "logs", "gates.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2)
