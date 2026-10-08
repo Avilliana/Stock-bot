@@ -193,6 +193,21 @@ class Alpaca:
                        params={"activity_types": ",".join(kinds), "after": after_iso, "direction": "asc",
                                "page_size": 100})
 
+    def cash_dividends(self, symbols, start, end):
+        """{symbol: [(ex_date, rate), ...]} from Alpaca corporate actions."""
+        out, token = {}, None
+        while True:
+            params = {"symbols": ",".join(symbols), "types": "cash_dividend", "start": start, "end": end,
+                      "limit": 1000}
+            if token:
+                params["page_token"] = token
+            page = self._d("/v1/corporate-actions", params=params)
+            for d in (page.get("corporate_actions") or {}).get("cash_dividends", []) or []:
+                out.setdefault(d["symbol"], []).append((d.get("ex_date"), float(d.get("rate") or 0)))
+            token = page.get("next_page_token")
+            if not token:
+                return out
+
     def snapshots(self, symbols, feed="iex"):
         return self._d("/v2/stocks/snapshots",
                        params={"symbols": ",".join(symbols), "feed": feed})

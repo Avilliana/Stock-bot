@@ -80,6 +80,13 @@ def run():
     bil = [b["c"] for b in bars.get("BIL", [])]
     rate = max(0.0, (bil[-1] / bil[-22] - 1) * 252 / 21) if len(bil) > 22 else 0.04
 
+    try:
+        divs = api.cash_dividends(universe, str(today - timedelta(days=365)), str(today))
+        div_ok = True
+    except Exception as e:                                 # noqa: BLE001
+        print(f"dividend data unavailable: {str(e)[:120]}")
+        divs, div_ok = {}, False
+
     earn = earnings_between(today, today + timedelta(days=sc["max_dte"] + 2)) if sc.get("check_earnings") else None
 
     rows, skipped = [], {}
@@ -124,16 +131,17 @@ def run():
             continue
         _, occ, exp, K, m, bp, ap, iv = best
         T = max(1, (exp - today).days) / 365
-        iv = float(iv) if iv else implied_vol("put", m, px, K, T, rate)
+        q = sum(r_ for _, r_ in divs.get(sym, [])) / px     # trailing 12-month dividend yield
+        iv = float(iv) if iv else implied_vol("put", m, px, K, T, rate, q)
         if not iv:
             skipped[sym] = "could not read implied volatility"
             continue
         fill = round((bp + m) / 2, 2)                      # conservative: between bid and mid
         credit = fill * 100 - fee
-        fair = bs("put", px, K, T, rate, rv60) * 100
+        fair = bs("put", px, K, T, rate, rv60, q) * 100
         edge = credit - fair
         sq = iv * math.sqrt(T)
-        d2 = (math.log(px / K) + (rate - 0.5 * iv * iv) * T) / sq
+        d2 = (math.log(px / K) + (rate - q - 0.5 * iv * iv) * T) / sq
         p_assign = _N(-d2)
         e_date = (earn or {}).get(sym)
         earnings_before = bool(e_date and e_date <= str(exp))
@@ -146,14 +154,14 @@ def run():
             "richness": round(iv / rv60, 2) if rv60 > 0 else None,
             "fair_usd": round(fair, 2), "edge_usd": round(edge, 2),
             "p_assign_pct": round(p_assign * 100, 1), "breakeven": round(K - fill, 2),
-            "otm_pct": round((1 - K / px) * 100, 1), "spread_pct": round((ap - bp) / m * 100, 1),
+            "otm_pct": round((1 - K / px) * 100, 1), "div_yield_pct": round(q * 100, 1), "spread_pct": round((ap - bp) / m * 100, 1),
             "earnings": e_date if earnings_before else None,
         })
     clean = sorted([r for r in rows if not r["earnings"]], key=lambda r: -r["edge_usd"])
     flagged = sorted([r for r in rows if r["earnings"]], key=lambda r: -r["edge_usd"])
     top = [r for r in clean if r["edge_usd"] > 0][: sc["top_n"]]
     out = {"updated": now.strftime("%Y-%m-%d %H:%M ET"), "date": str(today), "rate_pct": round(rate * 100, 2),
-           "earnings_checked": earn is not None, "budget_usd": o["capital"],
+           "earnings_checked": earn is not None, "dividends_checked": div_ok, "budget_usd": o["capital"],
            "pick": top[0] if top else None, "top": top, "earnings_flagged": flagged[:5],
            "all": clean + flagged, "skipped": skipped,
            "how": "edge = estimated credit (between bid and mid, after $0.65) minus fair value at the stock's "
@@ -170,8 +178,10 @@ def run():
     for r in clean + flagged:
         md.append(f"| {r['symbol']} ${r['price']} | {r['strike']}P {r['expiry']} | ${r['credit_usd']} | ${r['edge_usd']} | "
                   f"{r['yield_annual_pct']}% | {r['p_assign_pct']}% | ${r['breakeven']} | "
-                  f"{r['iv_pct']}% / {r['rv60_pct']}%{' · EARNINGS ' + r['earnings'] if r['earnings'] else ''} |")
-    md.append(f"\nEarnings check: {'on' if earn is not None else 'unavailable today'}. Skipped: "
+                  f"{r['iv_pct']}% / {r['rv60_pct']}%{' · div ' + str(r['div_yield_pct']) + '%' if r['div_yield_pct'] else ''}"
+                  f"{' · EARNINGS ' + r['earnings'] if r['earnings'] else ''} |")
+    md.append(f"\nEarnings check: {'on' if earn is not None else 'unavailable today - check before trading'}. "
+              f"Dividends: {'priced in' if div_ok else 'unavailable today'}. Skipped: "
               + ", ".join(f"{k} ({v})" for k, v in skipped.items()))
     with open(os.path.join(HERE, "SCREENER.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(md) + "\n")

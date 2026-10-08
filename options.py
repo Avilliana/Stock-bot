@@ -44,25 +44,26 @@ def _N(x):
     return 0.5 * (1 + math.erf(x / math.sqrt(2)))
 
 
-def bs(kind, S, K, T, r, sigma):
+def bs(kind, S, K, T, r, sigma, q=0.0):
+    """Black-Scholes with a continuous dividend yield q (dividends make puts dearer)."""
     if T <= 0 or sigma <= 0:
         return max(0.0, S - K) if kind == "call" else max(0.0, K - S)
     sq = sigma * math.sqrt(T)
-    d1 = (math.log(S / K) + (r + 0.5 * sigma * sigma) * T) / sq
+    d1 = (math.log(S / K) + (r - q + 0.5 * sigma * sigma) * T) / sq
     d2 = d1 - sq
     if kind == "call":
-        return S * _N(d1) - K * math.exp(-r * T) * _N(d2)
-    return K * math.exp(-r * T) * _N(-d2) - S * _N(-d1)
+        return S * math.exp(-q * T) * _N(d1) - K * math.exp(-r * T) * _N(d2)
+    return K * math.exp(-r * T) * _N(-d2) - S * math.exp(-q * T) * _N(-d1)
 
 
-def implied_vol(kind, price, S, K, T, r):
+def implied_vol(kind, price, S, K, T, r, q=0.0):
     intrinsic = max(0.0, S - K) if kind == "call" else max(0.0, K * math.exp(-r * T) - S)
     if T <= 0 or price <= intrinsic + 1e-4:
         return None
     lo, hi = 0.01, 5.0
     for _ in range(60):
         mid = (lo + hi) / 2
-        if bs(kind, S, K, T, r, mid) > price:
+        if bs(kind, S, K, T, r, mid, q) > price:
             hi = mid
         else:
             lo = mid
