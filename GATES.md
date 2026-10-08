@@ -1,6 +1,6 @@
 # Gate status
 
-Updated 2026-10-08 16:57:56 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
+Updated 2026-10-08 16:58:11 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
 
 ## orb v1 - PAPER (3/10)
 
@@ -84,20 +84,41 @@ Updated 2026-10-08 16:57:56 UTC. A strategy is **DEPLOYABLE** only when every ga
 
 # Options lane
 
-## wheel v1 - PAPER (0/3)
+## wheel v1 - PAPER (5/10)
 
-- FAIL **backtest**: no backtest report yet - run options.py
+- PASS **settings**: costs on, IV/RV calibrated, 10.46 years
+- PASS **sample**: 358 option cycles across stocks (need 100+)
+- PASS **quality**: Sharpe 0.896 vs holding the same stocks 0.634
+- FAIL **growth**: CAGR 5.73% vs $1k in SPY 15.22% (allowed 2.0 pts behind)
+- PASS **pain**: worst drop 12.47% vs holding the stocks 49.14%
+- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.621 vs holding 0.634
+- FAIL **breadth**: beats holding in 56% of stocks (need 60%+)
+- PASS **recent**: last 3 yrs: CAGR 5.25%, Sharpe 0.909 vs holding 0.858
 - FAIL **risk officer**: no review yet (-):
 - FAIL **forward**: 0 completed paper option cycles (need 3+)
 
-## covered_call v1 - PAPER (0/3)
+## covered_call v1 - PAPER (5/10)
 
-- FAIL **backtest**: no backtest report yet - run options.py
+- PASS **settings**: costs on, IV/RV calibrated, 10.46 years
+- PASS **sample**: 601 option cycles across stocks (need 100+)
+- PASS **quality**: Sharpe 0.954 vs holding the same stocks 0.634
+- FAIL **growth**: CAGR 5.24% vs $1k in SPY 15.22% (allowed 2.0 pts behind)
+- PASS **pain**: worst drop 14.0% vs holding the stocks 49.14%
+- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.571 vs holding 0.634
+- FAIL **breadth**: beats holding in 56% of stocks (need 60%+)
+- PASS **recent**: last 3 yrs: CAGR 7.44%, Sharpe 1.641 vs holding 0.858
 - FAIL **risk officer**: no review yet (-):
 - FAIL **forward**: not paper traded (only the wheel runs live)
 
-## csp v1 - PAPER (0/3)
+## csp v1 - PAPER (5/10)
 
-- FAIL **backtest**: no backtest report yet - run options.py
+- PASS **settings**: costs on, IV/RV calibrated, 10.46 years
+- PASS **sample**: 613 option cycles across stocks (need 100+)
+- PASS **quality**: Sharpe 1.079 vs holding the same stocks 0.634
+- FAIL **growth**: CAGR 3.9% vs $1k in SPY 15.22% (allowed 2.0 pts behind)
+- PASS **pain**: worst drop 10.38% vs holding the stocks 49.14%
+- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.174 vs holding 0.634
+- FAIL **breadth**: beats holding in 50% of stocks (need 60%+)
+- PASS **recent**: last 3 yrs: CAGR 5.59%, Sharpe 2.025 vs holding 0.858
 - FAIL **risk officer**: no review yet (-):
 - FAIL **forward**: not paper traded (only the wheel runs live)

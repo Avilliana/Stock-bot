@@ -1,0 +1,575 @@
+{
+  "strategy": "csp",
+  "version": "v1",
+  "params": {
+    "put_otm_pct": 5.0,
+    "min_dte": 20
+  },
+  "since": "2026-10-08",
+  "updated": "2026-10-08 16:57:52",
+  "synthetic": false,
+  "costs": {
+    "commission_per_contract": 0.65,
+    "min_half_spread": 0.025,
+    "half_spread_frac": 0.1,
+    "stock_slippage_bps": 5.0,
+    "min_premium": 0.05
+  },
+  "calibrated": true,
+  "base": {
+    "days": 2635,
+    "years": 10.46,
+    "cagr_pct": 3.9,
+    "vol_pct": 3.61,
+    "sharpe": 1.079,
+    "max_dd_pct": 10.38,
+    "total_return_pct": 49.23,
+    "cycles": 613,
+    "assigned": 168
+  },
+  "bh_stocks": {
+    "days": 2635,
+    "years": 10.46,
+    "cagr_pct": 12.51,
+    "vol_pct": 22.64,
+    "sharpe": 0.634,
+    "max_dd_pct": 49.14,
+    "total_return_pct": 243.1
+  },
+  "spy": {
+    "days": 2635,
+    "years": 10.46,
+    "cagr_pct": 15.22,
+    "vol_pct": 17.44,
+    "sharpe": 0.9,
+    "max_dd_pct": 33.79,
+    "total_return_pct": 340.08
+  },
+  "no_edge_stress": {
+    "days": 2635,
+    "years": 10.46,
+    "cagr_pct": 0.62,
+    "vol_pct": 4.05,
+    "sharpe": 0.174,
+    "max_dd_pct": 15.91,
+    "total_return_pct": 6.72
+  },
+  "iv_ratio_sweep": {
+    "0.9": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": 1.21,
+      "vol_pct": 3.74,
+      "sharpe": 0.341,
+      "max_dd_pct": 10.84,
+      "total_return_pct": 13.44
+    },
+    "1.0": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": 2.01,
+      "vol_pct": 3.76,
+      "sharpe": 0.55,
+      "max_dd_pct": 11.57,
+      "total_return_pct": 23.17
+    },
+    "1.1": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": 3.98,
+      "vol_pct": 3.51,
+      "sharpe": 1.13,
+      "max_dd_pct": 8.3,
+      "total_return_pct": 50.36
+    },
+    "1.2": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": 5.14,
+      "vol_pct": 3.47,
+      "sharpe": 1.462,
+      "max_dd_pct": 8.27,
+      "total_return_pct": 68.82
+    },
+    "1.3": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": 6.13,
+      "vol_pct": 3.39,
+      "sharpe": 1.772,
+      "max_dd_pct": 8.02,
+      "total_return_pct": 86.37
+    }
+  },
+  "plateau": [
+    {
+      "change": "put_otm_pct 5.0 -> 4.0",
+      "cagr_pct": 3.85,
+      "sharpe": 1.105,
+      "max_dd_pct": 9.79
+    },
+    {
+      "change": "put_otm_pct 5.0 -> 6.0",
+      "cagr_pct": 4.31,
+      "sharpe": 1.214,
+      "max_dd_pct": 9.56
+    },
+    {
+      "change": "min_dte 20 -> 16",
+      "cagr_pct": 4.12,
+      "sharpe": 1.162,
+      "max_dd_pct": 8.91
+    },
+    {
+      "change": "min_dte 20 -> 24",
+      "cagr_pct": 3.97,
+      "sharpe": 1.124,
+      "max_dd_pct": 9.23
+    }
+  ],
+  "halves": [
+    {
+      "days": 1317,
+      "years": 5.23,
+      "cagr_pct": 2.28,
+      "vol_pct": 3.37,
+      "sharpe": 0.687,
+      "max_dd_pct": 10.38,
+      "total_return_pct": 12.51
+    },
+    {
+      "days": 1318,
+      "years": 5.23,
+      "cagr_pct": 5.55,
+      "vol_pct": 3.84,
+      "sharpe": 1.427,
+      "max_dd_pct": 6.5,
+      "total_return_pct": 32.64
+    }
+  ],
+  "bh_halves": [
+    {
+      "days": 1317,
+      "years": 5.23,
+      "cagr_pct": 22.48,
+      "vol_pct": 17.15,
+      "sharpe": 1.269,
+      "max_dd_pct": 21.69,
+      "total_return_pct": 188.62
+    },
+    {
+      "days": 1318,
+      "years": 5.23,
+      "cagr_pct": 3.36,
+      "vol_pct": 27.03,
+      "sharpe": 0.257,
+      "max_dd_pct": 49.14,
+      "total_return_pct": 18.88
+    }
+  ],
+  "recent": {
+    "days": 756,
+    "years": 3.0,
+    "cagr_pct": 5.59,
+    "vol_pct": 2.7,
+    "sharpe": 2.025,
+    "max_dd_pct": 3.33,
+    "total_return_pct": 17.71
+  },
+  "bh_recent": {
+    "days": 756,
+    "years": 3.0,
+    "cagr_pct": 19.32,
+    "vol_pct": 23.89,
+    "sharpe": 0.858,
+    "max_dd_pct": 24.14,
+    "total_return_pct": 69.86
+  },
+  "per_stock": {
+    "F": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": -1.47,
+      "vol_pct": 6.71,
+      "sharpe": -0.187,
+      "max_dd_pct": 42.16,
+      "total_return_pct": -14.36,
+      "cycles": 27,
+      "assigned": 3,
+      "called_away": 0,
+      "premium_usd": 183.08,
+      "iv_ratio": 0.899,
+      "bh": {
+        "days": 2635,
+        "years": 10.46,
+        "cagr_pct": 2.12,
+        "vol_pct": 34.66,
+        "sharpe": 0.234,
+        "max_dd_pct": 64.63,
+        "total_return_pct": 24.55
+      },
+      "beats_holding": false
+    },
+    "SOFI": {
+      "days": 1399,
+      "years": 5.55,
+      "cagr_pct": 7.07,
+      "vol_pct": 12.6,
+      "sharpe": 0.606,
+      "max_dd_pct": 21.18,
+      "total_return_pct": 46.12,
+      "cycles": 34,
+      "assigned": 11,
+      "called_away": 0,
+      "premium_usd": 1016.58,
+      "iv_ratio": 1.099,
+      "bh": {
+        "days": 1399,
+        "years": 5.55,
+        "cagr_pct": 8.67,
+        "vol_pct": 57.41,
+        "sharpe": 0.429,
+        "max_dd_pct": 61.95,
+        "total_return_pct": 58.66
+      },
+      "beats_holding": true
+    },
+    "AAL": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": 4.85,
+      "vol_pct": 5.49,
+      "sharpe": 0.891,
+      "max_dd_pct": 8.42,
+      "total_return_pct": 64.16,
+      "cycles": 12,
+      "assigned": 2,
+      "called_away": 0,
+      "premium_usd": 489.28,
+      "iv_ratio": 0.989,
+      "bh": {
+        "days": 2635,
+        "years": 10.46,
+        "cagr_pct": 3.4,
+        "vol_pct": 40.18,
+        "sharpe": 0.279,
+        "max_dd_pct": 61.65,
+        "total_return_pct": 41.79
+      },
+      "beats_holding": true
+    },
+    "NIO": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": 5.93,
+      "vol_pct": 8.36,
+      "sharpe": 0.73,
+      "max_dd_pct": 19.87,
+      "total_return_pct": 82.57,
+      "cycles": 69,
+      "assigned": 22,
+      "called_away": 0,
+      "premium_usd": 1948.2,
+      "iv_ratio": 1.115,
+      "bh": {
+        "days": 2635,
+        "years": 10.46,
+        "cagr_pct": -2.15,
+        "vol_pct": 49.84,
+        "sharpe": 0.197,
+        "max_dd_pct": 89.0,
+        "total_return_pct": -20.36
+      },
+      "beats_holding": true
+    },
+    "SNAP": {
+      "days": 2343,
+      "years": 9.3,
+      "cagr_pct": 11.18,
+      "vol_pct": 10.7,
+      "sharpe": 1.046,
+      "max_dd_pct": 24.98,
+      "total_return_pct": 167.89,
+      "cycles": 54,
+      "assigned": 12,
+      "called_away": 0,
+      "premium_usd": 2556.61,
+      "iv_ratio": 1.288,
+      "bh": {
+        "days": 2343,
+        "years": 9.3,
+        "cagr_pct": -4.91,
+        "vol_pct": 65.01,
+        "sharpe": 0.253,
+        "max_dd_pct": 94.75,
+        "total_return_pct": -37.41
+      },
+      "beats_holding": true
+    },
+    "PLUG": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": -1.42,
+      "vol_pct": 11.88,
+      "sharpe": -0.059,
+      "max_dd_pct": 34.8,
+      "total_return_pct": -13.84,
+      "cycles": 71,
+      "assigned": 25,
+      "called_away": 0,
+      "premium_usd": 1109.91,
+      "iv_ratio": 1.08,
+      "bh": {
+        "days": 2635,
+        "years": 10.46,
+        "cagr_pct": 1.5,
+        "vol_pct": 38.26,
+        "sharpe": 0.227,
+        "max_dd_pct": 87.58,
+        "total_return_pct": 16.82
+      },
+      "beats_holding": false
+    },
+    "NOK": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": 4.29,
+      "vol_pct": 5.18,
+      "sharpe": 0.837,
+      "max_dd_pct": 11.84,
+      "total_return_pct": 55.09,
+      "cycles": 83,
+      "assigned": 15,
+      "called_away": 0,
+      "premium_usd": 638.67,
+      "iv_ratio": 1.019,
+      "bh": {
+        "days": 2635,
+        "years": 10.46,
+        "cagr_pct": 4.44,
+        "vol_pct": 26.45,
+        "sharpe": 0.297,
+        "max_dd_pct": 43.31,
+        "total_return_pct": 57.54
+      },
+      "beats_holding": true
+    },
+    "RIVN": {
+      "days": 1160,
+      "years": 4.6,
+      "cagr_pct": 9.26,
+      "vol_pct": 5.35,
+      "sharpe": 1.683,
+      "max_dd_pct": 10.67,
+      "total_return_pct": 50.36,
+      "cycles": 9,
+      "assigned": 1,
+      "called_away": 0,
+      "premium_usd": 418.62,
+      "iv_ratio": 1.042,
+      "bh": {
+        "days": 1160,
+        "years": 4.6,
+        "cagr_pct": 10.3,
+        "vol_pct": 45.15,
+        "sharpe": 0.437,
+        "max_dd_pct": 43.3,
+        "total_return_pct": 57.02
+      },
+      "beats_holding": true
+    },
+    "LCID": {
+      "days": 1449,
+      "years": 5.75,
+      "cagr_pct": 1.98,
+      "vol_pct": 12.18,
+      "sharpe": 0.222,
+      "max_dd_pct": 20.76,
+      "total_return_pct": 11.91,
+      "cycles": 44,
+      "assigned": 19,
+      "called_away": 0,
+      "premium_usd": 1320.27,
+      "iv_ratio": 1.263,
+      "bh": {
+        "days": 1449,
+        "years": 5.75,
+        "cagr_pct": -40.36,
+        "vol_pct": 86.67,
+        "sharpe": -0.174,
+        "max_dd_pct": 99.1,
+        "total_return_pct": -94.88
+      },
+      "beats_holding": true
+    },
+    "HOOD": {
+      "days": 1233,
+      "years": 4.89,
+      "cagr_pct": 7.45,
+      "vol_pct": 11.58,
+      "sharpe": 0.678,
+      "max_dd_pct": 18.57,
+      "total_return_pct": 42.11,
+      "cycles": 20,
+      "assigned": 6,
+      "called_away": 0,
+      "premium_usd": 662.44,
+      "iv_ratio": 1.006,
+      "bh": {
+        "days": 1233,
+        "years": 4.89,
+        "cagr_pct": 63.29,
+        "vol_pct": 62.12,
+        "sharpe": 1.098,
+        "max_dd_pct": 57.04,
+        "total_return_pct": 1001.34
+      },
+      "beats_holding": false
+    },
+    "PLTR": {
+      "days": 1441,
+      "years": 5.72,
+      "cagr_pct": 6.69,
+      "vol_pct": 12.05,
+      "sharpe": 0.6,
+      "max_dd_pct": 28.37,
+      "total_return_pct": 44.84,
+      "cycles": 14,
+      "assigned": 5,
+      "called_away": 0,
+      "premium_usd": 510.94,
+      "iv_ratio": 1.05,
+      "bh": {
+        "days": 1441,
+        "years": 5.72,
+        "cagr_pct": 41.8,
+        "vol_pct": 65.53,
+        "sharpe": 0.853,
+        "max_dd_pct": 83.53,
+        "total_return_pct": 636.73
+      },
+      "beats_holding": false
+    },
+    "CCL": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": 3.58,
+      "vol_pct": 10.46,
+      "sharpe": 0.39,
+      "max_dd_pct": 24.73,
+      "total_return_pct": 44.51,
+      "cycles": 14,
+      "assigned": 4,
+      "called_away": 0,
+      "premium_usd": 571.71,
+      "iv_ratio": 1.038,
+      "bh": {
+        "days": 2635,
+        "years": 10.46,
+        "cagr_pct": 10.19,
+        "vol_pct": 47.76,
+        "sharpe": 0.441,
+        "max_dd_pct": 76.65,
+        "total_return_pct": 175.89
+      },
+      "beats_holding": false
+    },
+    "T": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": 2.21,
+      "vol_pct": 0.26,
+      "sharpe": 8.268,
+      "max_dd_pct": 0.21,
+      "total_return_pct": 25.63,
+      "cycles": 0,
+      "assigned": 0,
+      "called_away": 0,
+      "premium_usd": 0.0,
+      "iv_ratio": 1.064,
+      "bh": {
+        "days": 2635,
+        "years": 10.46,
+        "cagr_pct": 2.21,
+        "vol_pct": 0.26,
+        "sharpe": 8.268,
+        "max_dd_pct": 0.21,
+        "total_return_pct": 25.63
+      },
+      "beats_holding": false
+    },
+    "INTC": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": 2.21,
+      "vol_pct": 0.26,
+      "sharpe": 8.268,
+      "max_dd_pct": 0.21,
+      "total_return_pct": 25.63,
+      "cycles": 0,
+      "assigned": 0,
+      "called_away": 0,
+      "premium_usd": 0.0,
+      "iv_ratio": 0.858,
+      "bh": {
+        "days": 2635,
+        "years": 10.46,
+        "cagr_pct": 2.21,
+        "vol_pct": 0.26,
+        "sharpe": 8.268,
+        "max_dd_pct": 0.21,
+        "total_return_pct": 25.63
+      },
+      "beats_holding": false
+    },
+    "GRAB": {
+      "days": 1968,
+      "years": 7.81,
+      "cagr_pct": -0.33,
+      "vol_pct": 12.43,
+      "sharpe": 0.039,
+      "max_dd_pct": 44.29,
+      "total_return_pct": -2.56,
+      "cycles": 48,
+      "assigned": 15,
+      "called_away": 0,
+      "premium_usd": 587.64,
+      "iv_ratio": 1.099,
+      "bh": {
+        "days": 1968,
+        "years": 7.81,
+        "cagr_pct": -2.24,
+        "vol_pct": 34.93,
+        "sharpe": 0.091,
+        "max_dd_pct": 68.54,
+        "total_return_pct": -16.2
+      },
+      "beats_holding": false
+    },
+    "BB": {
+      "days": 2635,
+      "years": 10.46,
+      "cagr_pct": 7.1,
+      "vol_pct": 11.29,
+      "sharpe": 0.665,
+      "max_dd_pct": 40.25,
+      "total_return_pct": 104.95,
+      "cycles": 114,
+      "assigned": 28,
+      "called_away": 0,
+      "premium_usd": 2419.38,
+      "iv_ratio": 1.153,
+      "bh": {
+        "days": 2635,
+        "years": 10.46,
+        "cagr_pct": 2.08,
+        "vol_pct": 51.77,
+        "sharpe": 0.299,
+        "max_dd_pct": 88.06,
+        "total_return_pct": 24.06
+      },
+      "beats_holding": true
+    }
+  },
+  "breadth_share": 0.5
+}
