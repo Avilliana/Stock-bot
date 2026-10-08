@@ -1,0 +1,53 @@
+name: End of day
+
+on:
+  schedule:
+    # 21:20 UTC = 4:20 PM New York in winter, 5:20 PM in summer - after the close either way.
+    - cron: "20 21 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Date to reconcile (YYYY-MM-DD, blank = today)"
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Pair the day's fills into trades
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            python reconcile.py --date "${{ github.event.inputs.date }}"
+          else
+            python reconcile.py
+          fi
+      - name: Update the scorecard
+        run: python gate.py
+      - name: Save to the repo
+        run: |
+          git config user.name "stockbot"
+          git config user.email "stockbot@users.noreply.github.com"
+          git add logs GATES.md
+          git diff --cached --quiet && exit 0
+          git commit -m "End of day $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          exit 1

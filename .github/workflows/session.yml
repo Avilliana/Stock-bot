@@ -1,0 +1,55 @@
+name: Trading session
+
+on:
+  schedule:
+    # Every 30 min on weekdays 13:05-20:35 UTC. The bot asks Alpaca's clock whether
+    # the market is open (handles daylight saving and holidays): too early -> waits
+    # up to 40 min for the open, closed -> exits in seconds. A run lasts at most
+    # 345 min (GitHub's limit is 360), so the next queued run picks up the rest of
+    # the day. Only one session runs at a time.
+    - cron: "5,35 13-20 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: "Max minutes to run"
+        default: "345"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: session
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Trade (Alpaca PAPER account only)
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: python bot.py --max-minutes "${{ github.event.inputs.minutes || '345' }}"
+      - name: Save logs to the repo
+        if: always()
+        run: |
+          git config user.name "stockbot"
+          git config user.email "stockbot@users.noreply.github.com"
+          git add logs
+          git diff --cached --quiet && exit 0
+          git commit -m "Session log $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          exit 1

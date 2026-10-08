@@ -1,0 +1,60 @@
+name: Backtest and gauntlet
+
+on:
+  schedule:
+    # Saturdays 12:00 UTC: refresh data, re-test everything, re-score.
+    - cron: "0 12 * * 6"
+  push:
+    # Re-gate every change: editing a strategy or its settings re-runs the gauntlet.
+    branches: [main]
+    paths: ["config.json", "strategies.py", "backtest.py", "gate.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: backtest
+  cancel-in-progress: true
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Look-ahead test
+        run: python tests/test_no_lookahead.py
+      - name: Restore cached minute bars
+        uses: actions/cache@v4
+        with:
+          path: data
+          key: bars-${{ github.run_id }}
+          restore-keys: bars-
+      - name: Backtest (downloads only the missing days)
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: python backtest.py
+      - name: Score against the gates
+        run: python gate.py
+      - name: Save results to the repo
+        run: |
+          git config user.name "stockbot"
+          git config user.email "stockbot@users.noreply.github.com"
+          git add reports BACKTEST.md GATES.md logs/gates.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Backtest $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          exit 1

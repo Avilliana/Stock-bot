@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0e1116">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Stock Bot">
+<title>Stock Bot</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Cpath d='M9 8v16M9 12h-2M9 19h2M17 10v14M17 14h-2M17 21h2M24 7v12M24 10h-2M24 16h2' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f6f7f9; --card:#ffffff; --ink:#111418; --muted:#5f6b7a; --line:#e3e7ec;
+  --up:#15803d; --down:#c2410c; --accent:#2563eb; --bar:#cbd5e1; --warn-bg:#fff7e6; --warn:#92400e;
+  --ok-bg:#e8f5ee; --ok:#166534;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1116; --card:#161b22; --ink:#e8edf3; --muted:#8b98a8; --line:#262d36;
+    --up:#34d399; --down:#fb923c; --accent:#60a5fa; --bar:#334155; --warn-bg:#2a2210; --warn:#fbbf24;
+    --ok-bg:#0f2a1c; --ok:#4ade80;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1116; --card:#161b22; --ink:#e8edf3; --muted:#8b98a8; --line:#262d36;
+  --up:#34d399; --down:#fb923c; --accent:#60a5fa; --bar:#334155; --warn-bg:#2a2210; --warn:#fbbf24;
+  --ok-bg:#0f2a1c; --ok:#4ade80;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  padding:max(16px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom));-webkit-font-smoothing:antialiased}
+main{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+h1{font-size:17px;margin:0;display:flex;align-items:center;gap:8px}
+.badge{font-size:11px;font-weight:600;letter-spacing:.04em;padding:2px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.updated{font-size:12px;color:var(--muted);text-align:right}
+button.refresh{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:5px 9px;font:inherit;font-size:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.hero .label{font-size:12px;color:var(--muted)}
+.hero .big{font-size:40px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1;margin-top:2px}
+.hero .chg{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--muted)}
+#chart{width:100%;height:120px;display:block;margin-top:10px}
+.chart-note{font-size:12px;color:var(--muted);margin-top:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat .label{font-size:12px;color:var(--muted)}
+.stat .val{font-size:22px;font-weight:650;font-variant-numeric:tabular-nums;margin-top:2px}
+.stat .sub{font-size:12px;color:var(--muted)}
+h2{font-size:13px;margin:0 0 8px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.strat{padding:10px 0;border-top:1px solid var(--line)}
+.strat:first-of-type{border-top:0;padding-top:2px}
+.strat .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.strat .name{font-weight:650}
+.strat .name small{font-weight:500;color:var(--muted)}
+.chip{font-size:11px;font-weight:700;letter-spacing:.04em;padding:2px 8px;border-radius:999px;background:var(--warn-bg);color:var(--warn)}
+.chip.ok{background:var(--ok-bg);color:var(--ok)}
+.strat .line{font-size:13px;color:var(--muted);margin-top:4px;font-variant-numeric:tabular-nums}
+.gbar{display:flex;gap:3px;margin-top:8px}
+.gbar span{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.gbar span.p{background:var(--up)}
+details{margin-top:6px;font-size:13px}
+summary{color:var(--accent);cursor:pointer}
+details ul{margin:6px 0 0;padding-left:18px;color:var(--muted)}
+details li b{color:var(--ink);font-weight:600}
+.trade{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+.trade:first-of-type{border-top:0}
+.trade .sym{font-weight:600}
+.trade .meta{font-size:12px;color:var(--muted)}
+.trade .pnl{font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.trade .pnl small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+.empty{color:var(--muted);font-size:13px}
+.warn{background:var(--warn-bg);color:var(--warn);border-radius:10px;padding:9px 12px;font-size:13px;display:none}
+footer{font-size:12px;color:var(--muted);text-align:center;margin-top:4px}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Stock Bot <span class="badge">PAPER</span></h1>
+    <div class="updated"><span id="updated">Loading…</span><br><button class="refresh" id="refresh">Refresh</button></div>
+  </header>
+
+  <div class="warn" id="warn"></div>
+
+  <section class="card hero">
+    <div class="label">Bot P&amp;L, all strategies (paper)</div>
+    <div class="big" id="pnl">—</div>
+    <div class="chg" id="today">&nbsp;</div>
+    <svg id="chart" viewBox="0 0 300 120" preserveAspectRatio="none" aria-label="Cumulative P&L"></svg>
+    <div class="chart-note" id="chartnote"></div>
+  </section>
+
+  <section class="grid">
+    <div class="card stat"><div class="label">Win rate</div><div class="val" id="winrate">—</div><div class="sub" id="wins"></div></div>
+    <div class="card stat"><div class="label">Closed trades</div><div class="val" id="closed">—</div><div class="sub" id="since"></div></div>
+    <div class="card stat"><div class="label">Avg trade</div><div class="val" id="avgr">—</div><div class="sub">in R (1R = planned risk)</div></div>
+    <div class="card stat"><div class="label">Ready for real money</div><div class="val" id="ready">—</div><div class="sub">strategies passing every gate</div></div>
+  </section>
+
+  <section class="card">
+    <h2>Strategies vs the scorecard</h2>
+    <div id="strats"><div class="empty">Waiting for the first backtest.</div></div>
+  </section>
+
+  <section class="card">
+    <h2>Recent trades</h2>
+    <div id="trades"><div class="empty">No trades yet.</div></div>
+  </section>
+
+  <footer>Paper money only · trades every market day 9:30–3:55 ET · results update after the close</footer>
+</main>
+
+<script>
+const REPO_RAW = "https://raw.githubusercontent.com/Avilliana/Stock-bot/main/";
+const $ = id => document.getElementById(id);
+
+async function getText(path){
+  const bust = "?t=" + Date.now();
+  for (const base of ["", REPO_RAW]) {
+    try {
+      const r = await fetch(base + path + bust, {cache: "no-store"});
+      if (r.ok) return await r.text();
+    } catch (e) {}
+  }
+  return null;
+}
+
+function parseCSV(text){
+  if (!text) return [];
+  const rows = []; let row = [], cur = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) {
+      if (c === '"' && text[i+1] === '"') { cur += '"'; i++; }
+      else if (c === '"') q = false;
+      else cur += c;
+    } else if (c === '"') q = true;
+    else if (c === ",") { row.push(cur); cur = ""; }
+    else if (c === "\n") { row.push(cur); rows.push(row); row = []; cur = ""; }
+    else if (c !== "\r") cur += c;
+  }
+  if (cur || row.length) { row.push(cur); rows.push(row); }
+  const head = rows.shift() || [];
+  return rows.filter(r => r.length === head.length)
+             .map(r => Object.fromEntries(head.map((h, i) => [h, r[i]])));
+}
+
+const utc = s => new Date(s.replace(" ", "T") + "Z");
+const usd = v => (v < 0 ? "−$" : "$") + Math.abs(Number(v)).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const sUsd = v => (v > 0 ? "+" : "") + usd(v);
+const rr = v => (v > 0 ? "+" : "") + Number(v).toFixed(2) + "R";
+const cls = v => v > 0 ? "up" : v < 0 ? "down" : "flat";
+const NAMES = {orb: "Opening-range breakout", vwap: "VWAP reversion", gapfade: "Gap fade"};
+const REASONS = {target: "hit target", stop: "stopped out", time: "time exit"};
+
+function ago(d){
+  const m = Math.round((Date.now() - d) / 60000);
+  if (m < 1) return "just now";
+  if (m < 60) return m + " min ago";
+  const h = Math.round(m / 60);
+  return h < 48 ? h + " hr ago" : Math.round(h / 24) + " days ago";
+}
+
+function drawChart(trades){
+  const svg = $("chart"); svg.innerHTML = "";
+  if (trades.length < 2) {
+    svg.style.display = "none";
+    $("chartnote").textContent = "The chart fills in after a few trading days.";
+    return;
+  }
+  svg.style.display = "block";
+  $("chartnote").textContent = "Cumulative P&L after each closed trade · dashed line = $0";
+  let cum = 0;
+  const pts = [0].concat(trades.map(t => (cum += +t.pnl_usd)));
+  const W = 300, H = 120, P = 6;
+  let lo = Math.min(0, ...pts), hi = Math.max(0, ...pts);
+  if (hi - lo < 1) { hi += 1; lo -= 1; }
+  const X = i => P + (W - 2*P) * i / (pts.length - 1);
+  const Y = v => H - P - (H - 2*P) * ((v - lo) / (hi - lo));
+  const ns = "http://www.w3.org/2000/svg";
+  const base = document.createElementNS(ns, "line");
+  Object.entries({x1: 0, x2: W, y1: Y(0), y2: Y(0), stroke: "var(--line)", "stroke-dasharray": "4 4",
+                  "vector-effect": "non-scaling-stroke"}).forEach(([k, v]) => base.setAttribute(k, v));
+  svg.appendChild(base);
+  const path = document.createElementNS(ns, "path");
+  path.setAttribute("d", pts.map((v, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1)).join(" "));
+  Object.entries({fill: "none", stroke: cum >= 0 ? "var(--up)" : "var(--down)", "stroke-width": "2.5",
+                  "stroke-linejoin": "round", "vector-effect": "non-scaling-stroke"}).forEach(([k, v]) => path.setAttribute(k, v));
+  svg.appendChild(path);
+}
+
+function renderStrategies(s, g){
+  const box = $("strats"); box.innerHTML = "";
+  const names = Object.keys((g && g.strategies) || (s && s.strategies) || {});
+  if (!names.length) { box.innerHTML = '<div class="empty">Waiting for the first backtest.</div>'; return 0; }
+  let ready = 0;
+  for (const n of names) {
+    const gs = g && g.strategies[n];
+    const live = s && s.strategies[n] ? s.strategies[n].current_version : null;
+    const div = document.createElement("div"); div.className = "strat";
+    const top = document.createElement("div"); top.className = "top";
+    const nm = document.createElement("div"); nm.className = "name";
+    nm.textContent = (NAMES[n] || n) + " ";
+    const sm = document.createElement("small"); sm.textContent = (gs ? gs.version : "");
+    nm.appendChild(sm);
+    const chip = document.createElement("span");
+    const ok = gs && gs.status === "DEPLOYABLE";
+    if (ok) ready++;
+    chip.className = "chip" + (ok ? " ok" : "");
+    chip.textContent = gs ? (ok ? "PASSES ALL" : gs.passed + "/" + gs.total + " GATES") : "NO DATA";
+    top.append(nm, chip);
+    div.appendChild(top);
+    const line = document.createElement("div"); line.className = "line";
+    line.textContent = live && live.trades
+      ? `Paper: ${live.trades} trades · ${usd(live.pnl_usd)} · ${Math.round(live.win_rate_pct)}% won` + (live.avg_r !== null ? ` · avg ${rr(live.avg_r)}` : "")
+      : "Paper: no closed trades on this version yet";
+    div.appendChild(line);
+    if (gs) {
+      const bar = document.createElement("div"); bar.className = "gbar";
+      for (const x of gs.gates) { const sp = document.createElement("span"); if (x.pass) sp.className = "p"; sp.title = x.gate; bar.appendChild(sp); }
+      div.appendChild(bar);
+      const det = document.createElement("details");
+      const su = document.createElement("summary"); su.textContent = "Gate details";
+      const ul = document.createElement("ul");
+      for (const x of gs.gates.concat((gs.notes || []).map(t => ({gate: "note", pass: true, detail: t})))) {
+        const li = document.createElement("li");
+        const b = document.createElement("b"); b.textContent = (x.gate === "note" ? "note" : (x.pass ? "✓ " : "✗ ") + x.gate) + ": ";
+        li.append(b, document.createTextNode(x.detail));
+        ul.appendChild(li);
+      }
+      det.append(su, ul); div.appendChild(det);
+    }
+    box.appendChild(div);
+  }
+  return ready;
+}
+
+async function load(){
+  $("updated").textContent = "Loading…";
+  const [sumText, tradesText, gatesText] = await Promise.all([
+    getText("logs/summary.json"), getText("logs/trades.csv"), getText("logs/gates.json")]);
+  let s = null, g = null;
+  try { s = JSON.parse(sumText); } catch (e) {}
+  try { g = JSON.parse(gatesText); } catch (e) {}
+  const trades = parseCSV(tradesText);
+
+  const ready = renderStrategies(s, g);
+  $("ready").textContent = (g ? ready + " of " + Object.keys(g.strategies).length : "—");
+
+  if (!s) {
+    $("updated").textContent = g ? "Backtest " + ago(utc(g.updated)) : "No data yet";
+    $("warn").style.display = "block";
+    $("warn").textContent = "No paper trading results yet. They appear after the first market close.";
+    drawChart([]);
+    return;
+  }
+  const updated = utc(s.updated);
+  $("updated").textContent = "Updated " + ago(updated);
+  const staleH = (Date.now() - updated) / 3600000;
+  if (staleH > 80) {
+    $("warn").style.display = "block";
+    $("warn").textContent = "No end-of-day update for " + ago(updated).replace(" ago", "") +
+      ". Check the Actions tab on GitHub (holiday, or a run failed).";
+  } else $("warn").style.display = "none";
+
+  const a = s.all;
+  const pnl = $("pnl"); pnl.textContent = sUsd(a.pnl_usd); pnl.className = "big " + cls(a.pnl_usd);
+  const td = $("today"); td.className = "chg " + cls(s.today.pnl_usd);
+  td.textContent = sUsd(s.today.pnl_usd) + " on " + s.last_day + " (" + s.today.trades + " trades)";
+  $("winrate").textContent = a.trades ? Math.round(a.win_rate_pct) + "%" : "—";
+  $("wins").textContent = a.trades ? a.wins + " of " + a.trades + " won" : "no closed trades";
+  $("closed").textContent = a.trades;
+  $("since").textContent = "since " + s.first_day;
+  const ar = $("avgr"); ar.textContent = a.avg_r === null ? "—" : rr(a.avg_r); ar.className = "val " + (a.avg_r === null ? "" : cls(a.avg_r));
+
+  drawChart(trades);
+
+  const box = $("trades"); box.innerHTML = "";
+  const recent = trades.slice(-12).reverse();
+  if (!recent.length) box.innerHTML = '<div class="empty">No closed trades yet.</div>';
+  for (const t of recent) {
+    const row = document.createElement("div"); row.className = "trade";
+    const left = document.createElement("div");
+    const sym = document.createElement("div"); sym.className = "sym";
+    sym.textContent = t.symbol + " " + (t.side === "long" ? "long" : "short");
+    const meta = document.createElement("div"); meta.className = "meta";
+    meta.textContent = (NAMES[t.strategy] || t.strategy) + " · " + (REASONS[t.reason] || t.reason) + " · " + t.date.slice(5) + " " + t.entry_time + "–" + t.exit_time;
+    left.append(sym, meta);
+    const p = document.createElement("div"); const v = +t.pnl_usd;
+    p.className = "pnl " + cls(v); p.textContent = sUsd(v);
+    const sm = document.createElement("small"); sm.textContent = t.r !== "" ? rr(t.r) : "";
+    p.appendChild(sm);
+    row.append(left, p); box.appendChild(row);
+  }
+}
+
+$("refresh").addEventListener("click", load);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) load(); });
+setInterval(load, 10 * 60 * 1000);
+load();
+</script>
+</body>
+</html>

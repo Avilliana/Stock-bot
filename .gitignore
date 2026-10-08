@@ -1,0 +1,4 @@
+data/
+logs_sim/
+__pycache__/
+*.pyc
