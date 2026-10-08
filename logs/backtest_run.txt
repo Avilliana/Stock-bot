@@ -1,1 +1,24 @@
-Missing ALPACA_API_KEY_ID / ALPACA_API_SECRET_KEY (add them as GitHub secrets, or set them in your shell).
+SPY: downloading 2023-10-02 -> 2026-10-08 (iex)
+SPY: 288,489 bars cached
+QQQ: downloading 2023-10-02 -> 2026-10-08 (iex)
+QQQ: 274,527 bars cached
+AAPL: downloading 2023-10-02 -> 2026-10-08 (iex)
+AAPL: 291,065 bars cached
+MSFT: downloading 2023-10-02 -> 2026-10-08 (iex)
+MSFT: 273,686 bars cached
+NVDA: downloading 2023-10-02 -> 2026-10-08 (iex)
+NVDA: 287,736 bars cached
+AMZN: downloading 2023-10-02 -> 2026-10-08 (iex)
+AMZN: 289,714 bars cached
+META: downloading 2023-10-02 -> 2026-10-08 (iex)
+META: 259,912 bars cached
+GOOGL: downloading 2023-10-02 -> 2026-10-08 (iex)
+GOOGL: 286,137 bars cached
+TSLA: downloading 2023-10-02 -> 2026-10-08 (iex)
+TSLA: 288,128 bars cached
+AMD: downloading 2023-10-02 -> 2026-10-08 (iex)
+AMD: 284,490 bars cached
+10 symbols, 750 trading days, 38 backtest runs
+orb: 5138 trades, PF 0.883, Sharpe -1.706, P&L $-15386.87, max DD 150.76%
+vwap: 13935 trades, PF 0.706, Sharpe -7.859, P&L $-65717.39, max DD 665.9%
+gapfade: 987 trades, PF 0.726, Sharpe -1.939, P&L $-5250.02, max DD 54.87%

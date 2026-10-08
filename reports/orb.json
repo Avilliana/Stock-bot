@@ -1,0 +1,200 @@
+{
+  "strategy": "orb",
+  "version": "v1",
+  "params": {
+    "or_minutes": 15,
+    "last_entry": "11:30",
+    "stop_frac": 0.5,
+    "reward_risk": 2.0,
+    "min_range_pct": 0.15,
+    "max_range_pct": 1.5,
+    "time_stop": "15:55"
+  },
+  "updated": "2026-10-08 16:20:43",
+  "synthetic": false,
+  "data_feed": "iex",
+  "period": [
+    "2023-10-10",
+    "2026-10-07"
+  ],
+  "days": 750,
+  "costs": {
+    "commission_per_share": 0.0,
+    "slippage_bps_etf": 1.5,
+    "slippage_bps_stock": 3.0,
+    "sec_fee_per_million_sold": 27.8,
+    "finra_taf_per_share_sold": 0.000166,
+    "finra_taf_max": 8.3
+  },
+  "honest_slippage_mult": 1.0,
+  "base": {
+    "trades": 5138,
+    "win_rate": 37.5,
+    "profit_factor": 0.883,
+    "total_pnl": -15386.87,
+    "avg_pnl": -2.99,
+    "avg_r": -0.082,
+    "std_r": 1.374,
+    "sharpe": -1.706,
+    "max_dd_pct": 150.76,
+    "return_on_alloc_pct": -153.87,
+    "trades_per_year": 1726.4,
+    "long": {
+      "trades": 2601,
+      "pnl": -7806.01,
+      "profit_factor": 0.882
+    },
+    "short": {
+      "trades": 2537,
+      "pnl": -7580.86,
+      "profit_factor": 0.884
+    },
+    "best_symbol_share": null,
+    "top5_trades_share": null,
+    "exit_reasons": {
+      "stop": 2977,
+      "target": 1443,
+      "time": 698,
+      "eod": 20
+    },
+    "beta": -0.209
+  },
+  "stress": {
+    "trades": 5138,
+    "win_rate": 36.7,
+    "profit_factor": 0.75,
+    "total_pnl": -36842.45,
+    "avg_pnl": -7.17,
+    "avg_r": -0.205,
+    "std_r": 1.405,
+    "sharpe": -4.016,
+    "max_dd_pct": 360.63,
+    "return_on_alloc_pct": -368.42,
+    "trades_per_year": 1726.4,
+    "long": {
+      "trades": 2601,
+      "pnl": -18741.48,
+      "profit_factor": 0.747
+    },
+    "short": {
+      "trades": 2537,
+      "pnl": -18100.97,
+      "profit_factor": 0.752
+    },
+    "best_symbol_share": null,
+    "top5_trades_share": null,
+    "exit_reasons": {
+      "stop": 2977,
+      "target": 1443,
+      "time": 698,
+      "eod": 20
+    }
+  },
+  "recent": {
+    "trades": 1690,
+    "win_rate": 35.9,
+    "profit_factor": 0.827,
+    "total_pnl": -7873.64,
+    "avg_pnl": -4.66,
+    "avg_r": -0.132,
+    "std_r": 1.342,
+    "sharpe": -2.751,
+    "max_dd_pct": 79.25,
+    "return_on_alloc_pct": -78.74,
+    "trades_per_year": 1690.0,
+    "long": {
+      "trades": 901,
+      "pnl": -2863.31,
+      "profit_factor": 0.879
+    },
+    "short": {
+      "trades": 789,
+      "pnl": -5010.33,
+      "profit_factor": 0.77
+    },
+    "best_symbol_share": null,
+    "top5_trades_share": null,
+    "exit_reasons": {
+      "stop": 1010,
+      "target": 439,
+      "time": 234,
+      "eod": 7
+    }
+  },
+  "benchmark": {
+    "sharpe": 1.394,
+    "return_pct": 79.8
+  },
+  "plateau": [
+    {
+      "change": "or_minutes 15 -> 12",
+      "trades": 5369,
+      "profit_factor": 0.853,
+      "total_pnl": -20668.21,
+      "sharpe": -2.268
+    },
+    {
+      "change": "or_minutes 15 -> 18",
+      "trades": 4908,
+      "profit_factor": 0.916,
+      "total_pnl": -10290.37,
+      "sharpe": -1.131
+    },
+    {
+      "change": "stop_frac 0.5 -> 0.4",
+      "trades": 5138,
+      "profit_factor": 0.841,
+      "total_pnl": -20555.62,
+      "sharpe": -2.519
+    },
+    {
+      "change": "stop_frac 0.5 -> 0.6",
+      "trades": 5138,
+      "profit_factor": 0.903,
+      "total_pnl": -12560.59,
+      "sharpe": -1.361
+    },
+    {
+      "change": "reward_risk 2.0 -> 1.6",
+      "trades": 5138,
+      "profit_factor": 0.864,
+      "total_pnl": -17188.49,
+      "sharpe": -2.131
+    },
+    {
+      "change": "reward_risk 2.0 -> 2.4",
+      "trades": 5138,
+      "profit_factor": 0.883,
+      "total_pnl": -15879.87,
+      "sharpe": -1.634
+    },
+    {
+      "change": "min_range_pct 0.15 -> 0.12",
+      "trades": 5241,
+      "profit_factor": 0.881,
+      "total_pnl": -15810.84,
+      "sharpe": -1.75
+    },
+    {
+      "change": "min_range_pct 0.15 -> 0.18",
+      "trades": 5023,
+      "profit_factor": 0.883,
+      "total_pnl": -15358.55,
+      "sharpe": -1.708
+    },
+    {
+      "change": "max_range_pct 1.5 -> 1.2",
+      "trades": 4289,
+      "profit_factor": 0.908,
+      "total_pnl": -9645.42,
+      "sharpe": -1.224
+    },
+    {
+      "change": "max_range_pct 1.5 -> 1.8",
+      "trades": 5719,
+      "profit_factor": 0.879,
+      "total_pnl": -18043.92,
+      "sharpe": -1.853
+    }
+  ]
+}
