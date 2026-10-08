@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08 16:20:44",
+  "updated": "2026-10-08 16:29:17",
   "strategies": {
     "orb": {
       "version": "v1",
@@ -174,6 +174,185 @@
           "gate": "forward",
           "pass": false,
           "detail": "0 paper trades over 0 days (need 30+ over 20+)"
+        }
+      ],
+      "notes": []
+    }
+  },
+  "daily": {
+    "trend": {
+      "version": "v1",
+      "status": "PAPER",
+      "passed": 8,
+      "total": 10,
+      "gates": [
+        {
+          "gate": "settings",
+          "pass": true,
+          "detail": "2.0 bps per trade, dividends included, 9.71 years"
+        },
+        {
+          "gate": "sample",
+          "pass": true,
+          "detail": "9.71 years, 38 position changes (need 8+ yrs, 20+ changes)"
+        },
+        {
+          "gate": "quality",
+          "pass": true,
+          "detail": "Sharpe 1.095 vs buy-and-hold 0.886"
+        },
+        {
+          "gate": "growth",
+          "pass": true,
+          "detail": "CAGR 15.63% vs buy-and-hold 15.28% (allowed 2.0 pts behind)"
+        },
+        {
+          "gate": "pain",
+          "pass": true,
+          "detail": "max drawdown 21.82% vs buy-and-hold 33.79% (need <= 75% of it)"
+        },
+        {
+          "gate": "consistency",
+          "pass": true,
+          "detail": "Sharpe by half: 1.217 vs 0.997, 0.96 vs 0.768 (within 0.25)"
+        },
+        {
+          "gate": "stress",
+          "pass": true,
+          "detail": "costs x2: Sharpe 1.088; plateau 4/4 nudges keep Sharpe near/above buy-and-hold"
+        },
+        {
+          "gate": "recent",
+          "pass": true,
+          "detail": "last 3 yrs: CAGR 20.77%, Sharpe 1.397 vs 1.462"
+        },
+        {
+          "gate": "risk officer",
+          "pass": false,
+          "detail": "no review yet (-):"
+        },
+        {
+          "gate": "forward",
+          "pass": false,
+          "detail": "0 out-of-sample days since 2026-10-08 (need 60+)"
+        }
+      ],
+      "notes": []
+    },
+    "momentum": {
+      "version": "v1",
+      "status": "PAPER",
+      "passed": 3,
+      "total": 10,
+      "gates": [
+        {
+          "gate": "settings",
+          "pass": true,
+          "detail": "2.0 bps per trade, dividends included, 9.71 years"
+        },
+        {
+          "gate": "sample",
+          "pass": true,
+          "detail": "9.71 years, 44 position changes (need 8+ yrs, 20+ changes)"
+        },
+        {
+          "gate": "quality",
+          "pass": false,
+          "detail": "Sharpe 0.63 vs buy-and-hold 0.886"
+        },
+        {
+          "gate": "growth",
+          "pass": false,
+          "detail": "CAGR 11.18% vs buy-and-hold 15.28% (allowed 2.0 pts behind)"
+        },
+        {
+          "gate": "pain",
+          "pass": false,
+          "detail": "max drawdown 34.89% vs buy-and-hold 33.79% (need <= 75% of it)"
+        },
+        {
+          "gate": "consistency",
+          "pass": false,
+          "detail": "Sharpe by half: 0.425 vs 0.997, 0.868 vs 0.768 (within 0.25)"
+        },
+        {
+          "gate": "stress",
+          "pass": false,
+          "detail": "costs x2: Sharpe 0.621; plateau 0/3 nudges keep Sharpe near/above buy-and-hold"
+        },
+        {
+          "gate": "recent",
+          "pass": true,
+          "detail": "last 3 yrs: CAGR 31.43%, Sharpe 1.441 vs 1.462"
+        },
+        {
+          "gate": "risk officer",
+          "pass": false,
+          "detail": "no review yet (-):"
+        },
+        {
+          "gate": "forward",
+          "pass": false,
+          "detail": "0 out-of-sample days since 2026-10-08 (need 60+)"
+        }
+      ],
+      "notes": []
+    },
+    "voltarget": {
+      "version": "v1",
+      "status": "PAPER",
+      "passed": 7,
+      "total": 10,
+      "gates": [
+        {
+          "gate": "settings",
+          "pass": true,
+          "detail": "2.0 bps per trade, dividends included, 9.71 years"
+        },
+        {
+          "gate": "sample",
+          "pass": true,
+          "detail": "9.71 years, 88 position changes (need 8+ yrs, 20+ changes)"
+        },
+        {
+          "gate": "quality",
+          "pass": true,
+          "detail": "Sharpe 0.997 vs buy-and-hold 0.886"
+        },
+        {
+          "gate": "growth",
+          "pass": false,
+          "detail": "CAGR 12.86% vs buy-and-hold 15.28% (allowed 2.0 pts behind)"
+        },
+        {
+          "gate": "pain",
+          "pass": true,
+          "detail": "max drawdown 17.82% vs buy-and-hold 33.79% (need <= 75% of it)"
+        },
+        {
+          "gate": "consistency",
+          "pass": true,
+          "detail": "Sharpe by half: 1.188 vs 0.997, 0.822 vs 0.768 (within 0.25)"
+        },
+        {
+          "gate": "stress",
+          "pass": true,
+          "detail": "costs x2: Sharpe 0.993; plateau 8/8 nudges keep Sharpe near/above buy-and-hold"
+        },
+        {
+          "gate": "recent",
+          "pass": true,
+          "detail": "last 3 yrs: CAGR 19.19%, Sharpe 1.461 vs 1.462"
+        },
+        {
+          "gate": "risk officer",
+          "pass": false,
+          "detail": "no review yet (-):"
+        },
+        {
+          "gate": "forward",
+          "pass": false,
+          "detail": "0 out-of-sample days since 2026-10-08 (need 60+)"
         }
       ],
       "notes": []

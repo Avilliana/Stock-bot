@@ -1,6 +1,6 @@
 # Gate status
 
-Updated 2026-10-08 16:20:44 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
+Updated 2026-10-08 16:29:17 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
 
 ## orb v1 - PAPER (3/10)
 
@@ -40,3 +40,44 @@ Updated 2026-10-08 16:20:44 UTC. A strategy is **DEPLOYABLE** only when every ga
 - FAIL **recent**: trailing year: 343 trades, PF 0.691, P&L $-2057.27
 - FAIL **risk officer**: no review yet (-):
 - FAIL **forward**: 0 paper trades over 0 days (need 30+ over 20+)
+
+# Slow lane (daily)
+
+## trend v1 - PAPER (8/10)
+
+- PASS **settings**: 2.0 bps per trade, dividends included, 9.71 years
+- PASS **sample**: 9.71 years, 38 position changes (need 8+ yrs, 20+ changes)
+- PASS **quality**: Sharpe 1.095 vs buy-and-hold 0.886
+- PASS **growth**: CAGR 15.63% vs buy-and-hold 15.28% (allowed 2.0 pts behind)
+- PASS **pain**: max drawdown 21.82% vs buy-and-hold 33.79% (need <= 75% of it)
+- PASS **consistency**: Sharpe by half: 1.217 vs 0.997, 0.96 vs 0.768 (within 0.25)
+- PASS **stress**: costs x2: Sharpe 1.088; plateau 4/4 nudges keep Sharpe near/above buy-and-hold
+- PASS **recent**: last 3 yrs: CAGR 20.77%, Sharpe 1.397 vs 1.462
+- FAIL **risk officer**: no review yet (-):
+- FAIL **forward**: 0 out-of-sample days since 2026-10-08 (need 60+)
+
+## momentum v1 - PAPER (3/10)
+
+- PASS **settings**: 2.0 bps per trade, dividends included, 9.71 years
+- PASS **sample**: 9.71 years, 44 position changes (need 8+ yrs, 20+ changes)
+- FAIL **quality**: Sharpe 0.63 vs buy-and-hold 0.886
+- FAIL **growth**: CAGR 11.18% vs buy-and-hold 15.28% (allowed 2.0 pts behind)
+- FAIL **pain**: max drawdown 34.89% vs buy-and-hold 33.79% (need <= 75% of it)
+- FAIL **consistency**: Sharpe by half: 0.425 vs 0.997, 0.868 vs 0.768 (within 0.25)
+- FAIL **stress**: costs x2: Sharpe 0.621; plateau 0/3 nudges keep Sharpe near/above buy-and-hold
+- PASS **recent**: last 3 yrs: CAGR 31.43%, Sharpe 1.441 vs 1.462
+- FAIL **risk officer**: no review yet (-):
+- FAIL **forward**: 0 out-of-sample days since 2026-10-08 (need 60+)
+
+## voltarget v1 - PAPER (7/10)
+
+- PASS **settings**: 2.0 bps per trade, dividends included, 9.71 years
+- PASS **sample**: 9.71 years, 88 position changes (need 8+ yrs, 20+ changes)
+- PASS **quality**: Sharpe 0.997 vs buy-and-hold 0.886
+- FAIL **growth**: CAGR 12.86% vs buy-and-hold 15.28% (allowed 2.0 pts behind)
+- PASS **pain**: max drawdown 17.82% vs buy-and-hold 33.79% (need <= 75% of it)
+- PASS **consistency**: Sharpe by half: 1.188 vs 0.997, 0.822 vs 0.768 (within 0.25)
+- PASS **stress**: costs x2: Sharpe 0.993; plateau 8/8 nudges keep Sharpe near/above buy-and-hold
+- PASS **recent**: last 3 yrs: CAGR 19.19%, Sharpe 1.461 vs 1.462
+- FAIL **risk officer**: no review yet (-):
+- FAIL **forward**: 0 out-of-sample days since 2026-10-08 (need 60+)
