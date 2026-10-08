@@ -64,6 +64,13 @@ details{margin-top:6px;font-size:13px}
 summary{color:var(--accent);cursor:pointer}
 details ul{margin:6px 0 0;padding-left:18px;color:var(--muted)}
 details li b{color:var(--ink);font-weight:600}
+.drow{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:4px 12px;align-items:baseline;font-variant-numeric:tabular-nums;font-size:14px}
+.drow .h{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;text-align:right}
+.drow .h:first-child{text-align:left}
+.drow .n{text-align:right}
+.drow .nm{font-weight:600}
+.drow .bm{color:var(--muted)}
+.hold{font-size:12px;color:var(--muted);grid-column:1/-1;margin:-2px 0 6px}
 .trade{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
 .trade:first-of-type{border-top:0}
 .trade .sym{font-weight:600}
@@ -100,7 +107,13 @@ footer{font-size:12px;color:var(--muted);text-align:center;margin-top:4px}
   </section>
 
   <section class="card">
-    <h2>Strategies vs the scorecard</h2>
+    <h2>Slow lane vs just holding SPY</h2>
+    <div id="daily"><div class="empty">Waiting for the first daily run.</div></div>
+    <div class="chart-note" id="dailynote"></div>
+  </section>
+
+  <section class="card">
+    <h2>Day-trading strategies vs the scorecard</h2>
     <div id="strats"><div class="empty">Waiting for the first backtest.</div></div>
   </section>
 
@@ -109,7 +122,7 @@ footer{font-size:12px;color:var(--muted);text-align:center;margin-top:4px}
     <div id="trades"><div class="empty">No trades yet.</div></div>
   </section>
 
-  <footer>Paper money only · trades every market day 9:30–3:55 ET · results update after the close</footer>
+  <footer>Paper money only · day trading runs 9:30–3:55 ET · slow lane updates after each close</footer>
 </main>
 
 <script>
@@ -237,17 +250,55 @@ function renderStrategies(s, g){
   return ready;
 }
 
+const DNAMES = {trend: "Trend filter", momentum: "Momentum rotation", voltarget: "Volatility target"};
+const pc = v => (v === undefined || v === null) ? "—" : Number(v).toFixed(1) + "%";
+
+function renderDaily(d, g){
+  const box = $("daily");
+  if (!d || !d.strategies) return;
+  box.innerHTML = "";
+  const grid = document.createElement("div"); grid.className = "drow";
+  for (const h of ["", "Yearly", "Worst dip", "Gates"]) {
+    const e = document.createElement("div"); e.className = "h"; e.textContent = h; grid.appendChild(e);
+  }
+  const add = (name, cls_, a, b, c) => {
+    for (const [t, k] of [[name, "nm " + cls_], [a, "n " + cls_], [b, "n " + cls_], [c, "n " + cls_]]) {
+      const e = document.createElement("div"); e.className = k; e.textContent = t; grid.appendChild(e);
+    }
+  };
+  const b = d.benchmark;
+  add("Hold " + b.symbol + " (≈VOO)", "bm", pc(b.cagr_pct), "−" + pc(b.max_dd_pct), "");
+  if (d.qqq) add("Hold QQQ", "bm", pc(d.qqq.cagr_pct), "−" + pc(d.qqq.max_dd_pct), "");
+  const names = {BIL: "T-bills"};
+  for (const [n, st] of Object.entries(d.strategies)) {
+    const gs = g && g.daily && g.daily[n];
+    add((DNAMES[n] || n) + " " + st.version, "", pc(st.base.cagr_pct), "−" + pc(st.base.max_dd_pct),
+        gs ? gs.passed + "/" + gs.total : "—");
+    const h = document.createElement("div"); h.className = "hold";
+    h.textContent = "Holds now: " + Object.entries(st.holding).map(([k, v]) => (names[k] || k) + " " + Math.round(v * 100) + "%").join(" · ") +
+      (st.forward && st.forward.days >= 2 ? " · since start " + (st.forward.total_return_pct >= 0 ? "+" : "") + st.forward.total_return_pct + "%" : "");
+    grid.appendChild(h);
+  }
+  box.appendChild(grid);
+  $("dailynote").textContent = d.period[0] + " to " + d.period[1] + (d.synthetic ? " · SYNTHETIC" : "") +
+    " · after costs, dividends included · not a recommendation";
+}
+
 async function load(){
   $("updated").textContent = "Loading…";
-  const [sumText, tradesText, gatesText] = await Promise.all([
-    getText("logs/summary.json"), getText("logs/trades.csv"), getText("logs/gates.json")]);
-  let s = null, g = null;
+  const [sumText, tradesText, gatesText, dailyText] = await Promise.all([
+    getText("logs/summary.json"), getText("logs/trades.csv"), getText("logs/gates.json"), getText("logs/daily_summary.json")]);
+  let s = null, g = null, dl = null;
   try { s = JSON.parse(sumText); } catch (e) {}
   try { g = JSON.parse(gatesText); } catch (e) {}
+  try { dl = JSON.parse(dailyText); } catch (e) {}
+  renderDaily(dl, g);
   const trades = parseCSV(tradesText);
 
   const ready = renderStrategies(s, g);
-  $("ready").textContent = (g ? ready + " of " + Object.keys(g.strategies).length : "—");
+  const dReady = g && g.daily ? Object.values(g.daily).filter(x => x.status === "DEPLOYABLE").length : 0;
+  const total = g ? Object.keys(g.strategies).length + Object.keys(g.daily || {}).length : 0;
+  $("ready").textContent = (g ? (ready + dReady) + " of " + total : "—");
 
   if (!s) {
     $("updated").textContent = g ? "Backtest " + ago(utc(g.updated)) : "No data yet";

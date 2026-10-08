@@ -1,0 +1,59 @@
+name: Slow lane (daily)
+
+on:
+  schedule:
+    # 22:05 UTC on weekdays: after the close (and after the end-of-day job) in
+    # both summer and winter time.
+    - cron: "5 22 * * 1-5"
+  push:
+    # Re-gate every change to the slow lane.
+    branches: [main]
+    paths: ["daily.py", "config.json"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: true
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Look-ahead test
+        run: python tests/test_daily_lookahead.py
+      - name: Refresh daily prices, backtest, forward record
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: |
+          mkdir -p logs
+          set -o pipefail
+          python daily.py 2>&1 | tee logs/daily_run.txt
+      - name: Save results to the repo
+        if: always()
+        run: |
+          git config user.name "stockbot"
+          git config user.email "stockbot@users.noreply.github.com"
+          for i in 1 2 3; do
+            git pull --rebase --autostash -q || true
+            python gate.py || true
+            git add reports DAILY.md GATES.md logs/gates.json logs/daily_summary.json logs/daily_run.txt 2>/dev/null
+            git diff --cached --quiet && exit 0
+            git commit -qm "Slow lane $(date -u +%Y-%m-%d)"
+            git push && exit 0
+            git reset -q --soft HEAD~1
+            sleep 5
+          done
+          exit 1

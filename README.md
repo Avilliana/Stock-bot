@@ -27,7 +27,30 @@ Every trade is sized so that hitting the stop loses about $50 (1R), capped at
 $10k per position. A kill switch flattens everything and stops new entries for the
 day if the account is down $300.
 
-## The scorecard (enforced by `gate.py`)
+## Slow lane (daily ETF strategies)
+
+`daily.py` runs three strategies aimed at compounding. Each is judged against simply
+holding SPY (the same index as VOO), over about 10 years of daily, dividend-adjusted prices:
+
+| Strategy | Idea |
+|---|---|
+| `trend` | Hold SPY and QQQ (half each) only while each is above its 200-day average; otherwise T-bills (BIL) |
+| `momentum` | Each month end, hold the strongest of SPY/QQQ/IWM/EFA/GLD/TLT over 6 months, or T-bills if none beat them |
+| `voltarget` | Size SPY to about 15% yearly volatility; the rest sits in T-bills |
+
+Each strategy's decision uses prices through yesterday's close and trades at today's close.
+Its own scorecard (in `GATES.md` under "Slow lane") checks five things against buy-and-hold:
+a better Sharpe, CAGR no more than 2 points behind, a max drawdown at most 75% of
+buy-and-hold's, holding up in both halves of history and in the last 3 years, and survival
+of costs x2 plus ±20% parameter nudges. The forward record is every day since the version's
+`since` date. Those days are true out-of-sample, because the settings were fixed before they
+happened. Results update every evening (`daily.yml`). Nothing is bought; the dashboard shows
+what each one would hold today.
+
+Monthly switching creates short-term gains. If one of these ever earns real money, it fits
+an IRA/Roth better than a taxable account.
+
+## The scorecard for day trading (enforced by `gate.py`)
 
 | Gate | Keep if |
 |---|---|
@@ -55,6 +78,7 @@ paper endpoint).
 | After the close | pairs fills into trades, updates logs and gates | `eod.yml` |
 | Weeknights | Claude reviews the day; writes lessons; risk-officer verdict; at most ONE change | Claude scheduled task |
 | Saturdays, and on any strategy/config change | re-downloads data, re-runs backtest + stress + plateau, re-scores | `backtest.yml` |
+| Weekdays after the close, and on slow-lane changes | refreshes daily prices, re-tests the slow lane, extends its forward record | `daily.yml` |
 
 ## One-time setup
 

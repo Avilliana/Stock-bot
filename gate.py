@@ -105,6 +105,60 @@ def check(name, cfg, verdicts):
             "passed": passed, "total": len(gates), "gates": gates, "notes": notes}
 
 
+def check_daily(name, cfg, verdicts):
+    d = cfg["daily"]
+    sc = d["scorecard"]
+    strat = d["strategies"][name]
+    rep = _load(os.path.join(HERE, "reports", f"daily_{name}.json"), None)
+    gates = []
+
+    def g(label, ok, detail):
+        gates.append({"gate": label, "pass": bool(ok), "detail": detail})
+
+    if rep is None:
+        g("backtest", False, "no backtest report yet - run daily.py")
+    else:
+        b, bb = rep["base"], rep["benchmark"]
+        stale = rep.get("version") != strat["version"] or rep.get("params") != strat["params"]
+        g("settings", d["slippage_bps"] > 0 and not rep.get("synthetic") and not stale,
+          "synthetic data" if rep.get("synthetic") else
+          "report is for an older version/params" if stale else
+          f"{d['slippage_bps']} bps per trade, dividends included, {b['years']} years")
+        g("sample", b["years"] >= sc["min_years"] and b.get("switches", 0) >= sc["min_switches"],
+          f"{b['years']} years, {b.get('switches', 0)} position changes (need {sc['min_years']}+ yrs, {sc['min_switches']}+ changes)")
+        g("quality", b["sharpe"] > bb["sharpe"], f"Sharpe {b['sharpe']} vs buy-and-hold {bb['sharpe']}")
+        g("growth", b["cagr_pct"] >= bb["cagr_pct"] - sc["growth_max_shortfall_pp"],
+          f"CAGR {b['cagr_pct']}% vs buy-and-hold {bb['cagr_pct']}% (allowed {sc['growth_max_shortfall_pp']} pts behind)")
+        g("pain", b["max_dd_pct"] <= bb["max_dd_pct"] * sc["max_dd_vs_benchmark"],
+          f"max drawdown {b['max_dd_pct']}% vs buy-and-hold {bb['max_dd_pct']}% (need <= {int(sc['max_dd_vs_benchmark'] * 100)}% of it)")
+        tol = sc["half_sharpe_tolerance"]
+        hs = [(h["sharpe"], hb["sharpe"]) for h, hb in zip(rep["halves"], rep["bench_halves"])]
+        g("consistency", all(x >= y - tol for x, y in hs),
+          "Sharpe by half: " + ", ".join(f"{x} vs {y}" for x, y in hs) + f" (within {tol})")
+        s2 = rep["stress"]
+        plate = rep.get("plateau", [])
+        ok_n = sum(1 for x in plate if x["sharpe"] > bb["sharpe"] * 0.95)
+        share = ok_n / len(plate) if plate else 0
+        g("stress", s2["sharpe"] > bb["sharpe"] * 0.95 and share >= sc["plateau_share"],
+          f"costs x2: Sharpe {s2['sharpe']}; plateau {ok_n}/{len(plate)} nudges keep Sharpe near/above buy-and-hold")
+        r, rb = rep["recent"], rep["bench_recent"]
+        g("recent", r["cagr_pct"] > 0 and r["sharpe"] >= rb["sharpe"] - sc["recent_sharpe_tolerance"],
+          f"last {sc['recent_years']} yrs: CAGR {r['cagr_pct']}%, Sharpe {r['sharpe']} vs {rb['sharpe']}")
+
+    v = verdicts.get(f"daily_{name}", {})
+    g("risk officer", v.get("verdict") == "KEEP" and v.get("version") == strat["version"],
+      f"{v.get('verdict', 'no review yet')} ({v.get('date', '-')}): {v.get('reason', '')}".strip())
+    fwd = (rep or {}).get("forward", {})
+    days = fwd.get("days", 0)
+    ok = rep is not None and days >= sc["forward_min_days"] and fwd.get("max_dd_pct", 999) <= rep["base"]["max_dd_pct"]
+    g("forward", ok, f"{days} out-of-sample days since {strat['since']} (need {sc['forward_min_days']}+)"
+      + (f"; return {fwd['total_return_pct']}% vs {fwd['benchmark']['total_return_pct']}% buy-and-hold, "
+         f"worst dip {fwd['max_dd_pct']}%" if days >= 2 and "benchmark" in fwd else ""))
+    passed = sum(x["pass"] for x in gates)
+    return {"version": strat["version"], "status": "DEPLOYABLE" if passed == len(gates) else "PAPER",
+            "passed": passed, "total": len(gates), "gates": gates, "notes": []}
+
+
 def main():
     with open(os.path.join(HERE, "config.json"), encoding="utf-8") as f:
         cfg = json.load(f)
@@ -123,6 +177,17 @@ def main():
         md += [f"- note: {n}" for n in res["notes"]]
         md.append("")
         print(f"{name}: {res['status']} {res['passed']}/{res['total']}")
+    out["daily"] = {}
+    md.append("# Slow lane (daily)\n")
+    for name, s in cfg.get("daily", {}).get("strategies", {}).items():
+        if not s["enabled"]:
+            continue
+        res = check_daily(name, cfg, verdicts)
+        out["daily"][name] = res
+        md.append(f"## {name} {res['version']} - {res['status']} ({res['passed']}/{res['total']})\n")
+        md += [f"- {'PASS' if x['pass'] else 'FAIL'} **{x['gate']}**: {x['detail']}" for x in res["gates"]]
+        md.append("")
+        print(f"daily {name}: {res['status']} {res['passed']}/{res['total']}")
     os.makedirs(os.path.join(HERE, "logs"), exist_ok=True)
     with open(os.path.join(HERE, "logs", "gates.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2)

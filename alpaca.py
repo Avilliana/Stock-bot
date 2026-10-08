@@ -118,13 +118,13 @@ class Alpaca:
             token = page[-1]["id"]
 
     # -- market data -------------------------------------------------------
-    def bars(self, symbols, start_iso, end_iso=None, timeframe="1Min", feed="iex"):
+    def bars(self, symbols, start_iso, end_iso=None, timeframe="1Min", feed="iex", adjustment="split"):
         """Returns {symbol: [bar, ...]} following every page."""
         out = {s: [] for s in symbols}
         token = None
         while True:
             params = {"symbols": ",".join(symbols), "timeframe": timeframe,
-                      "start": start_iso, "limit": 10000, "adjustment": "split",
+                      "start": start_iso, "limit": 10000, "adjustment": adjustment,
                       "feed": feed, "sort": "asc"}
             if end_iso:
                 params["end"] = end_iso

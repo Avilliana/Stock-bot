@@ -1,18 +1,30 @@
 {
-  "universe": ["SPY", "QQQ", "AAPL", "MSFT", "NVDA", "AMZN", "META", "GOOGL", "TSLA", "AMD"],
-  "etfs": ["SPY", "QQQ"],
+  "universe": [
+    "SPY",
+    "QQQ",
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMZN",
+    "META",
+    "GOOGL",
+    "TSLA",
+    "AMD"
+  ],
+  "etfs": [
+    "SPY",
+    "QQQ"
+  ],
   "benchmark": "SPY",
   "data_feed": "iex",
-
   "costs": {
     "commission_per_share": 0.0,
     "slippage_bps_etf": 1.5,
     "slippage_bps_stock": 3.0,
     "sec_fee_per_million_sold": 27.8,
     "finra_taf_per_share_sold": 0.000166,
-    "finra_taf_max": 8.30
+    "finra_taf_max": 8.3
   },
-
   "risk": {
     "risk_per_trade_usd": 50,
     "max_notional_per_trade_usd": 10000,
@@ -21,7 +33,6 @@
     "allow_shorts": true,
     "flatten_time": "15:55"
   },
-
   "strategies": {
     "orb": {
       "enabled": true,
@@ -73,14 +84,12 @@
       }
     }
   },
-
   "backtest": {
     "years": 3,
     "nudge_frac": 0.2,
     "stress_cost_mult": 2.0,
     "honest_slippage_mult": 1.0
   },
-
   "scorecard": {
     "min_trades": 100,
     "min_sharpe": 1.0,
@@ -93,5 +102,86 @@
     "recent_min_pf": 1.0,
     "forward_min_days": 20,
     "forward_min_trades": 30
+  },
+  "daily": {
+    "about": "Slow lane: daily-bar ETF strategies aimed at compounding, judged against simply holding SPY (same index as VOO). Decisions use data through yesterday's close and trade at today's close.",
+    "symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "EFA",
+      "GLD",
+      "TLT",
+      "BIL"
+    ],
+    "cash": "BIL",
+    "benchmark": "SPY",
+    "feed": "sip",
+    "start": "2016-01-01",
+    "slippage_bps": 2.0,
+    "strategies": {
+      "trend": {
+        "enabled": true,
+        "version": "v1",
+        "since": "2026-10-08",
+        "about": "Trend filter. Hold SPY and QQQ (half each) only while each is above its 200-day average; otherwise that half sits in T-bills (BIL).",
+        "other_side": "Forced and panicked sellers in drawn-out declines; trends persist because big holders de-risk slowly.",
+        "proves_it_wrong": "Whipsaws cost more than the crashes it avoids: lower return without a clearly smaller drawdown.",
+        "params": {
+          "assets": [
+            "SPY",
+            "QQQ"
+          ],
+          "sma_days": 200,
+          "band_pct": 1.0
+        }
+      },
+      "momentum": {
+        "enabled": true,
+        "version": "v1",
+        "since": "2026-10-08",
+        "about": "Momentum rotation. At each month end, hold the strongest of US stocks, Nasdaq, small caps, international, gold and bonds over the last 6 months, or T-bills if none beat T-bills.",
+        "other_side": "Investors who under-react to news and rebalance on a calendar, plus funds that chase late.",
+        "proves_it_wrong": "The leader over 6 months doesn't keep leading next month, net of switching costs.",
+        "params": {
+          "risky": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "EFA",
+            "GLD",
+            "TLT"
+          ],
+          "lookback_days": 126,
+          "top_n": 1
+        }
+      },
+      "voltarget": {
+        "enabled": true,
+        "version": "v1",
+        "since": "2026-10-08",
+        "about": "Volatility targeting. Hold more SPY when markets are calm and less when they're wild, aiming for about 15% yearly volatility; the rest in T-bills.",
+        "other_side": "Volatility clusters: wild days follow wild days, and leveraged/levered-down holders are forced to trade into it.",
+        "proves_it_wrong": "Cutting exposure after volatile stretches misses the rebounds that follow and doesn't reduce drawdowns.",
+        "params": {
+          "asset": "SPY",
+          "target_vol_pct": 15.0,
+          "vol_days": 20,
+          "max_weight": 1.0,
+          "min_change": 0.1
+        }
+      }
+    },
+    "scorecard": {
+      "min_years": 8,
+      "min_switches": 20,
+      "growth_max_shortfall_pp": 2.0,
+      "max_dd_vs_benchmark": 0.75,
+      "half_sharpe_tolerance": 0.25,
+      "recent_years": 3,
+      "recent_sharpe_tolerance": 0.3,
+      "plateau_share": 0.75,
+      "forward_min_days": 60
+    }
   }
 }
