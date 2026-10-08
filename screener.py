@@ -48,13 +48,14 @@ def earnings_between(start, end):
     while d <= end:
         if d.weekday() < 5:
             try:
-                r = s.get("https://api.nasdaq.com/api/calendar/earnings", params={"date": str(d)}, timeout=10)
+                r = s.get("https://api.nasdaq.com/api/calendar/earnings", params={"date": str(d)}, timeout=6)
                 rows = ((r.json().get("data") or {}).get("rows")) or []
                 for row in rows:
                     out.setdefault(row.get("symbol", "").upper(), str(d))
                 ok += 1
             except Exception:                              # noqa: BLE001
-                pass
+                if ok == 0 and d >= start + timedelta(days=4):
+                    return None                            # source unreachable - don't keep waiting
         d += timedelta(days=1)
     return out if ok else None
 
