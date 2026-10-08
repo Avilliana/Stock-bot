@@ -126,7 +126,8 @@ def check_daily(name, cfg, verdicts):
           f"{d['slippage_bps']} bps per trade, dividends included, {b['years']} years")
         g("sample", b["years"] >= sc["min_years"] and b.get("switches", 0) >= sc["min_switches"],
           f"{b['years']} years, {b.get('switches', 0)} position changes (need {sc['min_years']}+ yrs, {sc['min_switches']}+ changes)")
-        g("quality", b["sharpe"] > bb["sharpe"], f"Sharpe {b['sharpe']} vs buy-and-hold {bb['sharpe']}")
+        bl = bb.get("label", "buy-and-hold")
+        g("quality", b["sharpe"] > bb["sharpe"], f"Sharpe {b['sharpe']} vs holding {bl} {bb['sharpe']}")
         g("growth", b["cagr_pct"] >= bb["cagr_pct"] - sc["growth_max_shortfall_pp"],
           f"CAGR {b['cagr_pct']}% vs buy-and-hold {bb['cagr_pct']}% (allowed {sc['growth_max_shortfall_pp']} pts behind)")
         g("pain", b["max_dd_pct"] <= bb["max_dd_pct"] * sc["max_dd_vs_benchmark"],

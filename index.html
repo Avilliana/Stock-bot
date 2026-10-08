@@ -274,6 +274,8 @@ function renderDaily(d, g){
     const gs = g && g.daily && g.daily[n];
     add((DNAMES[n] || n) + " " + st.version, "", pc(st.base.cagr_pct), "−" + pc(st.base.max_dd_pct),
         gs ? gs.passed + "/" + gs.total : "—");
+    if (st.benchmark && st.benchmark.label && st.benchmark.label !== b.symbol)
+      add("↳ vs holding " + st.benchmark.label, "bm", pc(st.benchmark.cagr_pct), "−" + pc(st.benchmark.max_dd_pct), "");
     const h = document.createElement("div"); h.className = "hold";
     h.textContent = "Holds now: " + Object.entries(st.holding).map(([k, v]) => (names[k] || k) + " " + Math.round(v * 100) + "%").join(" · ") +
       (st.forward && st.forward.days >= 2 ? " · since start " + (st.forward.total_return_pct >= 0 ? "+" : "") + st.forward.total_return_pct + "%" : "");

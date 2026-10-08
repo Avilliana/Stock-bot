@@ -259,6 +259,11 @@ def run_all(px, cfg, synthetic=False):
             continue
         f = DAILY[name]
         p = s["params"]
+        # Judge each strategy against holding what it could hold: trend owns half
+        # QQQ, so comparing it with SPY alone would flatter it.
+        bmix = s.get("benchmark", {bench: 1.0})
+        sb = sum(px[k].pct_change().fillna(0.0) * v for k, v in bmix.items())
+        blabel = " + ".join(f"{int(v * 100)}% {k}" for k, v in bmix.items()) if len(bmix) > 1 else bench
         w = f(px, p, cash)
         ret, to = simulate(px, w, slip)
         ret2, _ = simulate(px, w, slip * stress)
@@ -267,17 +272,17 @@ def run_all(px, cfg, synthetic=False):
         fwd_ret = ret[ret.index > since]
         fwd = stats(fwd_ret) if len(fwd_ret) >= 2 else {"days": len(fwd_ret)}
         if len(fwd_ret) >= 2:
-            fwd["benchmark"] = stats(bh[bh.index > since])
+            fwd["benchmark"] = stats(sb[sb.index > since])
         rep = {
             "strategy": name, "version": s["version"], "params": p, "since": s["since"],
             "updated": stamp, "synthetic": synthetic, "slippage_bps": slip,
             "base": base,
             "stress": stats(window(ret2), window(to)),
             "halves": [stats(window(ret, b=half)), stats(window(ret, a=half))],
-            "bench_halves": [stats(window(bh, b=half)), stats(window(bh, a=half))],
+            "bench_halves": [stats(window(sb, b=half)), stats(window(sb, a=half))],
             "recent": stats(window(ret, a=recent_start)),
-            "bench_recent": stats(window(bh, a=recent_start)),
-            "benchmark": bench_full,
+            "bench_recent": stats(window(sb, a=recent_start)),
+            "benchmark": {"label": blabel, **stats(window(sb))},
             "plateau": [],
             "forward": fwd,
             "holding": {k: round(v, 3) for k, v in w.iloc[-1].items() if v > 0.001},
@@ -292,11 +297,15 @@ def run_all(px, cfg, synthetic=False):
         with open(os.path.join(REPORTS, f"daily_{name}.json"), "w", encoding="utf-8") as fh:
             json.dump(rep, fh, indent=2)
         summary["strategies"][name] = {"version": s["version"], "about": s["about"],
-                                       "base": base, "forward": fwd, "holding": rep["holding"]}
+                                       "base": base, "forward": fwd, "holding": rep["holding"],
+                                       "benchmark": rep["benchmark"]}
         md.append(f"| {name} {s['version']} | {base['cagr_pct']}% | {base['sharpe']} | {base['max_dd_pct']}% | "
                   f"{round(base['switches'] / base['years'], 1)} |")
+        if blabel != bench:
+            bs = rep["benchmark"]
+            md.append(f"| ↳ its benchmark: {blabel} | {bs['cagr_pct']}% | {bs['sharpe']} | {bs['max_dd_pct']}% | - |")
         print(f"{name}: CAGR {base['cagr_pct']}%, Sharpe {base['sharpe']}, max DD {base['max_dd_pct']}% "
-              f"(SPY {bench_full['cagr_pct']}%, {bench_full['sharpe']}, {bench_full['max_dd_pct']}%) · holds {rep['holding']}")
+              f"(vs {blabel}: {rep['benchmark']['cagr_pct']}%, {rep['benchmark']['sharpe']}, {rep['benchmark']['max_dd_pct']}%) · holds {rep['holding']}")
     be = (1 + window(bh)).cumprod()
     summary["benchmark"]["equity_monthly"] = [[str(i.date()), round(float(v), 4)] for i, v in be.resample("ME").last().items()]
     md.append("\nCosts: %.1f bps per unit of turnover. Decisions use data through the previous close; "

@@ -124,7 +124,7 @@
         "enabled": true,
         "version": "v1",
         "since": "2026-10-08",
-        "about": "Trend filter. Hold SPY and QQQ (half each) only while each is above its 200-day average; otherwise that half sits in T-bills (BIL).",
+        "about": "Trend filter. Hold SPY and QQQ (half each) only while each is above its 200-day average; otherwise that half sits in T-bills (BIL). Judged against holding the same 50/50 SPY+QQQ mix.",
         "other_side": "Forced and panicked sellers in drawn-out declines; trends persist because big holders de-risk slowly.",
         "proves_it_wrong": "Whipsaws cost more than the crashes it avoids: lower return without a clearly smaller drawdown.",
         "params": {
@@ -134,6 +134,10 @@
           ],
           "sma_days": 200,
           "band_pct": 1.0
+        },
+        "benchmark": {
+          "SPY": 0.5,
+          "QQQ": 0.5
         }
       },
       "momentum": {
