@@ -75,6 +75,16 @@ mid-afternoon). It keeps a $1,000 ledger and logs to `logs/wheel_log.csv`. Selec
 chosen today, so the list carries some hindsight both ways: it includes collapses (LCID, PLUG,
 NIO) and a giant winner (PLTR).
 
+### Daily screener
+
+`screener.py` runs every weekday right before the paper wheel. It pulls live quotes for about
+36 liquid stocks, keeps the ones where a ~5%-below put fits the $10 cap, and ranks the ~30-day
+puts by **estimated edge**. Edge means what you'd collect (between bid and mid, after the fee)
+minus a fair value from the stock's own 60-day moves, with dividends priced in. The paper wheel
+sells the top one. `SCREENER.md` shows the full table, and a Claude scheduled task pushes the top
+setup to your phone after checking the stock's next earnings date. A positive edge only means
+the option looks expensive versus recent moves. It's an estimate, not a forecast.
+
 ## The scorecard for day trading (enforced by `gate.py`)
 
 | Gate | Keep if |

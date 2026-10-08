@@ -114,6 +114,7 @@ footer{font-size:12px;color:var(--muted);text-align:center;margin-top:4px}
 
   <section class="card">
     <h2>Options lane · $1k, one contract</h2>
+    <div id="pick" class="line" style="margin:0 0 10px"></div>
     <div id="opts"><div class="empty">Waiting for the first options backtest.</div></div>
     <div class="chart-note" id="optsnote"></div>
   </section>
@@ -293,6 +294,17 @@ function renderDaily(d, g){
 }
 
 const ONAMES = {wheel: "The wheel", covered_call: "Covered calls", csp: "Cash-secured puts"};
+function renderPick(sc){
+  const el = $("pick");
+  if (!sc) { el.textContent = ""; return; }
+  const p = sc.pick;
+  if (!p) { el.textContent = "Today's screen (" + sc.updated + "): no put looked richer than fair value - sit tight."; return; }
+  el.textContent = `Top setup ${sc.updated}: sell 1 ${p.symbol} $${p.strike} put exp ${p.expiry} for ~$${p.fill_est} ` +
+    `($${p.credit_usd} credit, $${p.collateral_usd} set aside). Est. edge $${p.edge_usd} · ` +
+    `${p.p_assign_pct}% chance of assignment · break-even $${p.breakeven}` +
+    (sc.earnings_checked ? "" : " · earnings NOT checked") + ". Estimate, not advice.";
+}
+
 function renderOptions(d, g){
   const box = $("opts");
   if (!d || !d.strategies) return;
@@ -327,8 +339,8 @@ function renderOptions(d, g){
 
 async function load(){
   $("updated").textContent = "Loading…";
-  const [sumText, tradesText, gatesText, dailyText, optText] = await Promise.all([
-    getText("logs/summary.json"), getText("logs/trades.csv"), getText("logs/gates.json"), getText("logs/daily_summary.json"), getText("logs/options_summary.json")]);
+  const [sumText, tradesText, gatesText, dailyText, optText, scrText] = await Promise.all([
+    getText("logs/summary.json"), getText("logs/trades.csv"), getText("logs/gates.json"), getText("logs/daily_summary.json"), getText("logs/options_summary.json"), getText("logs/screener.json")]);
   let s = null, g = null, dl = null;
   try { s = JSON.parse(sumText); } catch (e) {}
   try { g = JSON.parse(gatesText); } catch (e) {}
@@ -337,6 +349,9 @@ async function load(){
   let op = null;
   try { op = JSON.parse(optText); } catch (e) {}
   renderOptions(op, g);
+  let scr = null;
+  try { scr = JSON.parse(scrText); } catch (e) {}
+  renderPick(scr);
   const trades = parseCSV(tradesText);
 
   const ready = renderStrategies(s, g);
