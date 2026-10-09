@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09 21:33:51",
+  "updated": "2026-10-09 22:18:33",
   "strategies": {
     "orb": {
       "version": "v1",
@@ -140,12 +140,12 @@
         {
           "gate": "quality",
           "pass": true,
-          "detail": "Sharpe 1.095 vs holding 50% SPY + 50% QQQ 0.948"
+          "detail": "Sharpe 1.088 vs holding 50% SPY + 50% QQQ 0.944"
         },
         {
           "gate": "growth",
           "pass": false,
-          "detail": "CAGR 15.63% vs buy-and-hold 18.46% (allowed 2.0 pts behind)"
+          "detail": "CAGR 15.52% vs buy-and-hold 18.34% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
@@ -155,17 +155,17 @@
         {
           "gate": "consistency",
           "pass": true,
-          "detail": "Sharpe by half: 1.217 vs 1.157, 0.96 vs 0.74 (within 0.25)"
+          "detail": "Sharpe by half: 1.217 vs 1.157, 0.945 vs 0.73 (within 0.25)"
         },
         {
           "gate": "stress",
           "pass": true,
-          "detail": "costs x2: Sharpe 1.088; plateau 4/4 nudges keep Sharpe near/above buy-and-hold"
+          "detail": "costs x2: Sharpe 1.081; plateau 4/4 nudges keep Sharpe near/above buy-and-hold"
         },
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 20.77%, Sharpe 1.397 vs 1.41"
+          "detail": "last 3 yrs: CAGR 21.04%, Sharpe 1.414 vs 1.424"
         },
         {
           "gate": "risk officer",
@@ -199,12 +199,12 @@
         {
           "gate": "quality",
           "pass": false,
-          "detail": "Sharpe 0.63 vs holding SPY 0.886"
+          "detail": "Sharpe 0.623 vs holding SPY 0.883"
         },
         {
           "gate": "growth",
           "pass": false,
-          "detail": "CAGR 11.18% vs buy-and-hold 15.28% (allowed 2.0 pts behind)"
+          "detail": "CAGR 11.02% vs buy-and-hold 15.22% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
@@ -214,17 +214,17 @@
         {
           "gate": "consistency",
           "pass": false,
-          "detail": "Sharpe by half: 0.425 vs 0.997, 0.868 vs 0.768 (within 0.25)"
+          "detail": "Sharpe by half: 0.425 vs 0.997, 0.852 vs 0.762 (within 0.25)"
         },
         {
           "gate": "stress",
           "pass": false,
-          "detail": "costs x2: Sharpe 0.621; plateau 0/3 nudges keep Sharpe near/above buy-and-hold"
+          "detail": "costs x2: Sharpe 0.614; plateau 0/3 nudges keep Sharpe near/above buy-and-hold"
         },
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 31.43%, Sharpe 1.441 vs 1.462"
+          "detail": "last 3 yrs: CAGR 31.61%, Sharpe 1.449 vs 1.484"
         },
         {
           "gate": "risk officer",
@@ -258,12 +258,12 @@
         {
           "gate": "quality",
           "pass": true,
-          "detail": "Sharpe 0.997 vs holding SPY 0.886"
+          "detail": "Sharpe 0.994 vs holding SPY 0.883"
         },
         {
           "gate": "growth",
           "pass": false,
-          "detail": "CAGR 12.86% vs buy-and-hold 15.28% (allowed 2.0 pts behind)"
+          "detail": "CAGR 12.81% vs buy-and-hold 15.22% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
@@ -273,17 +273,17 @@
         {
           "gate": "consistency",
           "pass": true,
-          "detail": "Sharpe by half: 1.188 vs 0.997, 0.822 vs 0.768 (within 0.25)"
+          "detail": "Sharpe by half: 1.188 vs 0.997, 0.816 vs 0.762 (within 0.25)"
         },
         {
           "gate": "stress",
           "pass": true,
-          "detail": "costs x2: Sharpe 0.993; plateau 8/8 nudges keep Sharpe near/above buy-and-hold"
+          "detail": "costs x2: Sharpe 0.99; plateau 8/8 nudges keep Sharpe near/above buy-and-hold"
         },
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 19.19%, Sharpe 1.461 vs 1.462"
+          "detail": "last 3 yrs: CAGR 19.57%, Sharpe 1.49 vs 1.484"
         },
         {
           "gate": "risk officer",

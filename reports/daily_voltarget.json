@@ -9,28 +9,28 @@
     "min_change": 0.1
   },
   "since": "2026-10-08",
-  "updated": "2026-10-08 23:10:36",
+  "updated": "2026-10-09 22:18:32",
   "synthetic": false,
   "slippage_bps": 2.0,
   "base": {
-    "days": 2446,
+    "days": 2447,
     "years": 9.71,
-    "cagr_pct": 12.86,
+    "cagr_pct": 12.81,
     "vol_pct": 12.98,
-    "sharpe": 0.997,
+    "sharpe": 0.994,
     "max_dd_pct": 17.82,
-    "total_return_pct": 223.66,
+    "total_return_pct": 222.42,
     "switches": 88,
     "turnover_per_year": 2.57
   },
   "stress": {
-    "days": 2446,
+    "days": 2447,
     "years": 9.71,
-    "cagr_pct": 12.81,
+    "cagr_pct": 12.76,
     "vol_pct": 12.98,
-    "sharpe": 0.993,
+    "sharpe": 0.99,
     "max_dd_pct": 17.88,
-    "total_return_pct": 222.05,
+    "total_return_pct": 220.82,
     "switches": 88,
     "turnover_per_year": 2.57
   },
@@ -45,13 +45,13 @@
       "total_return_pct": 97.65
     },
     {
-      "days": 1223,
-      "years": 4.85,
-      "cagr_pct": 10.7,
+      "days": 1224,
+      "years": 4.86,
+      "cagr_pct": 10.6,
       "vol_pct": 13.47,
-      "sharpe": 0.822,
+      "sharpe": 0.816,
       "max_dd_pct": 17.82,
-      "total_return_pct": 63.76
+      "total_return_pct": 63.13
     }
   ],
   "bench_halves": [
@@ -65,90 +65,90 @@
       "total_return_pct": 124.33
     },
     {
-      "days": 1223,
-      "years": 4.85,
-      "cagr_pct": 12.52,
+      "days": 1224,
+      "years": 4.86,
+      "cagr_pct": 12.41,
       "vol_pct": 17.31,
-      "sharpe": 0.768,
+      "sharpe": 0.762,
       "max_dd_pct": 24.5,
-      "total_return_pct": 77.23
+      "total_return_pct": 76.48
     }
   ],
   "recent": {
     "days": 756,
     "years": 3.0,
-    "cagr_pct": 19.19,
-    "vol_pct": 12.56,
-    "sharpe": 1.461,
+    "cagr_pct": 19.57,
+    "vol_pct": 12.53,
+    "sharpe": 1.49,
     "max_dd_pct": 15.66,
-    "total_return_pct": 69.32
+    "total_return_pct": 70.96
   },
   "bench_recent": {
     "days": 756,
     "years": 3.0,
-    "cagr_pct": 23.55,
-    "vol_pct": 15.27,
-    "sharpe": 1.462,
+    "cagr_pct": 23.93,
+    "vol_pct": 15.25,
+    "sharpe": 1.484,
     "max_dd_pct": 18.75,
-    "total_return_pct": 88.61
+    "total_return_pct": 90.36
   },
   "benchmark": {
     "label": "SPY",
-    "days": 2446,
+    "days": 2447,
     "years": 9.71,
-    "cagr_pct": 15.28,
-    "vol_pct": 17.87,
-    "sharpe": 0.886,
+    "cagr_pct": 15.22,
+    "vol_pct": 17.86,
+    "sharpe": 0.883,
     "max_dd_pct": 33.79,
-    "total_return_pct": 297.6
+    "total_return_pct": 295.91
   },
   "plateau": [
     {
       "change": "target_vol_pct 15.0 -> 12.0",
-      "cagr_pct": 12.42,
-      "sharpe": 1.068,
+      "cagr_pct": 12.36,
+      "sharpe": 1.064,
       "max_dd_pct": 16.6
     },
     {
       "change": "target_vol_pct 15.0 -> 18.0",
-      "cagr_pct": 13.99,
-      "sharpe": 0.994,
+      "cagr_pct": 13.93,
+      "sharpe": 0.991,
       "max_dd_pct": 19.85
     },
     {
       "change": "vol_days 20 -> 16",
-      "cagr_pct": 12.99,
-      "sharpe": 1.012,
+      "cagr_pct": 12.94,
+      "sharpe": 1.008,
       "max_dd_pct": 17.82
     },
     {
       "change": "vol_days 20 -> 24",
-      "cagr_pct": 12.76,
-      "sharpe": 0.988,
+      "cagr_pct": 12.71,
+      "sharpe": 0.984,
       "max_dd_pct": 18.53
     },
     {
       "change": "max_weight 1.0 -> 0.8",
-      "cagr_pct": 11.34,
-      "sharpe": 0.992,
+      "cagr_pct": 11.3,
+      "sharpe": 0.989,
       "max_dd_pct": 17.08
     },
     {
       "change": "max_weight 1.0 -> 1.2",
-      "cagr_pct": 14.32,
-      "sharpe": 1.018,
+      "cagr_pct": 14.26,
+      "sharpe": 1.014,
       "max_dd_pct": 18.8
     },
     {
       "change": "min_change 0.1 -> 0.08",
-      "cagr_pct": 12.85,
-      "sharpe": 1.003,
+      "cagr_pct": 12.8,
+      "sharpe": 1.0,
       "max_dd_pct": 19.34
     },
     {
       "change": "min_change 0.1 -> 0.12",
-      "cagr_pct": 12.84,
-      "sharpe": 0.996,
+      "cagr_pct": 12.78,
+      "sharpe": 0.992,
       "max_dd_pct": 19.68
     }
   ],
@@ -630,7 +630,7 @@
     ],
     [
       "2026-10-31",
-      3.2366
+      3.2242
     ]
   ]
 }
