@@ -7,21 +7,21 @@
   "shares": 0,
   "basis": null,
   "open": {
-    "contract": "AGNC261106P00008000",
+    "contract": "AGNC261113P00008000",
     "kind": "put",
     "strike": 8.0,
-    "expiry": "2026-11-06",
-    "mid": 0.14,
-    "bid": 0.12,
-    "ask": 0.16,
-    "iv": 0.415,
+    "expiry": "2026-11-13",
+    "mid": 0.16,
+    "bid": 0.14,
+    "ask": 0.17,
+    "iv": 0.3864,
     "status": "working",
-    "client_id": "wh-20261008-1"
+    "client_id": "wh-20261009-2"
   },
   "cycles_done": 0,
   "equity": 1000.0,
   "phase": "selling put",
-  "n": 1,
-  "last_run": "2026-10-08 14:59",
-  "last_note": "sell 1 AGNC261106P00008000 (put 8.0 exp 2026-11-06) at $0.14 (bid 0.12 / ask 0.16, IV 0.415), stock $8.655"
+  "n": 2,
+  "last_run": "2026-10-09 14:52",
+  "last_note": "sell 1 AGNC261113P00008000 (put 8.0 exp 2026-11-13) at $0.16 (bid 0.14 / ask 0.17, IV 0.3864), stock $8.61"
 }
