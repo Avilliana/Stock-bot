@@ -1,1 +1,9 @@
-2026-10-08 16:52:30 ET  Market closed; next open Fri 09:30 ET. Nothing to do.
+2026-10-09 09:26:02 ET  Market opens in 4 min - waiting.
+2026-10-09 09:30:05 ET  Session start: 10 symbols, strategies orb v1, gapfade v1
+2026-10-09 09:35:06 ET  ENTER sb-gapfade-v1-AAPL-20261009-1-1130 BUY 26 @mkt tp 334.13 sl 330.39 (gap -1.45%)
+2026-10-09 09:47:06 ET  ENTER sb-orb-v1-QQQ-20261009-1-1555 SELL SHORT 13 @mkt tp 744.44 sl 750.96 (break below 749.09)
+2026-10-09 10:00:06 ET  ENTER sb-orb-v1-NVDA-20261009-1-1555 SELL SHORT 31 @mkt tp 227.67 sl 232.38 (break below 230.87)
+2026-10-09 10:10:06 ET  ENTER sb-orb-v1-AMZN-20261009-1-1555 BUY 29 @mkt tp 262.57 sl 257.53 (break above 258.93)
+2026-10-09 10:19:06 ET  ENTER sb-orb-v1-MSFT-20261009-1-1555 BUY 17 @mkt tp 537.57 sl 528.93 (break above 531.50)
+2026-10-09 10:52:06 ET  ENTER sb-orb-v1-SPY-20261009-1-1555 BUY 12 @mkt tp 778.82 sl 776.1 (break above 776.83)
+2026-10-09 15:11:06 ET  Session end.

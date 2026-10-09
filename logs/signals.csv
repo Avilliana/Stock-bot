@@ -31,3 +31,10 @@ time,strategy,version,symbol,bar,side,ref,stop,target,time_stop,qty,result,note,
 2026-10-08 13:04,vwap,v1,AAPL,13:03,short,338.99,339.3719,337.8536,14:04,29,sent,z=2.62,sb-vwap-v1-AAPL-20261008-2-1404
 2026-10-08 13:06,vwap,v1,META,13:05,long,715.625,715.283,720.0669,14:06,0,skipped: stop or target too close,z=-3.25,
 2026-10-08 13:36,vwap,v1,META,13:35,long,716.69,715.4183,719.0602,14:36,13,sent,z=-2.28,sb-vwap-v1-META-20261008-2-1436
+2026-10-09 09:35,gapfade,v1,AAPL,09:34,long,332.25,330.3893,334.1325,11:30,26,sent,gap -1.45%,sb-gapfade-v1-AAPL-20261009-1-1130
+2026-10-09 09:47,orb,v1,QQQ,09:46,short,748.79,750.9625,744.445,15:55,13,sent,break below 749.09,sb-orb-v1-QQQ-20261009-1-1555
+2026-10-09 09:47,orb,v1,AAPL,09:46,long,333.67,332.135,336.74,15:55,0,skipped: symbol already has a position/order,break above 333.55,
+2026-10-09 10:00,orb,v1,NVDA,09:59,short,230.81,232.38,227.67,15:55,31,sent,break below 230.87,sb-orb-v1-NVDA-20261009-1-1555
+2026-10-09 10:10,orb,v1,AMZN,10:09,long,259.21,257.53,262.57,15:55,29,sent,break above 258.93,sb-orb-v1-AMZN-20261009-1-1555
+2026-10-09 10:19,orb,v1,MSFT,10:18,long,531.81,528.93,537.57,15:55,17,sent,break above 531.50,sb-orb-v1-MSFT-20261009-1-1555
+2026-10-09 10:52,orb,v1,SPY,10:51,long,777.005,776.1,778.815,15:55,12,sent,break above 776.83,sb-orb-v1-SPY-20261009-1-1555
