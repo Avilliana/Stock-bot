@@ -1,5 +1,1 @@
-2026-10-09 15:11:27 ET  Session start: 10 symbols, strategies orb v1, gapfade v1
-2026-10-09 15:55:06 ET  ERROR in step: AlpacaError: HTTP 403: {"available":"0","code":40310000,"existing_qty":"17","held_for_orders":"17","message":"insufficient qty available for order (requested: 17, available: 0)","symbol":"MSFT"}
-2026-10-09 15:56:06 ET  CLOSE MSFT: end-of-day flatten
-2026-10-09 15:56:06 ET  CLOSE NVDA: end-of-day flatten
-2026-10-09 16:00:06 ET  Session end.
+2026-10-09 16:00:24 ET  Market closed; next open Mon 09:30 ET. Nothing to do.
