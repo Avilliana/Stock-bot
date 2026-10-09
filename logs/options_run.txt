@@ -1,20 +1,20 @@
-F: 2706 days from 2016-01-04
-SOFI: 1470 days from 2020-11-30
-AAL: 2706 days from 2016-01-04
-NIO: 2706 days from 2016-01-04
-SNAP: 2414 days from 2017-03-02
-PLUG: 2706 days from 2016-01-04
-NOK: 2706 days from 2016-01-04
-RIVN: 1231 days from 2021-11-10
-LCID: 1520 days from 2020-09-18
-HOOD: 1304 days from 2021-07-29
-PLTR: 1512 days from 2020-09-30
-CCL: 2706 days from 2016-01-04
-T: 2706 days from 2016-01-04
-INTC: 2706 days from 2016-01-04
-GRAB: 2039 days from 2018-08-27
-BB: 2706 days from 2016-01-04
+F: 2707 days from 2016-01-04
+SOFI: 1471 days from 2020-11-30
+AAL: 2707 days from 2016-01-04
+NIO: 2707 days from 2016-01-04
+SNAP: 2415 days from 2017-03-02
+PLUG: 2707 days from 2016-01-04
+NOK: 2707 days from 2016-01-04
+RIVN: 1232 days from 2021-11-10
+LCID: 1521 days from 2020-09-18
+HOOD: 1305 days from 2021-07-29
+PLTR: 1513 days from 2020-09-30
+CCL: 2707 days from 2016-01-04
+T: 2707 days from 2016-01-04
+INTC: 2707 days from 2016-01-04
+GRAB: 2040 days from 2018-08-27
+BB: 2707 days from 2016-01-04
 calibration: pooled IV/RV 1.07 from 304 observations
-wheel: CAGR 5.73% Sharpe 0.896 DD 12.47% cycles 358 | hold stocks 12.51% 0.634 | SPY 15.22% | fair-priced 4.33% | beats holding in 56% of stocks
-covered_call: CAGR 5.24% Sharpe 0.954 DD 14.0% cycles 601 | hold stocks 12.51% 0.634 | SPY 15.22% | fair-priced 3.58% | beats holding in 56% of stocks
-csp: CAGR 3.9% Sharpe 1.079 DD 10.38% cycles 613 | hold stocks 12.51% 0.634 | SPY 15.22% | fair-priced 0.62% | beats holding in 50% of stocks
+wheel: CAGR 5.72% Sharpe 0.894 DD 12.47% cycles 358 | hold stocks 12.46% 0.632 | SPY 15.17% | fair-priced 4.31% | beats holding in 56% of stocks
+covered_call: CAGR 5.22% Sharpe 0.951 DD 14.0% cycles 601 | hold stocks 12.46% 0.632 | SPY 15.17% | fair-priced 3.55% | beats holding in 56% of stocks
+csp: CAGR 3.89% Sharpe 1.077 DD 10.38% cycles 613 | hold stocks 12.46% 0.632 | SPY 15.17% | fair-priced 0.61% | beats holding in 50% of stocks

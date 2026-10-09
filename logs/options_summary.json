@@ -1,107 +1,107 @@
 {
-  "updated": "2026-10-08 23:10:37",
+  "updated": "2026-10-09 23:10:54",
   "synthetic": false,
   "capital": 1000,
   "period": [
     "2016-04-15",
-    "2026-10-07"
+    "2026-10-08"
   ],
   "calibration": {
     "pooled": 1.07,
     "n": 304
   },
   "bh_stocks": {
-    "days": 2635,
+    "days": 2636,
     "years": 10.46,
-    "cagr_pct": 12.51,
-    "vol_pct": 22.64,
-    "sharpe": 0.634,
+    "cagr_pct": 12.46,
+    "vol_pct": 22.63,
+    "sharpe": 0.632,
     "max_dd_pct": 49.14,
-    "total_return_pct": 243.1
+    "total_return_pct": 241.67
   },
   "spy": {
-    "days": 2635,
+    "days": 2636,
     "years": 10.46,
-    "cagr_pct": 15.22,
+    "cagr_pct": 15.17,
     "vol_pct": 17.44,
-    "sharpe": 0.9,
+    "sharpe": 0.898,
     "max_dd_pct": 33.79,
-    "total_return_pct": 340.08
+    "total_return_pct": 338.21
   },
   "strategies": {
     "wheel": {
       "version": "v1",
       "about": "The wheel. Sell a ~monthly cash-secured put about 5% below the price; if assigned, sell ~monthly covered calls at least 5% above the price and not below what you paid; when called away, start over.",
       "base": {
-        "days": 2635,
+        "days": 2636,
         "years": 10.46,
-        "cagr_pct": 5.73,
+        "cagr_pct": 5.72,
         "vol_pct": 6.45,
-        "sharpe": 0.896,
+        "sharpe": 0.894,
         "max_dd_pct": 12.47,
-        "total_return_pct": 79.05,
+        "total_return_pct": 78.86,
         "cycles": 358,
         "assigned": 47
       },
       "breadth_share": 0.56,
       "no_edge": {
-        "days": 2635,
+        "days": 2636,
         "years": 10.46,
-        "cagr_pct": 4.33,
+        "cagr_pct": 4.31,
         "vol_pct": 7.25,
-        "sharpe": 0.621,
+        "sharpe": 0.619,
         "max_dd_pct": 14.95,
-        "total_return_pct": 55.72
+        "total_return_pct": 55.5
       }
     },
     "covered_call": {
       "version": "v1",
       "about": "Covered calls. Hold 100 shares and sell a ~monthly call about 5% above the price; if called away, buy back in at the next cycle.",
       "base": {
-        "days": 2635,
+        "days": 2636,
         "years": 10.46,
-        "cagr_pct": 5.24,
+        "cagr_pct": 5.22,
         "vol_pct": 5.51,
-        "sharpe": 0.954,
+        "sharpe": 0.951,
         "max_dd_pct": 14.0,
-        "total_return_pct": 70.57,
+        "total_return_pct": 70.3,
         "cycles": 601,
         "assigned": 0
       },
       "breadth_share": 0.56,
       "no_edge": {
-        "days": 2635,
+        "days": 2636,
         "years": 10.46,
-        "cagr_pct": 3.58,
+        "cagr_pct": 3.55,
         "vol_pct": 6.53,
-        "sharpe": 0.571,
+        "sharpe": 0.567,
         "max_dd_pct": 17.69,
-        "total_return_pct": 44.44
+        "total_return_pct": 44.11
       }
     },
     "csp": {
       "version": "v1",
       "about": "Cash-secured puts only. Sell a ~monthly put about 5% below the price; if assigned, sell the shares at the next cycle and keep selling puts.",
       "base": {
-        "days": 2635,
+        "days": 2636,
         "years": 10.46,
-        "cagr_pct": 3.9,
+        "cagr_pct": 3.89,
         "vol_pct": 3.61,
-        "sharpe": 1.079,
+        "sharpe": 1.077,
         "max_dd_pct": 10.38,
-        "total_return_pct": 49.23,
+        "total_return_pct": 49.13,
         "cycles": 613,
         "assigned": 168
       },
       "breadth_share": 0.5,
       "no_edge": {
-        "days": 2635,
+        "days": 2636,
         "years": 10.46,
-        "cagr_pct": 0.62,
+        "cagr_pct": 0.61,
         "vol_pct": 4.05,
-        "sharpe": 0.174,
+        "sharpe": 0.171,
         "max_dd_pct": 15.91,
-        "total_return_pct": 6.72
+        "total_return_pct": 6.57
       }
     }
   },
@@ -112,16 +112,16 @@
     "cycles_done": 0,
     "started": "2026-10-08",
     "open": {
-      "contract": "AGNC261106P00008000",
+      "contract": "AGNC261113P00008000",
       "kind": "put",
       "strike": 8.0,
-      "expiry": "2026-11-06",
-      "mid": 0.14,
-      "bid": 0.12,
-      "ask": 0.16,
-      "iv": 0.415,
+      "expiry": "2026-11-13",
+      "mid": 0.16,
+      "bid": 0.14,
+      "ask": 0.17,
+      "iv": 0.3864,
       "status": "working",
-      "client_id": "wh-20261008-1"
+      "client_id": "wh-20261009-2"
     }
   }
 }
