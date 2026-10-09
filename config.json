@@ -69,7 +69,7 @@
       }
     },
     "gapfade": {
-      "enabled": true,
+      "enabled": false,
       "version": "v1",
       "about": "Gap fade. When a stock gaps 0.75-4% and the first 5 minutes move against the gap, trade toward a partial gap fill.",
       "other_side": "Overnight/pre-market buyers (or sellers) who chased news and unwind once regular-session liquidity shows the gap was overdone.",

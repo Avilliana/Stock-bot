@@ -1,11 +1,56 @@
 {
-  "orb": {"verdict": "KILL", "version": "v1", "date": "2026-10-08", "reason": "Loses money on 3 years of real minute data (5,138 trades, PF 0.88, trailing year PF 0.83) and none of the 10 parameter nudges gets PF above 0.92."},
-  "vwap": {"verdict": "KILL", "version": "v1", "date": "2026-10-08", "reason": "Deeply negative in the backtest (13,935 trades, PF 0.71, avg -0.36R) and 0/17 on its first paper day; stops sit only 0.4-1.5 sd from entry so normal noise hits them. Disabled."},
-  "gapfade": {"verdict": "KILL", "version": "v1", "date": "2026-10-08", "reason": "Wins 53% but the losers are bigger: PF 0.73 over 987 trades, worse at costs x2 (0.60), and no nudge reaches PF 0.8."},
-  "daily_trend": {"verdict": "KILL", "version": "v1", "date": "2026-10-08", "reason": "Better Sharpe and a smaller drawdown than 50/50 SPY+QQQ, but 2.8 pts/yr less growth and the edge rests on a handful of bear markets (38 switches in 9.7 years, ~5 regimes) with zero out-of-sample days."},
-  "daily_momentum": {"verdict": "KILL", "version": "v1", "date": "2026-10-08", "reason": "Worse than holding SPY on Sharpe (0.63 vs 0.89), growth (-4.1 pts/yr) and drawdown, inconsistent across halves, and 0/3 parameter nudges hold up."},
-  "daily_voltarget": {"verdict": "KILL", "version": "v1", "date": "2026-10-08", "reason": "Halves the drawdown but gives up 2.4 pts/yr vs SPY, which Andrew already owns as VOO; with zero forward days there is no proof it beats simply holding a bit of cash."},
-  "options_wheel": {"verdict": "KILL", "version": "v1", "date": "2026-10-08", "reason": "Fails the no-edge stress (Sharpe 0.62 vs 0.63 for holding the stocks), earns 5.7%/yr vs 15.2% for $1k in SPY, and the live bot is trading AGNC, a stock the backtest never tested."},
-  "options_covered_call": {"verdict": "KILL", "version": "v1", "date": "2026-10-08", "reason": "Its edge is the modeled IV/RV ratio: at a fair 1.0 ratio Sharpe drops from 0.95 to 0.74, at 0.9 to 0.48, and it grows 10 pts/yr slower than SPY."},
-  "options_csp": {"verdict": "KILL", "version": "v1", "date": "2026-10-08", "reason": "Almost entirely priced-in edge: with fair option prices and doubled spreads it returns 0.6%/yr (Sharpe 0.17) and beats holding in only 50% of stocks."}
+  "orb": {
+    "verdict": "KILL",
+    "version": "v1",
+    "date": "2026-10-09",
+    "reason": "Loses money on 3 years of real minute data (5,138 trades, PF 0.88, trailing year PF 0.83), no nudge gets PF above 0.92, and its one good paper day (5 trades, +0.95R) is a single trending session, not evidence."
+  },
+  "vwap": {
+    "verdict": "KILL",
+    "version": "v1",
+    "date": "2026-10-09",
+    "reason": "Deeply negative in the backtest (13,935 trades, PF 0.71, avg -0.36R) and 0/17 on its first paper day; stops sit only 0.4-1.5 sd from entry so normal noise hits them. Disabled."
+  },
+  "gapfade": {
+    "verdict": "KILL",
+    "version": "v1",
+    "date": "2026-10-09",
+    "reason": "PF 0.73 over 987 backtest trades, 0.60 at costs x2, trailing year 0.69 and no nudge reaches 0.8; one winning paper trade changes nothing. Disabled."
+  },
+  "daily_trend": {
+    "verdict": "KILL",
+    "version": "v1",
+    "date": "2026-10-09",
+    "reason": "Gives up 2.8 pts/yr vs 50/50 SPY+QQQ for a smaller drawdown that rests on ~5 bear-market regimes (38 switches in 9.7 years), still with zero out-of-sample days."
+  },
+  "daily_momentum": {
+    "verdict": "KILL",
+    "version": "v1",
+    "date": "2026-10-09",
+    "reason": "Worse than holding SPY on Sharpe (0.63 vs 0.89), growth (-4.1 pts/yr) and drawdown, inconsistent across halves, and 0/3 parameter nudges hold up."
+  },
+  "daily_voltarget": {
+    "verdict": "KILL",
+    "version": "v1",
+    "date": "2026-10-09",
+    "reason": "Halves the drawdown but trails SPY (which Andrew holds as VOO) by 2.4 pts/yr, is 91% SPY today, and has zero forward days to show it beats simply holding a bit of cash."
+  },
+  "options_wheel": {
+    "verdict": "KILL",
+    "version": "v1",
+    "date": "2026-10-09",
+    "reason": "Fails the no-edge stress (Sharpe 0.62 vs 0.63 holding the stocks), earns 5.7%/yr vs 15.2% for $1k in SPY, and the live bot trades AGNC, a stock the backtest never tested, so its forward record can't validate v1."
+  },
+  "options_covered_call": {
+    "verdict": "KILL",
+    "version": "v1",
+    "date": "2026-10-09",
+    "reason": "Its edge is the modeled IV/RV ratio: at a fair 1.0 ratio Sharpe drops from 0.95 to 0.74, at 0.9 to 0.48, and it grows 10 pts/yr slower than SPY."
+  },
+  "options_csp": {
+    "verdict": "KILL",
+    "version": "v1",
+    "date": "2026-10-09",
+    "reason": "Almost entirely priced-in edge: with fair option prices and doubled spreads it returns 0.6%/yr (Sharpe 0.17) and beats holding in only 50% of stocks."
+  }
 }
