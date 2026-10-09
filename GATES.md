@@ -1,6 +1,6 @@
 # Gate status
 
-Updated 2026-10-09 18:52:34 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
+Updated 2026-10-09 21:33:51 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
 
 ## orb v1 - PAPER (3/10)
 
@@ -13,7 +13,7 @@ Updated 2026-10-09 18:52:34 UTC. A strategy is **DEPLOYABLE** only when every ga
 - FAIL **stress**: costs x2: PF 0.75, P&L $-36842.45; plateau 0/10 nudges hold up
 - FAIL **recent**: trailing year: 1690 trades, PF 0.827, P&L $-7873.64
 - FAIL **risk officer**: KILL (2026-10-08): Loses money on 3 years of real minute data (5,138 trades, PF 0.88, trailing year PF 0.83) and none of the 10 parameter nudges gets PF above 0.92.
-- FAIL **forward**: 0 paper trades over 0 days (need 30+ over 20+)
+- FAIL **forward**: 5 paper trades over 1 days (need 30+ over 20+); avg +0.95R vs backtest -0.08R (floor -1.31R), PF 5.89
 
 ## gapfade v1 - PAPER (3/10)
 
@@ -26,7 +26,7 @@ Updated 2026-10-09 18:52:34 UTC. A strategy is **DEPLOYABLE** only when every ga
 - FAIL **stress**: costs x2: PF 0.603, P&L $-8419.26; plateau 0/10 nudges hold up
 - FAIL **recent**: trailing year: 343 trades, PF 0.691, P&L $-2057.27
 - FAIL **risk officer**: KILL (2026-10-08): Wins 53% but the losers are bigger: PF 0.73 over 987 trades, worse at costs x2 (0.60), and no nudge reaches PF 0.8.
-- FAIL **forward**: 0 paper trades over 0 days (need 30+ over 20+)
+- FAIL **forward**: 1 paper trades over 1 days (need 30+ over 20+); avg +0.85R vs backtest -0.13R (floor -2.09R), PF 99.00
 
 # Slow lane (daily)
 
