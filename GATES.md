@@ -1,17 +1,17 @@
 # Gate status
 
-Updated 2026-10-09 23:11:18 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
+Updated 2026-10-10 12:22:00 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
 
 ## orb v1 - PAPER (3/10)
 
 - PASS **settings**: slippage 1.5/3.0 bps, fees on, 750 days
-- PASS **sample**: 5138 closed trades (need 100+)
-- FAIL **quality**: Sharpe -1.706 (>1.0), PF 0.883 (>1.3)
-- FAIL **pain**: max drawdown 150.76% of allocation (limit 15.0%)
-- FAIL **benchmark**: Sharpe -1.706 vs buy-and-hold 1.394
-- PASS **neutral**: beta -0.209 (|beta| <= 0.3)
-- FAIL **stress**: costs x2: PF 0.75, P&L $-36842.45; plateau 0/10 nudges hold up
-- FAIL **recent**: trailing year: 1690 trades, PF 0.827, P&L $-7873.64
+- PASS **sample**: 5134 closed trades (need 100+)
+- FAIL **quality**: Sharpe -1.676 (>1.0), PF 0.885 (>1.3)
+- FAIL **pain**: max drawdown 150.53% of allocation (limit 15.0%)
+- FAIL **benchmark**: Sharpe -1.676 vs buy-and-hold 1.376
+- PASS **neutral**: beta -0.21 (|beta| <= 0.3)
+- FAIL **stress**: costs x2: PF 0.751, P&L $-36547.75; plateau 0/10 nudges hold up
+- FAIL **recent**: trailing year: 1691 trades, PF 0.835, P&L $-7506.27
 - FAIL **risk officer**: KILL (2026-10-09): Loses money on 3 years of real minute data (5,138 trades, PF 0.88, trailing year PF 0.83), no nudge gets PF above 0.92, and its one good paper day (5 trades, +0.95R) is a single trending session, not evidence.
 - FAIL **forward**: 5 paper trades over 1 days (need 30+ over 20+); avg +0.95R vs backtest -0.08R (floor -1.31R), PF 5.89
 
