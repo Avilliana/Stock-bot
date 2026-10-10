@@ -1,6 +1,6 @@
 # Gate status
 
-Updated 2026-10-10 12:22:00 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
+Updated 2026-10-10 13:42:20 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
 
 ## orb v1 - PAPER (3/10)
 
@@ -62,12 +62,12 @@ Updated 2026-10-10 12:22:00 UTC. A strategy is **DEPLOYABLE** only when every ga
 
 - PASS **settings**: costs on, IV/RV calibrated, 10.46 years
 - PASS **sample**: 358 option cycles across stocks (need 100+)
-- PASS **quality**: Sharpe 0.894 vs holding the same stocks 0.632
-- FAIL **growth**: CAGR 5.72% vs $1k in SPY 15.17% (allowed 2.0 pts behind)
+- PASS **quality**: Sharpe 0.899 vs holding the same stocks 0.637
+- FAIL **growth**: CAGR 5.75% vs $1k in SPY 15.23% (allowed 2.0 pts behind)
 - PASS **pain**: worst drop 12.47% vs holding the stocks 49.14%
-- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.619 vs holding 0.632
+- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.624 vs holding 0.637
 - FAIL **breadth**: beats holding in 56% of stocks (need 60%+)
-- PASS **recent**: last 3 yrs: CAGR 5.46%, Sharpe 0.947 vs holding 0.887
+- PASS **recent**: last 3 yrs: CAGR 5.45%, Sharpe 0.945 vs holding 0.886
 - FAIL **risk officer**: KILL (2026-10-09): Fails the no-edge stress (Sharpe 0.62 vs 0.63 holding the stocks), earns 5.7%/yr vs 15.2% for $1k in SPY, and the live bot trades AGNC, a stock the backtest never tested, so its forward record can't validate v1.
 - FAIL **forward**: 0 completed paper option cycles (need 3+)
 
@@ -75,12 +75,12 @@ Updated 2026-10-10 12:22:00 UTC. A strategy is **DEPLOYABLE** only when every ga
 
 - PASS **settings**: costs on, IV/RV calibrated, 10.46 years
 - PASS **sample**: 601 option cycles across stocks (need 100+)
-- PASS **quality**: Sharpe 0.951 vs holding the same stocks 0.632
-- FAIL **growth**: CAGR 5.22% vs $1k in SPY 15.17% (allowed 2.0 pts behind)
+- PASS **quality**: Sharpe 0.956 vs holding the same stocks 0.637
+- FAIL **growth**: CAGR 5.25% vs $1k in SPY 15.23% (allowed 2.0 pts behind)
 - PASS **pain**: worst drop 14.0% vs holding the stocks 49.14%
-- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.567 vs holding 0.632
+- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.573 vs holding 0.637
 - FAIL **breadth**: beats holding in 56% of stocks (need 60%+)
-- PASS **recent**: last 3 yrs: CAGR 7.66%, Sharpe 1.695 vs holding 0.887
+- PASS **recent**: last 3 yrs: CAGR 7.64%, Sharpe 1.692 vs holding 0.886
 - FAIL **risk officer**: KILL (2026-10-09): Its edge is the modeled IV/RV ratio: at a fair 1.0 ratio Sharpe drops from 0.95 to 0.74, at 0.9 to 0.48, and it grows 10 pts/yr slower than SPY.
 - FAIL **forward**: not paper traded (only the wheel runs live)
 
@@ -88,11 +88,11 @@ Updated 2026-10-10 12:22:00 UTC. A strategy is **DEPLOYABLE** only when every ga
 
 - PASS **settings**: costs on, IV/RV calibrated, 10.46 years
 - PASS **sample**: 613 option cycles across stocks (need 100+)
-- PASS **quality**: Sharpe 1.077 vs holding the same stocks 0.632
-- FAIL **growth**: CAGR 3.89% vs $1k in SPY 15.17% (allowed 2.0 pts behind)
+- PASS **quality**: Sharpe 1.08 vs holding the same stocks 0.637
+- FAIL **growth**: CAGR 3.9% vs $1k in SPY 15.23% (allowed 2.0 pts behind)
 - PASS **pain**: worst drop 10.38% vs holding the stocks 49.14%
-- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.171 vs holding 0.632
+- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.174 vs holding 0.637
 - FAIL **breadth**: beats holding in 50% of stocks (need 60%+)
-- PASS **recent**: last 3 yrs: CAGR 5.75%, Sharpe 2.096 vs holding 0.887
+- PASS **recent**: last 3 yrs: CAGR 5.68%, Sharpe 2.076 vs holding 0.886
 - FAIL **risk officer**: KILL (2026-10-09): Almost entirely priced-in edge: with fair option prices and doubled spreads it returns 0.6%/yr (Sharpe 0.17) and beats holding in only 50% of stocks.
 - FAIL **forward**: not paper traded (only the wheel runs live)
