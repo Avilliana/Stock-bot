@@ -1,6 +1,6 @@
 # Gate status
 
-Updated 2026-10-12 22:18:30 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
+Updated 2026-10-12 23:11:04 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
 
 ## orb v1 - PAPER (3/10)
 
@@ -12,7 +12,7 @@ Updated 2026-10-12 22:18:30 UTC. A strategy is **DEPLOYABLE** only when every ga
 - PASS **neutral**: beta -0.21 (|beta| <= 0.3)
 - FAIL **stress**: costs x2: PF 0.751, P&L $-36547.75; plateau 0/10 nudges hold up
 - FAIL **recent**: trailing year: 1691 trades, PF 0.835, P&L $-7506.27
-- FAIL **risk officer**: KILL (2026-10-09): Loses money on 3 years of real minute data (5,138 trades, PF 0.88, trailing year PF 0.83), no nudge gets PF above 0.92, and its one good paper day (5 trades, +0.95R) is a single trending session, not evidence.
+- FAIL **risk officer**: KILL (2026-10-12): Still loses money on 3 years of real minute data after Saturday's re-run (5,134 trades, PF 0.885, 0.75 at costs x2, trailing year 0.835, 0/10 nudges hold); +0.38R on 12 paper trades over two sessions is noise with optimistic fills.
 - FAIL **forward**: 12 paper trades over 2 days (need 30+ over 20+); avg +0.38R vs backtest -0.08R (floor -0.87R), PF 1.86
 
 # Slow lane (daily)
@@ -27,7 +27,7 @@ Updated 2026-10-12 22:18:30 UTC. A strategy is **DEPLOYABLE** only when every ga
 - PASS **consistency**: Sharpe by half: 1.206 vs 1.149, 0.965 vs 0.743 (within 0.25)
 - PASS **stress**: costs x2: Sharpe 1.085; plateau 4/4 nudges keep Sharpe near/above buy-and-hold
 - PASS **recent**: last 3 yrs: CAGR 20.84%, Sharpe 1.403 vs 1.415
-- FAIL **risk officer**: KILL (2026-10-09): Gives up 2.8 pts/yr vs 50/50 SPY+QQQ for a smaller drawdown that rests on ~5 bear-market regimes (38 switches in 9.7 years), still with zero out-of-sample days.
+- FAIL **risk officer**: KILL (2026-10-12): Gives up 2.8 pts/yr vs 50/50 SPY+QQQ for a smaller drawdown that rests on ~5 bear-market regimes in 9.7 years, with only 1 out-of-sample day.
 - FAIL **forward**: 1 out-of-sample days since 2026-10-08 (need 60+)
 
 ## momentum v1 - PAPER (3/10)
@@ -40,7 +40,7 @@ Updated 2026-10-12 22:18:30 UTC. A strategy is **DEPLOYABLE** only when every ga
 - FAIL **consistency**: Sharpe by half: 0.413 vs 0.994, 0.87 vs 0.773 (within 0.25)
 - FAIL **stress**: costs x2: Sharpe 0.616; plateau 0/3 nudges keep Sharpe near/above buy-and-hold
 - PASS **recent**: last 3 yrs: CAGR 31.24%, Sharpe 1.435 vs 1.481
-- FAIL **risk officer**: KILL (2026-10-09): Worse than holding SPY on Sharpe (0.63 vs 0.89), growth (-4.1 pts/yr) and drawdown, inconsistent across halves, and 0/3 parameter nudges hold up.
+- FAIL **risk officer**: KILL (2026-10-12): Worse than holding SPY on Sharpe (0.63 vs 0.89), growth (-4.2 pts/yr) and drawdown, inconsistent across halves, 0/3 nudges hold up.
 - FAIL **forward**: 1 out-of-sample days since 2026-10-08 (need 60+)
 
 ## voltarget v1 - PAPER (7/10)
@@ -53,7 +53,7 @@ Updated 2026-10-12 22:18:30 UTC. A strategy is **DEPLOYABLE** only when every ga
 - PASS **consistency**: Sharpe by half: 1.183 vs 0.994, 0.828 vs 0.773 (within 0.25)
 - PASS **stress**: costs x2: Sharpe 0.994; plateau 8/8 nudges keep Sharpe near/above buy-and-hold
 - PASS **recent**: last 3 yrs: CAGR 19.5%, Sharpe 1.485 vs 1.481
-- FAIL **risk officer**: KILL (2026-10-09): Halves the drawdown but trails SPY (which Andrew holds as VOO) by 2.4 pts/yr, is 91% SPY today, and has zero forward days to show it beats simply holding a bit of cash.
+- FAIL **risk officer**: KILL (2026-10-12): Trails SPY (held as VOO) by 2.4 pts/yr, is 91% SPY today, and its halved drawdown comes from a handful of crashes with only 1 forward day.
 - FAIL **forward**: 1 out-of-sample days since 2026-10-08 (need 60+)
 
 # Options lane
@@ -68,7 +68,7 @@ Updated 2026-10-12 22:18:30 UTC. A strategy is **DEPLOYABLE** only when every ga
 - FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.624 vs holding 0.637
 - FAIL **breadth**: beats holding in 56% of stocks (need 60%+)
 - PASS **recent**: last 3 yrs: CAGR 5.45%, Sharpe 0.945 vs holding 0.886
-- FAIL **risk officer**: KILL (2026-10-09): Fails the no-edge stress (Sharpe 0.62 vs 0.63 holding the stocks), earns 5.7%/yr vs 15.2% for $1k in SPY, and the live bot trades AGNC, a stock the backtest never tested, so its forward record can't validate v1.
+- FAIL **risk officer**: KILL (2026-10-12): Fails the no-edge stress (Sharpe 0.62 vs 0.64 holding the stocks) and earns 5.8%/yr vs 15.2% for $1k in SPY; the live SNAP put leans on SNAP's modeled 1.29 IV/RV ratio and likely spans an earnings date.
 - FAIL **forward**: 0 completed paper option cycles (need 3+)
 
 ## covered_call v1 - PAPER (5/10)
@@ -81,7 +81,7 @@ Updated 2026-10-12 22:18:30 UTC. A strategy is **DEPLOYABLE** only when every ga
 - FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.573 vs holding 0.637
 - FAIL **breadth**: beats holding in 56% of stocks (need 60%+)
 - PASS **recent**: last 3 yrs: CAGR 7.64%, Sharpe 1.692 vs holding 0.886
-- FAIL **risk officer**: KILL (2026-10-09): Its edge is the modeled IV/RV ratio: at a fair 1.0 ratio Sharpe drops from 0.95 to 0.74, at 0.9 to 0.48, and it grows 10 pts/yr slower than SPY.
+- FAIL **risk officer**: KILL (2026-10-12): Its edge is the modeled IV/RV ratio: Sharpe falls from 0.96 to 0.74 at a fair 1.0 ratio and 0.48 at 0.9, and it grows 10 pts/yr slower than SPY.
 - FAIL **forward**: not paper traded (only the wheel runs live)
 
 ## csp v1 - PAPER (5/10)
@@ -94,5 +94,5 @@ Updated 2026-10-12 22:18:30 UTC. A strategy is **DEPLOYABLE** only when every ga
 - FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.174 vs holding 0.637
 - FAIL **breadth**: beats holding in 50% of stocks (need 60%+)
 - PASS **recent**: last 3 yrs: CAGR 5.68%, Sharpe 2.076 vs holding 0.886
-- FAIL **risk officer**: KILL (2026-10-09): Almost entirely priced-in edge: with fair option prices and doubled spreads it returns 0.6%/yr (Sharpe 0.17) and beats holding in only 50% of stocks.
+- FAIL **risk officer**: KILL (2026-10-12): Almost entirely priced-in edge: with fair option prices and doubled spreads it returns 0.6%/yr (Sharpe 0.17) and beats holding in only 50% of stocks.
 - FAIL **forward**: not paper traded (only the wheel runs live)
