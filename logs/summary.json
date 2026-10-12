@@ -1,25 +1,25 @@
 {
-  "updated": "2026-10-09 21:33:50",
-  "last_day": "2026-10-09",
+  "updated": "2026-10-12 21:34:14",
+  "last_day": "2026-10-12",
   "first_day": "2026-10-08",
-  "account_equity": 100025.43,
+  "account_equity": 99950.98,
   "today": {
-    "trades": 6,
-    "pnl_usd": 215.71,
-    "wins": 5,
-    "win_rate_pct": 83.3,
-    "avg_r": 0.931,
-    "best_usd": 90.54,
-    "worst_usd": -27.27
+    "trades": 7,
+    "pnl_usd": -68.13,
+    "wins": 3,
+    "win_rate_pct": 42.9,
+    "avg_r": -0.02,
+    "best_usd": 72.63,
+    "worst_usd": -58.42
   },
   "all": {
-    "trades": 23,
-    "pnl_usd": 22.74,
-    "wins": 5,
-    "win_rate_pct": 21.7,
-    "avg_r": -0.627,
+    "trades": 30,
+    "pnl_usd": -45.39,
+    "wins": 8,
+    "win_rate_pct": 26.7,
+    "avg_r": -0.486,
     "best_usd": 90.54,
-    "worst_usd": -27.27
+    "worst_usd": -58.42
   },
   "strategies": {
     "orb": {
@@ -27,22 +27,22 @@
       "enabled": true,
       "about": "Opening-range breakout. Trade the first clean break of the first N minutes' high/low.",
       "current_version": {
-        "trades": 5,
-        "pnl_usd": 174.37,
-        "wins": 4,
-        "win_rate_pct": 80.0,
-        "avg_r": 0.946,
+        "trades": 12,
+        "pnl_usd": 106.24,
+        "wins": 7,
+        "win_rate_pct": 58.3,
+        "avg_r": 0.383,
         "best_usd": 90.54,
-        "worst_usd": -27.27
+        "worst_usd": -58.42
       },
       "all_versions": {
-        "trades": 5,
-        "pnl_usd": 174.37,
-        "wins": 4,
-        "win_rate_pct": 80.0,
-        "avg_r": 0.946,
+        "trades": 12,
+        "pnl_usd": 106.24,
+        "wins": 7,
+        "win_rate_pct": 58.3,
+        "avg_r": 0.383,
         "best_usd": 90.54,
-        "worst_usd": -27.27
+        "worst_usd": -58.42
       }
     },
     "vwap": {
@@ -70,7 +70,7 @@
     },
     "gapfade": {
       "version": "v1",
-      "enabled": true,
+      "enabled": false,
       "about": "Gap fade. When a stock gaps 0.75-4% and the first 5 minutes move against the gap, trade toward a partial gap fill.",
       "current_version": {
         "trades": 1,
