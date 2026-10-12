@@ -1,2 +1,2 @@
-PICK: sell 1 AGNC261113P00008000 ~$0.15 ($14.35), edge $7.62, assign 33.8%
-15 screened, 0 with earnings before expiry, 21 skipped
+PICK: sell 1 SNAP261113P00006000 ~$0.35 ($34.35), edge $12.55, assign 40.3%
+14 screened, 0 with earnings before expiry, 22 skipped
