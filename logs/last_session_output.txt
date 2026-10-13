@@ -1,8 +1,4 @@
-2026-10-13 09:30:39 ET  Session start: 10 symbols, strategies orb v1
-2026-10-13 09:46:06 ET  ENTER sb-orb-v1-TSLA-20261013-1-1555 BUY 24 @mkt tp 379.17 sl 373.16 (break above 374.90)
-2026-10-13 09:48:06 ET  ENTER sb-orb-v1-AMZN-20261013-1-1555 BUY 30 @mkt tp 265.67 sl 260.78 (break above 262.17)
-2026-10-13 09:50:06 ET  ENTER sb-orb-v1-QQQ-20261013-1-1555 BUY 13 @mkt tp 748.68 sl 741.2 (break above 743.50)
-2026-10-13 09:55:06 ET  ENTER sb-orb-v1-GOOGL-20261013-1-1555 BUY 20 @mkt tp 362.78 sl 355.63 (break above 357.73)
-2026-10-13 10:01:06 ET  ENTER sb-orb-v1-NVDA-20261013-1-1555 BUY 36 @mkt tp 228.47 sl 224.38 (break above 225.63)
-2026-10-13 10:35:06 ET  ENTER sb-orb-v1-SPY-20261013-1-1555 SELL SHORT 12 @mkt tp 775.53 sl 777.96 (break below 777.17)
-2026-10-13 15:16:06 ET  Session end.
+2026-10-13 15:16:28 ET  Session start: 10 symbols, strategies orb v1
+2026-10-13 15:55:06 ET  ERROR in step: AlpacaError: HTTP 403: {"available":"0","code":40310000,"existing_qty":"36","held_for_orders":"36","message":"insufficient qty available for order (requested: 36, available: 0)","symbol":"NVDA"}
+2026-10-13 15:56:06 ET  CLOSE NVDA: end-of-day flatten
+2026-10-13 16:00:06 ET  Session end.
