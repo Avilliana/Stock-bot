@@ -66,3 +66,4 @@
 2026-10-13 15:55:06 ET  ERROR in step: AlpacaError: HTTP 403: {"available":"0","code":40310000,"existing_qty":"36","held_for_orders":"36","message":"insufficient qty available for order (requested: 36, available: 0)","symbol":"NVDA"}
 2026-10-13 15:56:06 ET  CLOSE NVDA: end-of-day flatten
 2026-10-13 16:00:06 ET  Session end.
+2026-10-13 16:00:55 ET  Market closed; next open Wed 09:30 ET. Nothing to do.
