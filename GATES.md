@@ -1,6 +1,6 @@
 # Gate status
 
-Updated 2026-10-13 21:46:56 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
+Updated 2026-10-13 22:26:58 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
 
 ## orb v1 - PAPER (3/10)
 
@@ -19,42 +19,42 @@ Updated 2026-10-13 21:46:56 UTC. A strategy is **DEPLOYABLE** only when every ga
 
 ## trend v1 - PAPER (7/10)
 
-- PASS **settings**: 2.0 bps per trade, dividends included, 9.71 years
-- PASS **sample**: 9.71 years, 38 position changes (need 8+ yrs, 20+ changes)
-- PASS **quality**: Sharpe 1.091 vs holding 50% SPY + 50% QQQ 0.946
-- FAIL **growth**: CAGR 15.58% vs buy-and-hold 18.4% (allowed 2.0 pts behind)
+- PASS **settings**: 2.0 bps per trade, dividends included, 9.72 years
+- PASS **sample**: 9.72 years, 38 position changes (need 8+ yrs, 20+ changes)
+- PASS **quality**: Sharpe 1.088 vs holding 50% SPY + 50% QQQ 0.944
+- FAIL **growth**: CAGR 15.53% vs buy-and-hold 18.35% (allowed 2.0 pts behind)
 - PASS **pain**: max drawdown 21.82% vs buy-and-hold 30.87% (need <= 75% of it)
-- PASS **consistency**: Sharpe by half: 1.206 vs 1.149, 0.965 vs 0.743 (within 0.25)
-- PASS **stress**: costs x2: Sharpe 1.085; plateau 4/4 nudges keep Sharpe near/above buy-and-hold
-- PASS **recent**: last 3 yrs: CAGR 20.84%, Sharpe 1.403 vs 1.415
+- PASS **consistency**: Sharpe by half: 1.206 vs 1.149, 0.959 vs 0.739 (within 0.25)
+- PASS **stress**: costs x2: Sharpe 1.082; plateau 4/4 nudges keep Sharpe near/above buy-and-hold
+- PASS **recent**: last 3 yrs: CAGR 20.76%, Sharpe 1.398 vs 1.411
 - FAIL **risk officer**: KILL (2026-10-12): Gives up 2.8 pts/yr vs 50/50 SPY+QQQ for a smaller drawdown that rests on ~5 bear-market regimes in 9.7 years, with only 1 out-of-sample day.
-- FAIL **forward**: 1 out-of-sample days since 2026-10-08 (need 60+)
+- FAIL **forward**: 2 out-of-sample days since 2026-10-08 (need 60+); return 0.17% vs 0.17% buy-and-hold, worst dip 0.38%
 
 ## momentum v1 - PAPER (3/10)
 
-- PASS **settings**: 2.0 bps per trade, dividends included, 9.71 years
-- PASS **sample**: 9.71 years, 44 position changes (need 8+ yrs, 20+ changes)
-- FAIL **quality**: Sharpe 0.625 vs holding SPY 0.886
-- FAIL **growth**: CAGR 11.07% vs buy-and-hold 15.29% (allowed 2.0 pts behind)
+- PASS **settings**: 2.0 bps per trade, dividends included, 9.72 years
+- PASS **sample**: 9.72 years, 44 position changes (need 8+ yrs, 20+ changes)
+- FAIL **quality**: Sharpe 0.622 vs holding SPY 0.886
+- FAIL **growth**: CAGR 10.99% vs buy-and-hold 15.27% (allowed 2.0 pts behind)
 - FAIL **pain**: max drawdown 34.89% vs buy-and-hold 33.79% (need <= 75% of it)
-- FAIL **consistency**: Sharpe by half: 0.413 vs 0.994, 0.87 vs 0.773 (within 0.25)
-- FAIL **stress**: costs x2: Sharpe 0.616; plateau 0/3 nudges keep Sharpe near/above buy-and-hold
-- PASS **recent**: last 3 yrs: CAGR 31.24%, Sharpe 1.435 vs 1.481
+- FAIL **consistency**: Sharpe by half: 0.413 vs 0.994, 0.862 vs 0.772 (within 0.25)
+- FAIL **stress**: costs x2: Sharpe 0.613; plateau 0/3 nudges keep Sharpe near/above buy-and-hold
+- PASS **recent**: last 3 yrs: CAGR 31.06%, Sharpe 1.428 vs 1.481
 - FAIL **risk officer**: KILL (2026-10-12): Worse than holding SPY on Sharpe (0.63 vs 0.89), growth (-4.2 pts/yr) and drawdown, inconsistent across halves, 0/3 nudges hold up.
-- FAIL **forward**: 1 out-of-sample days since 2026-10-08 (need 60+)
+- FAIL **forward**: 2 out-of-sample days since 2026-10-08 (need 60+); return -0.21% vs 0.54% buy-and-hold, worst dip 0.7%
 
 ## voltarget v1 - PAPER (7/10)
 
-- PASS **settings**: 2.0 bps per trade, dividends included, 9.71 years
-- PASS **sample**: 9.71 years, 88 position changes (need 8+ yrs, 20+ changes)
-- PASS **quality**: Sharpe 0.998 vs holding SPY 0.886
-- FAIL **growth**: CAGR 12.87% vs buy-and-hold 15.29% (allowed 2.0 pts behind)
+- PASS **settings**: 2.0 bps per trade, dividends included, 9.72 years
+- PASS **sample**: 9.72 years, 88 position changes (need 8+ yrs, 20+ changes)
+- PASS **quality**: Sharpe 0.997 vs holding SPY 0.886
+- FAIL **growth**: CAGR 12.86% vs buy-and-hold 15.27% (allowed 2.0 pts behind)
 - PASS **pain**: max drawdown 17.82% vs buy-and-hold 33.79% (need <= 75% of it)
-- PASS **consistency**: Sharpe by half: 1.183 vs 0.994, 0.828 vs 0.773 (within 0.25)
+- PASS **consistency**: Sharpe by half: 1.183 vs 0.994, 0.827 vs 0.772 (within 0.25)
 - PASS **stress**: costs x2: Sharpe 0.994; plateau 8/8 nudges keep Sharpe near/above buy-and-hold
-- PASS **recent**: last 3 yrs: CAGR 19.5%, Sharpe 1.485 vs 1.481
+- PASS **recent**: last 3 yrs: CAGR 19.49%, Sharpe 1.485 vs 1.481
 - FAIL **risk officer**: KILL (2026-10-12): Trails SPY (held as VOO) by 2.4 pts/yr, is 91% SPY today, and its halved drawdown comes from a handful of crashes with only 1 forward day.
-- FAIL **forward**: 1 out-of-sample days since 2026-10-08 (need 60+)
+- FAIL **forward**: 2 out-of-sample days since 2026-10-08 (need 60+); return 0.49% vs 0.54% buy-and-hold, worst dip 0.06%
 
 # Options lane
 
