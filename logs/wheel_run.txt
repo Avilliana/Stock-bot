@@ -1,2 +1,2 @@
-{'event': 'order', 'symbol': 'SNAP', 'contract': 'SNAP261113P00006000', 'kind': 'put', 'strike': 6.0, 'expiry': '2026-11-13', 'price': 0.33, 'cash_after': 1000.0, 'shares_after': 0, 'note': 'sell 1 SNAP261113P00006000 (put 6.0 exp 2026-11-13) at $0.33 (bid 0.29 / ask 0.38, IV 0.7934), stock $6.575'}
-{"symbol": "SNAP", "phase": "selling put", "cash": 1000.0, "shares": 0, "equity": 1000.0, "cycles_done": 0}
+{'event': 'sold', 'symbol': 'SNAP', 'contract': 'SNAP261113P00006000', 'kind': 'put', 'strike': 6.0, 'expiry': '2026-11-13', 'price': 0.33, 'cash_after': 1032.35, 'shares_after': 0, 'note': 'credit $32.35 after $0.65 fee'}
+{"symbol": "SNAP", "phase": "short put", "cash": 1032.35, "shares": 0, "equity": 994.35, "cycles_done": 0}

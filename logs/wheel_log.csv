@@ -4,3 +4,4 @@ time,event,symbol,contract,kind,strike,expiry,price,cash_after,shares_after,note
 2026-10-08 14:59,order,AGNC,AGNC261106P00008000,put,8.0,2026-11-06,0.14,1000.0,0,"sell 1 AGNC261106P00008000 (put 8.0 exp 2026-11-06) at $0.14 (bid 0.12 / ask 0.16, IV 0.415), stock $8.655"
 2026-10-09 14:52,order,AGNC,AGNC261113P00008000,put,8.0,2026-11-13,0.16,1000.0,0,"sell 1 AGNC261113P00008000 (put 8.0 exp 2026-11-13) at $0.16 (bid 0.14 / ask 0.17, IV 0.3864), stock $8.61"
 2026-10-12 14:55,order,SNAP,SNAP261113P00006000,put,6.0,2026-11-13,0.33,1000.0,0,"sell 1 SNAP261113P00006000 (put 6.0 exp 2026-11-13) at $0.33 (bid 0.29 / ask 0.38, IV 0.7934), stock $6.575"
+2026-10-13 15:02,sold,SNAP,SNAP261113P00006000,put,6.0,2026-11-13,0.33,1032.35,0,credit $32.35 after $0.65 fee
