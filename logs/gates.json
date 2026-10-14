@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14 19:10:47",
+  "updated": "2026-10-14 21:48:45",
   "strategies": {
     "orb": {
       "version": "v1",
@@ -55,7 +55,7 @@
         {
           "gate": "forward",
           "pass": false,
-          "detail": "18 paper trades over 3 days (need 30+ over 20+); avg +0.07R vs backtest -0.08R (floor -0.73R), PF 1.13"
+          "detail": "25 paper trades over 4 days (need 30+ over 20+); avg +0.12R vs backtest -0.08R (floor -0.63R), PF 1.20"
         }
       ],
       "notes": []
