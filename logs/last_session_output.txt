@@ -1,2 +1,1 @@
-2026-10-14 15:24:30 ET  Session start: 10 symbols, strategies orb v1
-2026-10-14 16:00:06 ET  Session end.
+2026-10-14 16:05:52 ET  Market closed; next open Thu 09:30 ET. Nothing to do.
