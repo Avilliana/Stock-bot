@@ -58,3 +58,9 @@ time,strategy,version,symbol,bar,side,ref,stop,target,time_stop,qty,result,note,
 2026-10-14 09:58,orb,v1,MSFT,09:57,short,541.79,543.785,537.8,15:55,18,sent,break below 541.86,sb-orb-v1-MSFT-20261014-1-1555
 2026-10-14 10:08,orb,v1,AMZN,10:07,short,256.84,258.28,253.96,15:55,34,sent,break below 257.17,sb-orb-v1-AMZN-20261014-1-1555
 2026-10-14 10:24,orb,v1,NVDA,10:23,short,224.16,225.1175,222.245,15:55,44,sent,break below 224.26,sb-orb-v1-NVDA-20261014-1-1555
+2026-10-15 09:48,orb,v1,AMZN,09:47,long,250.65,249.6975,252.555,15:55,39,sent,break above 250.60,sb-orb-v1-AMZN-20261015-1-1555
+2026-10-15 09:54,orb,v1,SPY,09:53,short,765.21,766.34,762.95,15:55,13,sent,break below 765.25,sb-orb-v1-SPY-20261015-1-1555
+2026-10-15 09:54,orb,v1,QQQ,09:53,short,716.245,718.875,710.985,15:55,13,sent,break below 717.01,sb-orb-v1-QQQ-20261015-1-1555
+2026-10-15 09:54,orb,v1,TSLA,09:53,short,356.305,358.9625,350.99,15:55,18,sent,break below 357.44,sb-orb-v1-TSLA-20261015-1-1555
+2026-10-15 09:55,orb,v1,NVDA,09:54,short,213.11,214.5825,210.165,15:55,33,sent,break below 213.20,sb-orb-v1-NVDA-20261015-1-1555
+2026-10-15 09:59,orb,v1,AAPL,09:58,short,345.16,346.58,342.32,15:55,28,sent,break below 345.44,sb-orb-v1-AAPL-20261015-1-1555
