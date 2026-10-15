@@ -1,2 +1,2 @@
-PICK: sell 1 SNAP261113P00005500 ~$0.33 ($32.35), edge $13.21, assign 40.1%
+PICK: sell 1 SNAP261113P00006000 ~$0.39 ($38.35), edge $11.95, assign 43.9%
 12 screened, 0 with earnings before expiry, 24 skipped
