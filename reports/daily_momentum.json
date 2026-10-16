@@ -14,135 +14,135 @@
     "top_n": 1
   },
   "since": "2026-10-08",
-  "updated": "2026-10-15 22:28:34",
+  "updated": "2026-10-16 22:27:38",
   "synthetic": false,
   "slippage_bps": 2.0,
   "base": {
-    "days": 2451,
+    "days": 2452,
     "years": 9.73,
-    "cagr_pct": 10.72,
-    "vol_pct": 20.02,
+    "cagr_pct": 10.7,
+    "vol_pct": 20.01,
     "sharpe": 0.609,
     "max_dd_pct": 34.89,
-    "total_return_pct": 169.15,
+    "total_return_pct": 168.8,
     "switches": 44,
-    "turnover_per_year": 9.05
+    "turnover_per_year": 9.04
   },
   "stress": {
-    "days": 2451,
+    "days": 2452,
     "years": 9.73,
-    "cagr_pct": 10.52,
-    "vol_pct": 20.02,
+    "cagr_pct": 10.5,
+    "vol_pct": 20.01,
     "sharpe": 0.6,
     "max_dd_pct": 35.15,
-    "total_return_pct": 164.46,
+    "total_return_pct": 164.12,
     "switches": 44,
-    "turnover_per_year": 9.05
+    "turnover_per_year": 9.04
   },
   "halves": [
     {
-      "days": 1225,
-      "years": 4.86,
-      "cagr_pct": 6.63,
-      "vol_pct": 21.29,
-      "sharpe": 0.409,
+      "days": 1226,
+      "years": 4.87,
+      "cagr_pct": 6.69,
+      "vol_pct": 21.28,
+      "sharpe": 0.412,
       "max_dd_pct": 34.89,
-      "total_return_pct": 36.61
+      "total_return_pct": 37.05
     },
     {
       "days": 1226,
       "years": 4.87,
-      "cagr_pct": 14.96,
+      "cagr_pct": 14.85,
       "vol_pct": 18.67,
-      "sharpe": 0.841,
+      "sharpe": 0.836,
       "max_dd_pct": 22.69,
-      "total_return_pct": 97.01
+      "total_return_pct": 96.13
     }
   ],
   "bench_halves": [
     {
-      "days": 1225,
-      "years": 4.86,
-      "cagr_pct": 18.05,
-      "vol_pct": 18.4,
-      "sharpe": 0.995,
+      "days": 1226,
+      "years": 4.87,
+      "cagr_pct": 18.09,
+      "vol_pct": 18.39,
+      "sharpe": 0.997,
       "max_dd_pct": 33.79,
-      "total_return_pct": 124.0
+      "total_return_pct": 124.6
     },
     {
       "days": 1226,
       "years": 4.87,
       "cagr_pct": 12.29,
       "vol_pct": 17.3,
-      "sharpe": 0.756,
+      "sharpe": 0.757,
       "max_dd_pct": 24.5,
-      "total_return_pct": 75.76
+      "total_return_pct": 75.79
     }
   ],
   "recent": {
     "days": 756,
     "years": 3.0,
-    "cagr_pct": 29.11,
+    "cagr_pct": 28.82,
     "vol_pct": 20.43,
-    "sharpe": 1.354,
+    "sharpe": 1.343,
     "max_dd_pct": 19.21,
-    "total_return_pct": 115.23
+    "total_return_pct": 113.77
   },
   "bench_recent": {
     "days": 756,
     "years": 3.0,
-    "cagr_pct": 22.67,
+    "cagr_pct": 22.58,
     "vol_pct": 15.24,
-    "sharpe": 1.417,
+    "sharpe": 1.412,
     "max_dd_pct": 18.75,
-    "total_return_pct": 84.61
+    "total_return_pct": 84.18
   },
   "benchmark": {
     "label": "SPY",
-    "days": 2451,
+    "days": 2452,
     "years": 9.73,
-    "cagr_pct": 15.13,
+    "cagr_pct": 15.16,
     "vol_pct": 17.85,
-    "sharpe": 0.879,
+    "sharpe": 0.88,
     "max_dd_pct": 33.79,
-    "total_return_pct": 293.7
+    "total_return_pct": 294.82
   },
   "plateau": [
     {
       "change": "lookback_days 126 -> 101",
-      "cagr_pct": 9.15,
-      "sharpe": 0.541,
+      "cagr_pct": 9.13,
+      "sharpe": 0.54,
       "max_dd_pct": 28.71
     },
     {
       "change": "lookback_days 126 -> 151",
-      "cagr_pct": 11.05,
-      "sharpe": 0.632,
+      "cagr_pct": 11.03,
+      "sharpe": 0.631,
       "max_dd_pct": 30.49
     },
     {
       "change": "top_n 1 -> 2",
       "cagr_pct": 11.1,
-      "sharpe": 0.768,
+      "sharpe": 0.769,
       "max_dd_pct": 26.83
     }
   ],
   "forward": {
-    "days": 4,
+    "days": 5,
     "years": 0.02,
-    "cagr_pct": -79.6,
-    "vol_pct": 16.24,
-    "sharpe": -9.695,
-    "max_dd_pct": 2.97,
-    "total_return_pct": -2.49,
+    "cagr_pct": -73.75,
+    "vol_pct": 14.5,
+    "sharpe": -9.142,
+    "max_dd_pct": 3.1,
+    "total_return_pct": -2.62,
     "benchmark": {
-      "days": 4,
+      "days": 5,
       "years": 0.02,
-      "cagr_pct": -29.77,
-      "vol_pct": 11.06,
-      "sharpe": -3.153,
+      "cagr_pct": -13.03,
+      "vol_pct": 10.03,
+      "sharpe": -1.35,
       "max_dd_pct": 1.15,
-      "total_return_pct": -0.56
+      "total_return_pct": -0.28
     }
   },
   "holding": {
@@ -619,7 +619,7 @@
     ],
     [
       "2026-10-31",
-      2.6915
+      2.688
     ]
   ]
 }
