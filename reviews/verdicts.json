@@ -2,55 +2,55 @@
   "orb": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-15",
-    "reason": "Still loses on 3 years of real minute data (5,134 trades, PF 0.885, 0.75 at costs x2, trailing year 0.835, 0/10 nudges hold); 31 paper trades are break-even (-0.01R) on optimistic fills, with clustered early breakouts failing together."
+    "date": "2026-10-16",
+    "reason": "Loses on 3 years of real minute data (5,134 trades, PF 0.885, 0.75 at costs x2, trailing year 0.835, 0/10 nudges hold); 36 paper trades at +0.10R on optimistic fills are within noise of that."
   },
   "vwap": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-15",
+    "date": "2026-10-16",
     "reason": "Deeply negative in the backtest (13,935 trades, PF 0.71, avg -0.36R) and 0/17 on its only paper day; disabled."
   },
   "gapfade": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-15",
+    "date": "2026-10-16",
     "reason": "PF 0.73 over 987 backtest trades, 0.60 at costs x2, trailing year 0.69, no nudge reaches 0.8; disabled."
   },
   "daily_trend": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-15",
-    "reason": "Gives up 2.8 pts/yr vs 50/50 SPY+QQQ for a smaller drawdown that rests on ~5 bear-market episodes, with 4 out-of-sample days identical to its benchmark (-1.53% vs -1.53%)."
+    "date": "2026-10-16",
+    "reason": "Gives up 2.8 pts/yr vs 50/50 SPY+QQQ for a smaller drawdown resting on ~5 bear-market episodes; 5 out-of-sample days identical to its benchmark (-1.45% vs -1.45%)."
   },
   "daily_momentum": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-15",
-    "reason": "Worse than holding SPY on Sharpe (0.61 vs 0.88), growth (-4.4 pts/yr) and drawdown, inconsistent across halves, 0/3 nudges hold up; forward -2.49% vs -0.56%."
+    "date": "2026-10-16",
+    "reason": "Worse than holding SPY on Sharpe (0.61 vs 0.88), growth (-4.4 pts/yr) and drawdown, inconsistent across halves, 0/3 nudges hold up; forward -2.62% vs -0.28%."
   },
   "daily_voltarget": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-15",
-    "reason": "Trails SPY (held as VOO) by 2.4 pts/yr, is 91% SPY today, and its halved drawdown comes from a handful of crashes with only 4 forward days."
+    "date": "2026-10-16",
+    "reason": "Trails SPY (held as VOO) by 2.4 pts/yr, is 91% SPY today, and its halved drawdown comes from a handful of crashes with only 5 forward days."
   },
   "options_wheel": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-15",
-    "reason": "Fails the no-edge stress (Sharpe 0.62 vs 0.64 holding the stocks) and earns 5.8%/yr vs 15.2% for $1k in SPY; the live SNAP put relies on modeled IV/RV and likely spans an unconfirmed earnings date."
+    "date": "2026-10-16",
+    "reason": "Fails the no-edge stress (Sharpe 0.62 vs 0.64 holding the stocks) and earns 5.8%/yr vs 15.2% for $1k in SPY; the live SNAP put is now ~1% OTM and likely spans an unconfirmed earnings date."
   },
   "options_covered_call": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-15",
+    "date": "2026-10-16",
     "reason": "Its edge is the modeled IV/RV ratio: Sharpe falls from 0.96 to 0.57 at fair prices with doubled spreads, and it grows 10 pts/yr slower than SPY."
   },
   "options_csp": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-15",
+    "date": "2026-10-16",
     "reason": "Almost entirely priced-in edge: with fair option prices and doubled spreads its Sharpe is 0.17 and it beats holding in only 50% of stocks."
   }
 }
