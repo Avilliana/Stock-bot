@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15 22:28:35",
+  "updated": "2026-10-16 19:05:54",
   "strategies": {
     "orb": {
       "version": "v1",
@@ -50,7 +50,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "KILL (2026-10-13): Still loses on 3 years of real minute data (5,134 trades, PF 0.885, 0.75 at costs x2, trailing year 0.835, 0/10 nudges hold), and its paper average is sliding toward that (+0.95R, -0.02R, -0.54R by day; 18 trades, +0.07R overall)."
+          "detail": "KILL (2026-10-15): Still loses on 3 years of real minute data (5,134 trades, PF 0.885, 0.75 at costs x2, trailing year 0.835, 0/10 nudges hold); 31 paper trades are break-even (-0.01R) on optimistic fills, with clustered early breakouts failing together."
         },
         {
           "gate": "forward",
@@ -111,7 +111,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "KILL (2026-10-13): Gives up 2.8 pts/yr vs 50/50 SPY+QQQ for a smaller drawdown that rests on ~5 bear-market episodes in 9.7 years, with 2 out-of-sample days identical to its benchmark."
+          "detail": "KILL (2026-10-15): Gives up 2.8 pts/yr vs 50/50 SPY+QQQ for a smaller drawdown that rests on ~5 bear-market episodes, with 4 out-of-sample days identical to its benchmark (-1.53% vs -1.53%)."
         },
         {
           "gate": "forward",
@@ -170,7 +170,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "KILL (2026-10-13): Worse than holding SPY on Sharpe (0.62 vs 0.89), growth (-4.3 pts/yr) and drawdown, inconsistent across halves, 0/3 nudges hold up."
+          "detail": "KILL (2026-10-15): Worse than holding SPY on Sharpe (0.61 vs 0.88), growth (-4.4 pts/yr) and drawdown, inconsistent across halves, 0/3 nudges hold up; forward -2.49% vs -0.56%."
         },
         {
           "gate": "forward",
@@ -229,7 +229,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "KILL (2026-10-13): Trails SPY (held as VOO) by 2.4 pts/yr, is 91% SPY today, and its halved drawdown comes from a handful of crashes with only 2 forward days."
+          "detail": "KILL (2026-10-15): Trails SPY (held as VOO) by 2.4 pts/yr, is 91% SPY today, and its halved drawdown comes from a handful of crashes with only 4 forward days."
         },
         {
           "gate": "forward",
@@ -290,7 +290,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "KILL (2026-10-13): Fails the no-edge stress (Sharpe 0.62 vs 0.64 holding the stocks) and earns 5.8%/yr vs 15.2% for $1k in SPY; the live SNAP put leans on SNAP's modeled 1.29 IV/RV ratio and likely spans an earnings date."
+          "detail": "KILL (2026-10-15): Fails the no-edge stress (Sharpe 0.62 vs 0.64 holding the stocks) and earns 5.8%/yr vs 15.2% for $1k in SPY; the live SNAP put relies on modeled IV/RV and likely spans an unconfirmed earnings date."
         },
         {
           "gate": "forward",
@@ -349,7 +349,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "KILL (2026-10-13): Its edge is the modeled IV/RV ratio: Sharpe falls from 0.96 to 0.57 at fair prices with doubled spreads, and it grows 10 pts/yr slower than SPY."
+          "detail": "KILL (2026-10-15): Its edge is the modeled IV/RV ratio: Sharpe falls from 0.96 to 0.57 at fair prices with doubled spreads, and it grows 10 pts/yr slower than SPY."
         },
         {
           "gate": "forward",
@@ -408,7 +408,7 @@
         {
           "gate": "risk officer",
           "pass": false,
-          "detail": "KILL (2026-10-13): Almost entirely priced-in edge: with fair option prices and doubled spreads its Sharpe is 0.17 and it beats holding in only 50% of stocks."
+          "detail": "KILL (2026-10-15): Almost entirely priced-in edge: with fair option prices and doubled spreads its Sharpe is 0.17 and it beats holding in only 50% of stocks."
         },
         {
           "gate": "forward",

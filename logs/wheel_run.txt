@@ -1,1 +1,1 @@
-{"symbol": "SNAP", "phase": "short put", "cash": 1032.35, "shares": 0, "equity": 991.35, "cycles_done": 0}
+{"symbol": "SNAP", "phase": "short put", "cash": 1032.35, "shares": 0, "equity": 980.35, "cycles_done": 0}

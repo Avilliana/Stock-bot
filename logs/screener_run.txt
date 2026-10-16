@@ -1,2 +1,2 @@
-PICK: sell 1 SNAP261113P00006000 ~$0.39 ($38.35), edge $11.95, assign 43.9%
-12 screened, 0 with earnings before expiry, 24 skipped
+PICK: sell 1 LCID261120P00002500 ~$0.2 ($19.35), edge $12.15, assign 37.0%
+13 screened, 0 with earnings before expiry, 23 skipped
