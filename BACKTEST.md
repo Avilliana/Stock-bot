@@ -1,13 +1,13 @@
 # Backtest results
 
-Updated 2026-10-10 12:21:59 UTC · 750 trading days (2023-10-12 to 2026-10-09) · data feed `iex`
+Updated 2026-10-17 12:29:22 UTC · 750 trading days (2023-10-19 to 2026-10-16) · data feed `iex`
 
-Buy-and-hold SPY: Sharpe 1.376, return 78.42%
+Buy-and-hold SPY: Sharpe 1.364, return 77.42%
 
 ## orb (v1)
 
 | | trades | win % | PF | Sharpe | P&L | max DD |
 |---|---|---|---|---|---|---|
-| base | 5134 | 37.6 | 0.885 | -1.676 | $-15111.03 | 150.53% |
-| costs x2 | 5134 | 36.7 | 0.751 | -3.985 | $-36547.75 | 357.65% |
-| last year | 1691 | 36.0 | 0.835 | -2.619 | $-7506.27 | 78.43% |
+| base | 5125 | 37.7 | 0.887 | -1.648 | $-14812.46 | 148.37% |
+| costs x2 | 5125 | 36.8 | 0.753 | -3.959 | $-36194.0 | 347.38% |
+| last year | 1685 | 36.0 | 0.832 | -2.667 | $-7603.5 | 79.73% |

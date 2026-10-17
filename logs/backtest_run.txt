@@ -1,22 +1,22 @@
-SPY: downloading 2026-10-07 -> 2026-10-10 (iex)
-SPY: 288,488 bars cached
-QQQ: downloading 2026-10-07 -> 2026-10-10 (iex)
-QQQ: 274,509 bars cached
-AAPL: downloading 2026-10-07 -> 2026-10-10 (iex)
-AAPL: 291,069 bars cached
-MSFT: downloading 2026-10-07 -> 2026-10-10 (iex)
-MSFT: 273,746 bars cached
-NVDA: downloading 2026-10-07 -> 2026-10-10 (iex)
-NVDA: 287,794 bars cached
-AMZN: downloading 2026-10-07 -> 2026-10-10 (iex)
-AMZN: 289,706 bars cached
-META: downloading 2026-10-07 -> 2026-10-10 (iex)
-META: 260,011 bars cached
-GOOGL: downloading 2026-10-07 -> 2026-10-10 (iex)
-GOOGL: 286,184 bars cached
-TSLA: downloading 2026-10-07 -> 2026-10-10 (iex)
-TSLA: 288,149 bars cached
-AMD: downloading 2026-10-07 -> 2026-10-10 (iex)
-AMD: 284,440 bars cached
+SPY: downloading 2026-10-09 -> 2026-10-17 (iex)
+SPY: 288,491 bars cached
+QQQ: downloading 2026-10-09 -> 2026-10-17 (iex)
+QQQ: 274,521 bars cached
+AAPL: downloading 2026-10-09 -> 2026-10-17 (iex)
+AAPL: 291,094 bars cached
+MSFT: downloading 2026-10-09 -> 2026-10-17 (iex)
+MSFT: 273,971 bars cached
+NVDA: downloading 2026-10-09 -> 2026-10-17 (iex)
+NVDA: 287,984 bars cached
+AMZN: downloading 2026-10-09 -> 2026-10-17 (iex)
+AMZN: 289,717 bars cached
+META: downloading 2026-10-09 -> 2026-10-17 (iex)
+META: 260,247 bars cached
+GOOGL: downloading 2026-10-09 -> 2026-10-17 (iex)
+GOOGL: 286,262 bars cached
+TSLA: downloading 2026-10-09 -> 2026-10-17 (iex)
+TSLA: 288,199 bars cached
+AMD: downloading 2026-10-09 -> 2026-10-17 (iex)
+AMD: 284,378 bars cached
 10 symbols, 750 trading days, 12 backtest runs
-orb: 5134 trades, PF 0.885, Sharpe -1.676, P&L $-15111.03, max DD 150.53%
+orb: 5125 trades, PF 0.887, Sharpe -1.648, P&L $-14812.46, max DD 148.37%
