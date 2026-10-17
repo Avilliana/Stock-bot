@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17 12:29:22",
+  "updated": "2026-10-17 13:53:29",
   "strategies": {
     "orb": {
       "version": "v1",
@@ -250,32 +250,32 @@
         {
           "gate": "settings",
           "pass": true,
-          "detail": "costs on, IV/RV calibrated, 10.46 years"
+          "detail": "costs on, IV/RV calibrated, 10.48 years"
         },
         {
           "gate": "sample",
           "pass": true,
-          "detail": "358 option cycles across stocks (need 100+)"
+          "detail": "362 option cycles across stocks (need 100+)"
         },
         {
           "gate": "quality",
           "pass": true,
-          "detail": "Sharpe 0.899 vs holding the same stocks 0.637"
+          "detail": "Sharpe 0.888 vs holding the same stocks 0.613"
         },
         {
           "gate": "growth",
           "pass": false,
-          "detail": "CAGR 5.75% vs $1k in SPY 15.23% (allowed 2.0 pts behind)"
+          "detail": "CAGR 5.66% vs $1k in SPY 14.98% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
           "pass": true,
-          "detail": "worst drop 12.47% vs holding the stocks 49.14%"
+          "detail": "worst drop 12.4% vs holding the stocks 49.14%"
         },
         {
           "gate": "no-edge stress",
           "pass": false,
-          "detail": "with options priced fairly and spreads x2: Sharpe 0.624 vs holding 0.637"
+          "detail": "with options priced fairly and spreads x2: Sharpe 0.605 vs holding 0.613"
         },
         {
           "gate": "breadth",
@@ -285,7 +285,7 @@
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 5.45%, Sharpe 0.945 vs holding 0.886"
+          "detail": "last 3 yrs: CAGR 4.85%, Sharpe 0.852 vs holding 0.79"
         },
         {
           "gate": "risk officer",
@@ -303,48 +303,48 @@
     "covered_call": {
       "version": "v1",
       "status": "PAPER",
-      "passed": 5,
+      "passed": 6,
       "total": 10,
       "gates": [
         {
           "gate": "settings",
           "pass": true,
-          "detail": "costs on, IV/RV calibrated, 10.46 years"
+          "detail": "costs on, IV/RV calibrated, 10.48 years"
         },
         {
           "gate": "sample",
           "pass": true,
-          "detail": "601 option cycles across stocks (need 100+)"
+          "detail": "618 option cycles across stocks (need 100+)"
         },
         {
           "gate": "quality",
           "pass": true,
-          "detail": "Sharpe 0.956 vs holding the same stocks 0.637"
+          "detail": "Sharpe 1.023 vs holding the same stocks 0.613"
         },
         {
           "gate": "growth",
           "pass": false,
-          "detail": "CAGR 5.25% vs $1k in SPY 15.23% (allowed 2.0 pts behind)"
+          "detail": "CAGR 5.73% vs $1k in SPY 14.98% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
           "pass": true,
-          "detail": "worst drop 14.0% vs holding the stocks 49.14%"
+          "detail": "worst drop 13.65% vs holding the stocks 49.14%"
         },
         {
           "gate": "no-edge stress",
           "pass": false,
-          "detail": "with options priced fairly and spreads x2: Sharpe 0.573 vs holding 0.637"
+          "detail": "with options priced fairly and spreads x2: Sharpe 0.551 vs holding 0.613"
         },
         {
           "gate": "breadth",
-          "pass": false,
-          "detail": "beats holding in 56% of stocks (need 60%+)"
+          "pass": true,
+          "detail": "beats holding in 62% of stocks (need 60%+)"
         },
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 7.64%, Sharpe 1.692 vs holding 0.886"
+          "detail": "last 3 yrs: CAGR 7.57%, Sharpe 1.606 vs holding 0.79"
         },
         {
           "gate": "risk officer",
@@ -368,32 +368,32 @@
         {
           "gate": "settings",
           "pass": true,
-          "detail": "costs on, IV/RV calibrated, 10.46 years"
+          "detail": "costs on, IV/RV calibrated, 10.48 years"
         },
         {
           "gate": "sample",
           "pass": true,
-          "detail": "613 option cycles across stocks (need 100+)"
+          "detail": "617 option cycles across stocks (need 100+)"
         },
         {
           "gate": "quality",
           "pass": true,
-          "detail": "Sharpe 1.08 vs holding the same stocks 0.637"
+          "detail": "Sharpe 1.074 vs holding the same stocks 0.613"
         },
         {
           "gate": "growth",
           "pass": false,
-          "detail": "CAGR 3.9% vs $1k in SPY 15.23% (allowed 2.0 pts behind)"
+          "detail": "CAGR 3.88% vs $1k in SPY 14.98% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
           "pass": true,
-          "detail": "worst drop 10.38% vs holding the stocks 49.14%"
+          "detail": "worst drop 10.26% vs holding the stocks 49.14%"
         },
         {
           "gate": "no-edge stress",
           "pass": false,
-          "detail": "with options priced fairly and spreads x2: Sharpe 0.174 vs holding 0.637"
+          "detail": "with options priced fairly and spreads x2: Sharpe 0.146 vs holding 0.613"
         },
         {
           "gate": "breadth",
@@ -403,7 +403,7 @@
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 5.68%, Sharpe 2.076 vs holding 0.886"
+          "detail": "last 3 yrs: CAGR 5.1%, Sharpe 1.893 vs holding 0.79"
         },
         {
           "gate": "risk officer",

@@ -1,6 +1,6 @@
 # Gate status
 
-Updated 2026-10-17 12:29:22 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
+Updated 2026-10-17 13:53:29 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
 
 ## orb v1 - PAPER (3/10)
 
@@ -60,39 +60,39 @@ Updated 2026-10-17 12:29:22 UTC. A strategy is **DEPLOYABLE** only when every ga
 
 ## wheel v1 - PAPER (5/10)
 
-- PASS **settings**: costs on, IV/RV calibrated, 10.46 years
-- PASS **sample**: 358 option cycles across stocks (need 100+)
-- PASS **quality**: Sharpe 0.899 vs holding the same stocks 0.637
-- FAIL **growth**: CAGR 5.75% vs $1k in SPY 15.23% (allowed 2.0 pts behind)
-- PASS **pain**: worst drop 12.47% vs holding the stocks 49.14%
-- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.624 vs holding 0.637
+- PASS **settings**: costs on, IV/RV calibrated, 10.48 years
+- PASS **sample**: 362 option cycles across stocks (need 100+)
+- PASS **quality**: Sharpe 0.888 vs holding the same stocks 0.613
+- FAIL **growth**: CAGR 5.66% vs $1k in SPY 14.98% (allowed 2.0 pts behind)
+- PASS **pain**: worst drop 12.4% vs holding the stocks 49.14%
+- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.605 vs holding 0.613
 - FAIL **breadth**: beats holding in 56% of stocks (need 60%+)
-- PASS **recent**: last 3 yrs: CAGR 5.45%, Sharpe 0.945 vs holding 0.886
+- PASS **recent**: last 3 yrs: CAGR 4.85%, Sharpe 0.852 vs holding 0.79
 - FAIL **risk officer**: KILL (2026-10-16): Fails the no-edge stress (Sharpe 0.62 vs 0.64 holding the stocks) and earns 5.8%/yr vs 15.2% for $1k in SPY; the live SNAP put is now ~1% OTM and likely spans an unconfirmed earnings date.
 - FAIL **forward**: 0 completed paper option cycles (need 3+)
 
-## covered_call v1 - PAPER (5/10)
+## covered_call v1 - PAPER (6/10)
 
-- PASS **settings**: costs on, IV/RV calibrated, 10.46 years
-- PASS **sample**: 601 option cycles across stocks (need 100+)
-- PASS **quality**: Sharpe 0.956 vs holding the same stocks 0.637
-- FAIL **growth**: CAGR 5.25% vs $1k in SPY 15.23% (allowed 2.0 pts behind)
-- PASS **pain**: worst drop 14.0% vs holding the stocks 49.14%
-- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.573 vs holding 0.637
-- FAIL **breadth**: beats holding in 56% of stocks (need 60%+)
-- PASS **recent**: last 3 yrs: CAGR 7.64%, Sharpe 1.692 vs holding 0.886
+- PASS **settings**: costs on, IV/RV calibrated, 10.48 years
+- PASS **sample**: 618 option cycles across stocks (need 100+)
+- PASS **quality**: Sharpe 1.023 vs holding the same stocks 0.613
+- FAIL **growth**: CAGR 5.73% vs $1k in SPY 14.98% (allowed 2.0 pts behind)
+- PASS **pain**: worst drop 13.65% vs holding the stocks 49.14%
+- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.551 vs holding 0.613
+- PASS **breadth**: beats holding in 62% of stocks (need 60%+)
+- PASS **recent**: last 3 yrs: CAGR 7.57%, Sharpe 1.606 vs holding 0.79
 - FAIL **risk officer**: KILL (2026-10-16): Its edge is the modeled IV/RV ratio: Sharpe falls from 0.96 to 0.57 at fair prices with doubled spreads, and it grows 10 pts/yr slower than SPY.
 - FAIL **forward**: not paper traded (only the wheel runs live)
 
 ## csp v1 - PAPER (5/10)
 
-- PASS **settings**: costs on, IV/RV calibrated, 10.46 years
-- PASS **sample**: 613 option cycles across stocks (need 100+)
-- PASS **quality**: Sharpe 1.08 vs holding the same stocks 0.637
-- FAIL **growth**: CAGR 3.9% vs $1k in SPY 15.23% (allowed 2.0 pts behind)
-- PASS **pain**: worst drop 10.38% vs holding the stocks 49.14%
-- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.174 vs holding 0.637
+- PASS **settings**: costs on, IV/RV calibrated, 10.48 years
+- PASS **sample**: 617 option cycles across stocks (need 100+)
+- PASS **quality**: Sharpe 1.074 vs holding the same stocks 0.613
+- FAIL **growth**: CAGR 3.88% vs $1k in SPY 14.98% (allowed 2.0 pts behind)
+- PASS **pain**: worst drop 10.26% vs holding the stocks 49.14%
+- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.146 vs holding 0.613
 - FAIL **breadth**: beats holding in 50% of stocks (need 60%+)
-- PASS **recent**: last 3 yrs: CAGR 5.68%, Sharpe 2.076 vs holding 0.886
+- PASS **recent**: last 3 yrs: CAGR 5.1%, Sharpe 1.893 vs holding 0.79
 - FAIL **risk officer**: KILL (2026-10-16): Almost entirely priced-in edge: with fair option prices and doubled spreads its Sharpe is 0.17 and it beats holding in only 50% of stocks.
 - FAIL **forward**: not paper traded (only the wheel runs live)

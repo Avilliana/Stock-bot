@@ -1,36 +1,36 @@
 {
-  "updated": "2026-10-10 13:42:13",
+  "updated": "2026-10-17 13:53:15",
   "method": "median of (ATM implied vol from real ~monthly option closes) / (60-day realized vol), first trading day of each month since Feb 2024",
-  "pooled": 1.07,
-  "pooled_n": 304,
+  "pooled": 1.069,
+  "pooled_n": 313,
   "per_symbol": {
     "F": {
-      "ratio": 0.899,
-      "n": 12
+      "ratio": 0.974,
+      "n": 13
     },
     "SOFI": {
-      "ratio": 1.099,
-      "n": 17
+      "ratio": 1.098,
+      "n": 18
     },
     "AAL": {
-      "ratio": 0.989,
-      "n": 12
+      "ratio": 0.965,
+      "n": 13
     },
     "NIO": {
-      "ratio": 1.115,
-      "n": 18
+      "ratio": 1.149,
+      "n": 19
     },
     "SNAP": {
       "ratio": 1.288,
       "n": 21
     },
     "PLUG": {
-      "ratio": 1.08,
-      "n": 29
+      "ratio": 1.083,
+      "n": 30
     },
     "NOK": {
       "ratio": 1.019,
-      "n": 24
+      "n": 25
     },
     "RIVN": {
       "ratio": 1.042,
@@ -50,11 +50,11 @@
     },
     "CCL": {
       "ratio": 1.038,
-      "n": 23
+      "n": 24
     },
     "T": {
-      "ratio": 1.064,
-      "n": 22
+      "ratio": 1.058,
+      "n": 23
     },
     "INTC": {
       "ratio": 0.858,
@@ -65,8 +65,8 @@
       "n": 24
     },
     "BB": {
-      "ratio": 1.153,
-      "n": 28
+      "ratio": 1.145,
+      "n": 29
     }
   }
 }
