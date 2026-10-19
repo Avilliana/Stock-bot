@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17 13:53:05",
+  "updated": "2026-10-19 23:23:08",
   "synthetic": false,
   "capital": 1000,
   "period": [
@@ -108,7 +108,7 @@
   "live": {
     "symbol": "SNAP",
     "phase": "short put",
-    "equity": 980.35,
+    "equity": 989.35,
     "cycles_done": 0,
     "started": "2026-10-08",
     "open": {
