@@ -118,3 +118,7 @@
 2026-10-19 10:12:06 ET  ENTER sb-orb-v1-MSFT-20261019-1-1555 BUY 18 @mkt tp 537.25 sl 530.6 (break above 532.64)
 2026-10-19 10:19:06 ET  ENTER sb-orb-v1-GOOGL-20261019-1-1555 BUY 21 @mkt tp 350.86 sl 343.79 (break above 345.69)
 2026-10-19 15:28:06 ET  Session end.
+2026-10-19 15:28:27 ET  Session start: 10 symbols, strategies orb v1
+2026-10-19 15:55:06 ET  ERROR in step: AlpacaError: HTTP 403: {"available":"0","code":40310000,"existing_qty":"18","held_for_orders":"18","message":"insufficient qty available for order (requested: 18, available: 0)","symbol":"MSFT"}
+2026-10-19 15:56:06 ET  CLOSE MSFT: end-of-day flatten
+2026-10-19 16:00:06 ET  Session end.
