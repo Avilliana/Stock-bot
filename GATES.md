@@ -1,6 +1,6 @@
 # Gate status
 
-Updated 2026-10-19 19:12:17 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
+Updated 2026-10-19 21:47:48 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
 
 ## orb v1 - PAPER (3/10)
 
@@ -13,7 +13,7 @@ Updated 2026-10-19 19:12:17 UTC. A strategy is **DEPLOYABLE** only when every ga
 - FAIL **stress**: costs x2: PF 0.753, P&L $-36194.0; plateau 0/10 nudges hold up
 - FAIL **recent**: trailing year: 1685 trades, PF 0.832, P&L $-7603.5
 - FAIL **risk officer**: KILL (2026-10-16): Loses on 3 years of real minute data (5,134 trades, PF 0.885, 0.75 at costs x2, trailing year 0.835, 0/10 nudges hold); 36 paper trades at +0.10R on optimistic fills are within noise of that.
-- FAIL **forward**: 36 paper trades over 6 days (need 30+ over 20+); avg +0.10R vs backtest -0.08R (floor -0.54R), PF 1.17
+- FAIL **forward**: 44 paper trades over 7 days (need 30+ over 20+); avg +0.01R vs backtest -0.08R (floor -0.49R), PF 1.01
 
 # Slow lane (daily)
 
