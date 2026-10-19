@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19 21:47:48",
+  "updated": "2026-10-19 22:28:29",
   "strategies": {
     "orb": {
       "version": "v1",
@@ -81,12 +81,12 @@
         {
           "gate": "quality",
           "pass": true,
-          "detail": "Sharpe 1.075 vs holding 50% SPY + 50% QQQ 0.935"
+          "detail": "Sharpe 1.061 vs holding 50% SPY + 50% QQQ 0.925"
         },
         {
           "gate": "growth",
           "pass": false,
-          "detail": "CAGR 15.31% vs buy-and-hold 18.12% (allowed 2.0 pts behind)"
+          "detail": "CAGR 15.09% vs buy-and-hold 17.89% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
@@ -96,17 +96,17 @@
         {
           "gate": "consistency",
           "pass": true,
-          "detail": "Sharpe by half: 1.207 vs 1.15, 0.93 vs 0.72 (within 0.25)"
+          "detail": "Sharpe by half: 1.207 vs 1.15, 0.899 vs 0.701 (within 0.25)"
         },
         {
           "gate": "stress",
           "pass": true,
-          "detail": "costs x2: Sharpe 1.069; plateau 4/4 nudges keep Sharpe near/above buy-and-hold"
+          "detail": "costs x2: Sharpe 1.055; plateau 4/4 nudges keep Sharpe near/above buy-and-hold"
         },
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 19.09%, Sharpe 1.3 vs 1.331"
+          "detail": "last 3 yrs: CAGR 18.15%, Sharpe 1.242 vs 1.284"
         },
         {
           "gate": "risk officer",
@@ -116,7 +116,7 @@
         {
           "gate": "forward",
           "pass": false,
-          "detail": "5 out-of-sample days since 2026-10-08 (need 60+); return -1.45% vs -1.45% buy-and-hold, worst dip 2.06%"
+          "detail": "6 out-of-sample days since 2026-10-08 (need 60+); return -3.23% vs -3.23% buy-and-hold, worst dip 3.76%"
         }
       ],
       "notes": []
@@ -140,12 +140,12 @@
         {
           "gate": "quality",
           "pass": false,
-          "detail": "Sharpe 0.609 vs holding SPY 0.88"
+          "detail": "Sharpe 0.595 vs holding SPY 0.874"
         },
         {
           "gate": "growth",
           "pass": false,
-          "detail": "CAGR 10.7% vs buy-and-hold 15.16% (allowed 2.0 pts behind)"
+          "detail": "CAGR 10.4% vs buy-and-hold 15.02% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
@@ -155,17 +155,17 @@
         {
           "gate": "consistency",
           "pass": false,
-          "detail": "Sharpe by half: 0.412 vs 0.997, 0.836 vs 0.757 (within 0.25)"
+          "detail": "Sharpe by half: 0.412 vs 0.997, 0.806 vs 0.743 (within 0.25)"
         },
         {
           "gate": "stress",
           "pass": false,
-          "detail": "costs x2: Sharpe 0.6; plateau 0/3 nudges keep Sharpe near/above buy-and-hold"
+          "detail": "costs x2: Sharpe 0.586; plateau 0/3 nudges keep Sharpe near/above buy-and-hold"
         },
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 28.82%, Sharpe 1.343 vs 1.412"
+          "detail": "last 3 yrs: CAGR 27.44%, Sharpe 1.287 vs 1.377"
         },
         {
           "gate": "risk officer",
@@ -175,7 +175,7 @@
         {
           "gate": "forward",
           "pass": false,
-          "detail": "5 out-of-sample days since 2026-10-08 (need 60+); return -2.62% vs -0.28% buy-and-hold, worst dip 3.1%"
+          "detail": "6 out-of-sample days since 2026-10-08 (need 60+); return -5.05% vs -1.38% buy-and-hold, worst dip 5.52%"
         }
       ],
       "notes": []
@@ -199,12 +199,12 @@
         {
           "gate": "quality",
           "pass": true,
-          "detail": "Sharpe 0.991 vs holding SPY 0.88"
+          "detail": "Sharpe 0.982 vs holding SPY 0.874"
         },
         {
           "gate": "growth",
           "pass": false,
-          "detail": "CAGR 12.76% vs buy-and-hold 15.16% (allowed 2.0 pts behind)"
+          "detail": "CAGR 12.64% vs buy-and-hold 15.02% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
@@ -214,17 +214,17 @@
         {
           "gate": "consistency",
           "pass": true,
-          "detail": "Sharpe by half: 1.188 vs 0.997, 0.809 vs 0.757 (within 0.25)"
+          "detail": "Sharpe by half: 1.188 vs 0.997, 0.793 vs 0.743 (within 0.25)"
         },
         {
           "gate": "stress",
           "pass": true,
-          "detail": "costs x2: Sharpe 0.987; plateau 8/8 nudges keep Sharpe near/above buy-and-hold"
+          "detail": "costs x2: Sharpe 0.978; plateau 8/8 nudges keep Sharpe near/above buy-and-hold"
         },
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 18.28%, Sharpe 1.404 vs 1.412"
+          "detail": "last 3 yrs: CAGR 17.72%, Sharpe 1.365 vs 1.377"
         },
         {
           "gate": "risk officer",
@@ -234,7 +234,7 @@
         {
           "gate": "forward",
           "pass": false,
-          "detail": "5 out-of-sample days since 2026-10-08 (need 60+); return -0.24% vs -0.28% buy-and-hold, worst dip 1.04%"
+          "detail": "6 out-of-sample days since 2026-10-08 (need 60+); return -1.24% vs -1.38% buy-and-hold, worst dip 1.78%"
         }
       ],
       "notes": []

@@ -10,28 +10,28 @@
     "band_pct": 1.0
   },
   "since": "2026-10-08",
-  "updated": "2026-10-16 22:27:38",
+  "updated": "2026-10-19 22:28:28",
   "synthetic": false,
   "slippage_bps": 2.0,
   "base": {
-    "days": 2452,
+    "days": 2453,
     "years": 9.73,
-    "cagr_pct": 15.31,
-    "vol_pct": 14.19,
-    "sharpe": 1.075,
+    "cagr_pct": 15.09,
+    "vol_pct": 14.2,
+    "sharpe": 1.061,
     "max_dd_pct": 21.82,
-    "total_return_pct": 299.97,
+    "total_return_pct": 292.76,
     "switches": 38,
     "turnover_per_year": 4.52
   },
   "stress": {
-    "days": 2452,
+    "days": 2453,
     "years": 9.73,
-    "cagr_pct": 15.21,
-    "vol_pct": 14.19,
-    "sharpe": 1.069,
+    "cagr_pct": 14.99,
+    "vol_pct": 14.2,
+    "sharpe": 1.055,
     "max_dd_pct": 21.93,
-    "total_return_pct": 296.46,
+    "total_return_pct": 289.31,
     "switches": 38,
     "turnover_per_year": 4.52
   },
@@ -46,13 +46,13 @@
       "total_return_pct": 129.83
     },
     {
-      "days": 1226,
+      "days": 1227,
       "years": 4.87,
-      "cagr_pct": 12.06,
-      "vol_pct": 13.19,
-      "sharpe": 0.93,
+      "cagr_pct": 11.63,
+      "vol_pct": 13.21,
+      "sharpe": 0.899,
       "max_dd_pct": 15.57,
-      "total_return_pct": 74.03
+      "total_return_pct": 70.89
     }
   ],
   "bench_halves": [
@@ -66,85 +66,85 @@
       "total_return_pct": 176.55
     },
     {
-      "days": 1226,
+      "days": 1227,
       "years": 4.87,
-      "cagr_pct": 13.2,
-      "vol_pct": 19.99,
-      "sharpe": 0.72,
+      "cagr_pct": 12.77,
+      "vol_pct": 20.0,
+      "sharpe": 0.701,
       "max_dd_pct": 29.69,
-      "total_return_pct": 82.83
+      "total_return_pct": 79.53
     }
   ],
   "recent": {
     "days": 756,
     "years": 3.0,
-    "cagr_pct": 19.09,
-    "vol_pct": 14.22,
-    "sharpe": 1.3,
+    "cagr_pct": 18.15,
+    "vol_pct": 14.26,
+    "sharpe": 1.242,
     "max_dd_pct": 11.54,
-    "total_return_pct": 68.91
+    "total_return_pct": 64.94
   },
   "bench_recent": {
     "days": 756,
     "years": 3.0,
-    "cagr_pct": 24.46,
-    "vol_pct": 17.6,
-    "sharpe": 1.331,
+    "cagr_pct": 23.47,
+    "vol_pct": 17.63,
+    "sharpe": 1.284,
     "max_dd_pct": 20.78,
-    "total_return_pct": 92.78
+    "total_return_pct": 88.24
   },
   "benchmark": {
     "label": "50% SPY + 50% QQQ",
-    "days": 2452,
+    "days": 2453,
     "years": 9.73,
-    "cagr_pct": 18.12,
+    "cagr_pct": 17.89,
     "vol_pct": 19.96,
-    "sharpe": 0.935,
+    "sharpe": 0.925,
     "max_dd_pct": 30.87,
-    "total_return_pct": 405.62
+    "total_return_pct": 396.5
   },
   "plateau": [
     {
       "change": "sma_days 200 -> 160",
-      "cagr_pct": 15.45,
-      "sharpe": 1.111,
+      "cagr_pct": 15.23,
+      "sharpe": 1.097,
       "max_dd_pct": 20.09
     },
     {
       "change": "sma_days 200 -> 240",
-      "cagr_pct": 14.78,
-      "sharpe": 1.019,
+      "cagr_pct": 14.56,
+      "sharpe": 1.005,
       "max_dd_pct": 21.22
     },
     {
       "change": "band_pct 1.0 -> 0.8",
-      "cagr_pct": 15.31,
-      "sharpe": 1.074,
+      "cagr_pct": 15.08,
+      "sharpe": 1.06,
       "max_dd_pct": 20.53
     },
     {
       "change": "band_pct 1.0 -> 1.2",
-      "cagr_pct": 15.25,
-      "sharpe": 1.072,
+      "cagr_pct": 15.03,
+      "sharpe": 1.058,
       "max_dd_pct": 21.82
     }
   ],
   "forward": {
-    "days": 5,
+    "days": 6,
     "years": 0.02,
-    "cagr_pct": -52.18,
-    "vol_pct": 12.24,
-    "sharpe": -5.968,
-    "max_dd_pct": 2.06,
-    "total_return_pct": -1.45,
+    "cagr_pct": -74.82,
+    "vol_pct": 14.7,
+    "sharpe": -9.294,
+    "max_dd_pct": 3.76,
+    "total_return_pct": -3.23,
     "benchmark": {
-      "days": 5,
+      "days": 6,
       "years": 0.02,
-      "cagr_pct": -52.18,
-      "vol_pct": 12.24,
-      "sharpe": -5.968,
-      "max_dd_pct": 2.06,
-      "total_return_pct": -1.45
+      "cagr_pct": -74.82,
+      "vol_pct": 14.7,
+      "sharpe": -9.294,
+      "max_dd_pct": 3.76,
+      "total_return_pct": -3.23
     }
   },
   "holding": {
@@ -622,7 +622,7 @@
     ],
     [
       "2026-10-31",
-      3.9997
+      3.9276
     ]
   ]
 }

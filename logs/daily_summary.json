@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-16 22:27:38",
+  "updated": "2026-10-19 22:28:28",
   "synthetic": false,
-  "last_date": "2026-10-15",
+  "last_date": "2026-10-16",
   "period": [
     "2017-01-13",
-    "2026-10-15"
+    "2026-10-16"
   ],
   "benchmark": {
     "symbol": "SPY",
-    "days": 2452,
+    "days": 2453,
     "years": 9.73,
-    "cagr_pct": 15.16,
+    "cagr_pct": 15.02,
     "vol_pct": 17.85,
-    "sharpe": 0.88,
+    "sharpe": 0.874,
     "max_dd_pct": 33.79,
-    "total_return_pct": 294.82,
+    "total_return_pct": 290.45,
     "equity_monthly": [
       [
         "2017-01-31",
@@ -486,50 +486,50 @@
       ],
       [
         "2026-10-31",
-        3.9482
+        3.9045
       ]
     ]
   },
   "qqq": {
-    "days": 2452,
+    "days": 2453,
     "years": 9.73,
-    "cagr_pct": 20.92,
-    "vol_pct": 22.77,
-    "sharpe": 0.949,
+    "cagr_pct": 20.6,
+    "vol_pct": 22.78,
+    "sharpe": 0.936,
     "max_dd_pct": 35.0,
-    "total_return_pct": 534.87
+    "total_return_pct": 518.99
   },
   "strategies": {
     "trend": {
       "version": "v1",
       "about": "Trend filter. Hold SPY and QQQ (half each) only while each is above its 200-day average; otherwise that half sits in T-bills (BIL). Judged against holding the same 50/50 SPY+QQQ mix.",
       "base": {
-        "days": 2452,
+        "days": 2453,
         "years": 9.73,
-        "cagr_pct": 15.31,
-        "vol_pct": 14.19,
-        "sharpe": 1.075,
+        "cagr_pct": 15.09,
+        "vol_pct": 14.2,
+        "sharpe": 1.061,
         "max_dd_pct": 21.82,
-        "total_return_pct": 299.97,
+        "total_return_pct": 292.76,
         "switches": 38,
         "turnover_per_year": 4.52
       },
       "forward": {
-        "days": 5,
+        "days": 6,
         "years": 0.02,
-        "cagr_pct": -52.18,
-        "vol_pct": 12.24,
-        "sharpe": -5.968,
-        "max_dd_pct": 2.06,
-        "total_return_pct": -1.45,
+        "cagr_pct": -74.82,
+        "vol_pct": 14.7,
+        "sharpe": -9.294,
+        "max_dd_pct": 3.76,
+        "total_return_pct": -3.23,
         "benchmark": {
-          "days": 5,
+          "days": 6,
           "years": 0.02,
-          "cagr_pct": -52.18,
-          "vol_pct": 12.24,
-          "sharpe": -5.968,
-          "max_dd_pct": 2.06,
-          "total_return_pct": -1.45
+          "cagr_pct": -74.82,
+          "vol_pct": 14.7,
+          "sharpe": -9.294,
+          "max_dd_pct": 3.76,
+          "total_return_pct": -3.23
         }
       },
       "holding": {
@@ -538,45 +538,45 @@
       },
       "benchmark": {
         "label": "50% SPY + 50% QQQ",
-        "days": 2452,
+        "days": 2453,
         "years": 9.73,
-        "cagr_pct": 18.12,
+        "cagr_pct": 17.89,
         "vol_pct": 19.96,
-        "sharpe": 0.935,
+        "sharpe": 0.925,
         "max_dd_pct": 30.87,
-        "total_return_pct": 405.62
+        "total_return_pct": 396.5
       }
     },
     "momentum": {
       "version": "v1",
       "about": "Momentum rotation. At each month end, hold the strongest of US stocks, Nasdaq, small caps, international, gold and bonds over the last 6 months, or T-bills if none beat T-bills.",
       "base": {
-        "days": 2452,
+        "days": 2453,
         "years": 9.73,
-        "cagr_pct": 10.7,
-        "vol_pct": 20.01,
-        "sharpe": 0.609,
+        "cagr_pct": 10.4,
+        "vol_pct": 20.03,
+        "sharpe": 0.595,
         "max_dd_pct": 34.89,
-        "total_return_pct": 168.8,
+        "total_return_pct": 162.08,
         "switches": 44,
         "turnover_per_year": 9.04
       },
       "forward": {
-        "days": 5,
+        "days": 6,
         "years": 0.02,
-        "cagr_pct": -73.75,
-        "vol_pct": 14.5,
-        "sharpe": -9.142,
-        "max_dd_pct": 3.1,
-        "total_return_pct": -2.62,
+        "cagr_pct": -88.67,
+        "vol_pct": 18.22,
+        "sharpe": -11.828,
+        "max_dd_pct": 5.52,
+        "total_return_pct": -5.05,
         "benchmark": {
-          "days": 5,
+          "days": 6,
           "years": 0.02,
-          "cagr_pct": -13.03,
-          "vol_pct": 10.03,
-          "sharpe": -1.35,
-          "max_dd_pct": 1.15,
-          "total_return_pct": -0.28
+          "cagr_pct": -44.21,
+          "vol_pct": 11.27,
+          "sharpe": -5.124,
+          "max_dd_pct": 1.97,
+          "total_return_pct": -1.38
         }
       },
       "holding": {
@@ -584,45 +584,45 @@
       },
       "benchmark": {
         "label": "SPY",
-        "days": 2452,
+        "days": 2453,
         "years": 9.73,
-        "cagr_pct": 15.16,
+        "cagr_pct": 15.02,
         "vol_pct": 17.85,
-        "sharpe": 0.88,
+        "sharpe": 0.874,
         "max_dd_pct": 33.79,
-        "total_return_pct": 294.82
+        "total_return_pct": 290.45
       }
     },
     "voltarget": {
       "version": "v1",
       "about": "Volatility targeting. Hold more SPY when markets are calm and less when they're wild, aiming for about 15% yearly volatility; the rest in T-bills.",
       "base": {
-        "days": 2452,
+        "days": 2453,
         "years": 9.73,
-        "cagr_pct": 12.76,
-        "vol_pct": 12.97,
-        "sharpe": 0.991,
+        "cagr_pct": 12.64,
+        "vol_pct": 12.98,
+        "sharpe": 0.982,
         "max_dd_pct": 17.82,
-        "total_return_pct": 221.64,
+        "total_return_pct": 218.42,
         "switches": 88,
         "turnover_per_year": 2.56
       },
       "forward": {
-        "days": 5,
+        "days": 6,
         "years": 0.02,
-        "cagr_pct": -11.54,
-        "vol_pct": 9.12,
-        "sharpe": -1.307,
-        "max_dd_pct": 1.04,
-        "total_return_pct": -0.24,
+        "cagr_pct": -40.8,
+        "vol_pct": 10.23,
+        "sharpe": -5.077,
+        "max_dd_pct": 1.78,
+        "total_return_pct": -1.24,
         "benchmark": {
-          "days": 5,
+          "days": 6,
           "years": 0.02,
-          "cagr_pct": -13.03,
-          "vol_pct": 10.03,
-          "sharpe": -1.35,
-          "max_dd_pct": 1.15,
-          "total_return_pct": -0.28
+          "cagr_pct": -44.21,
+          "vol_pct": 11.27,
+          "sharpe": -5.124,
+          "max_dd_pct": 1.97,
+          "total_return_pct": -1.38
         }
       },
       "holding": {
@@ -631,13 +631,13 @@
       },
       "benchmark": {
         "label": "SPY",
-        "days": 2452,
+        "days": 2453,
         "years": 9.73,
-        "cagr_pct": 15.16,
+        "cagr_pct": 15.02,
         "vol_pct": 17.85,
-        "sharpe": 0.88,
+        "sharpe": 0.874,
         "max_dd_pct": 33.79,
-        "total_return_pct": 294.82
+        "total_return_pct": 290.45
       }
     }
   }
