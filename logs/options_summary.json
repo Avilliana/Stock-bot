@@ -1,114 +1,114 @@
 {
-  "updated": "2026-10-19 23:23:08",
+  "updated": "2026-10-20 23:13:45",
   "synthetic": false,
   "capital": 1000,
   "period": [
     "2016-04-15",
-    "2026-10-16"
+    "2026-10-19"
   ],
   "calibration": {
     "pooled": 1.069,
     "n": 313
   },
   "bh_stocks": {
-    "days": 2642,
-    "years": 10.48,
-    "cagr_pct": 11.99,
+    "days": 2643,
+    "years": 10.49,
+    "cagr_pct": 11.98,
     "vol_pct": 22.66,
-    "sharpe": 0.613,
+    "sharpe": 0.612,
     "max_dd_pct": 49.14,
-    "total_return_pct": 227.79
+    "total_return_pct": 227.53
   },
   "spy": {
-    "days": 2642,
-    "years": 10.48,
-    "cagr_pct": 14.98,
+    "days": 2643,
+    "years": 10.49,
+    "cagr_pct": 15.02,
     "vol_pct": 17.43,
-    "sharpe": 0.889,
+    "sharpe": 0.891,
     "max_dd_pct": 33.79,
-    "total_return_pct": 332.17
+    "total_return_pct": 334.0
   },
   "strategies": {
     "wheel": {
       "version": "v1",
       "about": "The wheel. Sell a ~monthly cash-secured put about 5% below the price; if assigned, sell ~monthly covered calls at least 5% above the price and not below what you paid; when called away, start over.",
       "base": {
-        "days": 2642,
-        "years": 10.48,
+        "days": 2643,
+        "years": 10.49,
         "cagr_pct": 5.66,
         "vol_pct": 6.43,
-        "sharpe": 0.888,
+        "sharpe": 0.887,
         "max_dd_pct": 12.4,
-        "total_return_pct": 78.16,
+        "total_return_pct": 78.06,
         "cycles": 362,
         "assigned": 48
       },
       "breadth_share": 0.56,
       "no_edge": {
-        "days": 2642,
-        "years": 10.48,
-        "cagr_pct": 4.21,
+        "days": 2643,
+        "years": 10.49,
+        "cagr_pct": 4.2,
         "vol_pct": 7.25,
-        "sharpe": 0.605,
+        "sharpe": 0.604,
         "max_dd_pct": 14.95,
-        "total_return_pct": 54.09
+        "total_return_pct": 54.0
       }
     },
     "covered_call": {
       "version": "v1",
       "about": "Covered calls. Hold 100 shares and sell a ~monthly call about 5% above the price; if called away, buy back in at the next cycle.",
       "base": {
-        "days": 2642,
-        "years": 10.48,
+        "days": 2643,
+        "years": 10.49,
         "cagr_pct": 5.73,
         "vol_pct": 5.6,
         "sharpe": 1.023,
         "max_dd_pct": 13.65,
-        "total_return_pct": 79.35,
+        "total_return_pct": 79.32,
         "cycles": 618,
         "assigned": 0
       },
       "breadth_share": 0.62,
       "no_edge": {
-        "days": 2642,
-        "years": 10.48,
+        "days": 2643,
+        "years": 10.49,
         "cagr_pct": 3.45,
         "vol_pct": 6.54,
-        "sharpe": 0.551,
+        "sharpe": 0.552,
         "max_dd_pct": 17.69,
-        "total_return_pct": 42.64
+        "total_return_pct": 42.75
       }
     },
     "csp": {
       "version": "v1",
       "about": "Cash-secured puts only. Sell a ~monthly put about 5% below the price; if assigned, sell the shares at the next cycle and keep selling puts.",
       "base": {
-        "days": 2642,
-        "years": 10.48,
+        "days": 2643,
+        "years": 10.49,
         "cagr_pct": 3.88,
         "vol_pct": 3.6,
-        "sharpe": 1.074,
+        "sharpe": 1.075,
         "max_dd_pct": 10.26,
-        "total_return_pct": 49.06,
+        "total_return_pct": 49.12,
         "cycles": 617,
         "assigned": 173
       },
       "breadth_share": 0.5,
       "no_edge": {
-        "days": 2642,
-        "years": 10.48,
+        "days": 2643,
+        "years": 10.49,
         "cagr_pct": 0.51,
         "vol_pct": 4.06,
-        "sharpe": 0.146,
+        "sharpe": 0.147,
         "max_dd_pct": 15.91,
-        "total_return_pct": 5.49
+        "total_return_pct": 5.53
       }
     }
   },
   "live": {
     "symbol": "SNAP",
     "phase": "short put",
-    "equity": 989.35,
+    "equity": 996.35,
     "cycles_done": 0,
     "started": "2026-10-08",
     "open": {

@@ -1,6 +1,6 @@
 # Gate status
 
-Updated 2026-10-20 23:13:48 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
+Updated 2026-10-20 23:14:07 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
 
 # Slow lane (daily)
 
@@ -47,39 +47,39 @@ Updated 2026-10-20 23:13:48 UTC. A strategy is **DEPLOYABLE** only when every ga
 
 ## wheel v1 - PAPER (5/10)
 
-- PASS **settings**: costs on, IV/RV calibrated, 10.48 years
+- PASS **settings**: costs on, IV/RV calibrated, 10.49 years
 - PASS **sample**: 362 option cycles across stocks (need 100+)
-- PASS **quality**: Sharpe 0.888 vs holding the same stocks 0.613
-- FAIL **growth**: CAGR 5.66% vs $1k in SPY 14.98% (allowed 2.0 pts behind)
+- PASS **quality**: Sharpe 0.887 vs holding the same stocks 0.612
+- FAIL **growth**: CAGR 5.66% vs $1k in SPY 15.02% (allowed 2.0 pts behind)
 - PASS **pain**: worst drop 12.4% vs holding the stocks 49.14%
-- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.605 vs holding 0.613
+- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.604 vs holding 0.612
 - FAIL **breadth**: beats holding in 56% of stocks (need 60%+)
-- PASS **recent**: last 3 yrs: CAGR 4.85%, Sharpe 0.852 vs holding 0.79
+- PASS **recent**: last 3 yrs: CAGR 5.02%, Sharpe 0.881 vs holding 0.811
 - FAIL **risk officer**: KILL (2026-10-20): Fails the no-edge stress (Sharpe 0.605 vs 0.613 for holding the stocks) and earns 5.7%/yr vs 15.0% for $1k in SPY, with 0 completed paper cycles.
 - FAIL **forward**: 0 completed paper option cycles (need 3+)
 
 ## covered_call v1 - PAPER (6/10)
 
-- PASS **settings**: costs on, IV/RV calibrated, 10.48 years
+- PASS **settings**: costs on, IV/RV calibrated, 10.49 years
 - PASS **sample**: 618 option cycles across stocks (need 100+)
-- PASS **quality**: Sharpe 1.023 vs holding the same stocks 0.613
-- FAIL **growth**: CAGR 5.73% vs $1k in SPY 14.98% (allowed 2.0 pts behind)
+- PASS **quality**: Sharpe 1.023 vs holding the same stocks 0.612
+- FAIL **growth**: CAGR 5.73% vs $1k in SPY 15.02% (allowed 2.0 pts behind)
 - PASS **pain**: worst drop 13.65% vs holding the stocks 49.14%
-- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.551 vs holding 0.613
+- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.552 vs holding 0.612
 - PASS **breadth**: beats holding in 62% of stocks (need 60%+)
-- PASS **recent**: last 3 yrs: CAGR 7.57%, Sharpe 1.606 vs holding 0.79
+- PASS **recent**: last 3 yrs: CAGR 7.76%, Sharpe 1.649 vs holding 0.811
 - FAIL **risk officer**: KILL (2026-10-20): Its edge is the modeled IV/RV ratio: Sharpe falls to 0.55 at fair prices with doubled spreads (below holding's 0.61), and it grows 9 pts/yr slower than SPY.
 - FAIL **forward**: not paper traded (only the wheel runs live)
 
 ## csp v1 - PAPER (5/10)
 
-- PASS **settings**: costs on, IV/RV calibrated, 10.48 years
+- PASS **settings**: costs on, IV/RV calibrated, 10.49 years
 - PASS **sample**: 617 option cycles across stocks (need 100+)
-- PASS **quality**: Sharpe 1.074 vs holding the same stocks 0.613
-- FAIL **growth**: CAGR 3.88% vs $1k in SPY 14.98% (allowed 2.0 pts behind)
+- PASS **quality**: Sharpe 1.075 vs holding the same stocks 0.612
+- FAIL **growth**: CAGR 3.88% vs $1k in SPY 15.02% (allowed 2.0 pts behind)
 - PASS **pain**: worst drop 10.26% vs holding the stocks 49.14%
-- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.146 vs holding 0.613
+- FAIL **no-edge stress**: with options priced fairly and spreads x2: Sharpe 0.147 vs holding 0.612
 - FAIL **breadth**: beats holding in 50% of stocks (need 60%+)
-- PASS **recent**: last 3 yrs: CAGR 5.1%, Sharpe 1.893 vs holding 0.79
+- PASS **recent**: last 3 yrs: CAGR 5.28%, Sharpe 1.968 vs holding 0.811
 - FAIL **risk officer**: KILL (2026-10-20): Almost all of its edge is priced in: with fair option prices and doubled spreads its Sharpe is 0.15, and it beats holding in only 50% of stocks.
 - FAIL **forward**: not paper traded (only the wheel runs live)

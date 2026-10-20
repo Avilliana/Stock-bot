@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20 23:13:48",
+  "updated": "2026-10-20 23:14:07",
   "strategies": {},
   "daily": {
     "trend": {
@@ -190,7 +190,7 @@
         {
           "gate": "settings",
           "pass": true,
-          "detail": "costs on, IV/RV calibrated, 10.48 years"
+          "detail": "costs on, IV/RV calibrated, 10.49 years"
         },
         {
           "gate": "sample",
@@ -200,12 +200,12 @@
         {
           "gate": "quality",
           "pass": true,
-          "detail": "Sharpe 0.888 vs holding the same stocks 0.613"
+          "detail": "Sharpe 0.887 vs holding the same stocks 0.612"
         },
         {
           "gate": "growth",
           "pass": false,
-          "detail": "CAGR 5.66% vs $1k in SPY 14.98% (allowed 2.0 pts behind)"
+          "detail": "CAGR 5.66% vs $1k in SPY 15.02% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
@@ -215,7 +215,7 @@
         {
           "gate": "no-edge stress",
           "pass": false,
-          "detail": "with options priced fairly and spreads x2: Sharpe 0.605 vs holding 0.613"
+          "detail": "with options priced fairly and spreads x2: Sharpe 0.604 vs holding 0.612"
         },
         {
           "gate": "breadth",
@@ -225,7 +225,7 @@
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 4.85%, Sharpe 0.852 vs holding 0.79"
+          "detail": "last 3 yrs: CAGR 5.02%, Sharpe 0.881 vs holding 0.811"
         },
         {
           "gate": "risk officer",
@@ -249,7 +249,7 @@
         {
           "gate": "settings",
           "pass": true,
-          "detail": "costs on, IV/RV calibrated, 10.48 years"
+          "detail": "costs on, IV/RV calibrated, 10.49 years"
         },
         {
           "gate": "sample",
@@ -259,12 +259,12 @@
         {
           "gate": "quality",
           "pass": true,
-          "detail": "Sharpe 1.023 vs holding the same stocks 0.613"
+          "detail": "Sharpe 1.023 vs holding the same stocks 0.612"
         },
         {
           "gate": "growth",
           "pass": false,
-          "detail": "CAGR 5.73% vs $1k in SPY 14.98% (allowed 2.0 pts behind)"
+          "detail": "CAGR 5.73% vs $1k in SPY 15.02% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
@@ -274,7 +274,7 @@
         {
           "gate": "no-edge stress",
           "pass": false,
-          "detail": "with options priced fairly and spreads x2: Sharpe 0.551 vs holding 0.613"
+          "detail": "with options priced fairly and spreads x2: Sharpe 0.552 vs holding 0.612"
         },
         {
           "gate": "breadth",
@@ -284,7 +284,7 @@
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 7.57%, Sharpe 1.606 vs holding 0.79"
+          "detail": "last 3 yrs: CAGR 7.76%, Sharpe 1.649 vs holding 0.811"
         },
         {
           "gate": "risk officer",
@@ -308,7 +308,7 @@
         {
           "gate": "settings",
           "pass": true,
-          "detail": "costs on, IV/RV calibrated, 10.48 years"
+          "detail": "costs on, IV/RV calibrated, 10.49 years"
         },
         {
           "gate": "sample",
@@ -318,12 +318,12 @@
         {
           "gate": "quality",
           "pass": true,
-          "detail": "Sharpe 1.074 vs holding the same stocks 0.613"
+          "detail": "Sharpe 1.075 vs holding the same stocks 0.612"
         },
         {
           "gate": "growth",
           "pass": false,
-          "detail": "CAGR 3.88% vs $1k in SPY 14.98% (allowed 2.0 pts behind)"
+          "detail": "CAGR 3.88% vs $1k in SPY 15.02% (allowed 2.0 pts behind)"
         },
         {
           "gate": "pain",
@@ -333,7 +333,7 @@
         {
           "gate": "no-edge stress",
           "pass": false,
-          "detail": "with options priced fairly and spreads x2: Sharpe 0.146 vs holding 0.613"
+          "detail": "with options priced fairly and spreads x2: Sharpe 0.147 vs holding 0.612"
         },
         {
           "gate": "breadth",
@@ -343,7 +343,7 @@
         {
           "gate": "recent",
           "pass": true,
-          "detail": "last 3 yrs: CAGR 5.1%, Sharpe 1.893 vs holding 0.79"
+          "detail": "last 3 yrs: CAGR 5.28%, Sharpe 1.968 vs holding 0.811"
         },
         {
           "gate": "risk officer",
