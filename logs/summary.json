@@ -1,46 +1,46 @@
 {
-  "updated": "2026-10-19 21:47:48",
-  "last_day": "2026-10-19",
+  "updated": "2026-10-20 21:49:29",
+  "last_day": "2026-10-20",
   "first_day": "2026-10-08",
-  "account_equity": 99943.47,
+  "account_equity": 99969.98,
   "today": {
-    "trades": 8,
-    "pnl_usd": -107.93,
+    "trades": 3,
+    "pnl_usd": 29.04,
     "wins": 2,
-    "win_rate_pct": 25.0,
-    "avg_r": -0.422,
-    "best_usd": 91.66,
-    "worst_usd": -54.35
+    "win_rate_pct": 66.7,
+    "avg_r": 0.346,
+    "best_usd": 79.64,
+    "worst_usd": -53.33
   },
   "all": {
-    "trades": 62,
-    "pnl_usd": -50.84,
-    "wins": 18,
-    "win_rate_pct": 29.0,
-    "avg_r": -0.304,
+    "trades": 65,
+    "pnl_usd": -21.8,
+    "wins": 20,
+    "win_rate_pct": 30.8,
+    "avg_r": -0.274,
     "best_usd": 101.3,
     "worst_usd": -58.42
   },
   "strategies": {
     "orb": {
-      "version": "v1",
+      "version": "v2",
       "enabled": true,
       "about": "Opening-range breakout. Trade the first clean break of the first N minutes' high/low.",
       "current_version": {
-        "trades": 44,
-        "pnl_usd": 100.79,
-        "wins": 17,
-        "win_rate_pct": 38.6,
-        "avg_r": 0.007,
-        "best_usd": 101.3,
-        "worst_usd": -58.42
+        "trades": 3,
+        "pnl_usd": 29.04,
+        "wins": 2,
+        "win_rate_pct": 66.7,
+        "avg_r": 0.346,
+        "best_usd": 79.64,
+        "worst_usd": -53.33
       },
       "all_versions": {
-        "trades": 44,
-        "pnl_usd": 100.79,
-        "wins": 17,
-        "win_rate_pct": 38.6,
-        "avg_r": 0.007,
+        "trades": 47,
+        "pnl_usd": 129.83,
+        "wins": 19,
+        "win_rate_pct": 40.4,
+        "avg_r": 0.028,
         "best_usd": 101.3,
         "worst_usd": -58.42
       }
