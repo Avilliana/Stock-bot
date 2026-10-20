@@ -35,7 +35,7 @@
   },
   "strategies": {
     "orb": {
-      "enabled": true,
+      "enabled": false,
       "version": "v2",
       "about": "Opening-range breakout. Trade the first clean break of the first N minutes' high/low.",
       "other_side": "Overnight/early faders and short-term stops resting just past the opening range; momentum from the open's order imbalance carries further than they price in.",
