@@ -130,3 +130,7 @@
 2026-10-20 10:02:06 ET  ENTER sb-orb-v2-SPY-20261020-1-1555 BUY 13 @mkt tp 772.4 sl 766.16 (break above 767.97)
 2026-10-20 10:08:06 ET  ENTER sb-orb-v2-GOOGL-20261020-1-1555 BUY 28 @mkt tp 347.86 sl 342.64 (break above 344.18)
 2026-10-20 15:29:06 ET  Session end.
+2026-10-20 15:29:24 ET  Session start: 10 symbols, strategies orb v2
+2026-10-20 15:55:06 ET  ERROR in step: AlpacaError: HTTP 403: {"available":"0","code":40310000,"existing_qty":"13","held_for_orders":"13","message":"insufficient qty available for order (requested: 13, available: 0)","symbol":"SPY"}
+2026-10-20 15:56:06 ET  CLOSE SPY: end-of-day flatten
+2026-10-20 16:00:06 ET  Session end.
