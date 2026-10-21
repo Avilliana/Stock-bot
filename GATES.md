@@ -1,6 +1,6 @@
 # Gate status
 
-Updated 2026-10-20 23:14:07 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
+Updated 2026-10-21 19:13:09 UTC. A strategy is **DEPLOYABLE** only when every gate passes. Everything else keeps paper trading.
 
 # Slow lane (daily)
 
