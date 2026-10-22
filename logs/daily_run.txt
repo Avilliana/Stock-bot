@@ -1,10 +1,10 @@
-SPY: 2715 daily bars, 2016-01-04 to 2026-10-20
-QQQ: 2715 daily bars, 2016-01-04 to 2026-10-20
-IWM: 2715 daily bars, 2016-01-04 to 2026-10-20
-EFA: 2715 daily bars, 2016-01-04 to 2026-10-20
-GLD: 2715 daily bars, 2016-01-04 to 2026-10-20
-TLT: 2715 daily bars, 2016-01-04 to 2026-10-20
-BIL: 2715 daily bars, 2016-01-04 to 2026-10-20
-trend: CAGR 15.19%, Sharpe 1.067, max DD 21.82% (vs 50% SPY + 50% QQQ: 17.99%, 0.929, 30.87%) · holds {'SPY': 0.5, 'QQQ': 0.5}
-momentum: CAGR 10.52%, Sharpe 0.6, max DD 34.89% (vs SPY: 15.1%, 0.878, 33.79%) · holds {'QQQ': 1.0}
-voltarget: CAGR 12.7%, Sharpe 0.987, max DD 17.82% (vs SPY: 15.1%, 0.878, 33.79%) · holds {'SPY': 0.907, 'BIL': 0.093}
+SPY: 2716 daily bars, 2016-01-04 to 2026-10-21
+QQQ: 2716 daily bars, 2016-01-04 to 2026-10-21
+IWM: 2716 daily bars, 2016-01-04 to 2026-10-21
+EFA: 2716 daily bars, 2016-01-04 to 2026-10-21
+GLD: 2716 daily bars, 2016-01-04 to 2026-10-21
+TLT: 2716 daily bars, 2016-01-04 to 2026-10-21
+BIL: 2716 daily bars, 2016-01-04 to 2026-10-21
+trend: CAGR 15.27%, Sharpe 1.073, max DD 21.82% (vs 50% SPY + 50% QQQ: 18.08%, 0.933, 30.87%) · holds {'SPY': 0.5, 'QQQ': 0.5}
+momentum: CAGR 10.63%, Sharpe 0.606, max DD 34.89% (vs SPY: 15.15%, 0.88, 33.79%) · holds {'QQQ': 1.0}
+voltarget: CAGR 12.75%, Sharpe 0.991, max DD 17.82% (vs SPY: 15.15%, 0.88, 33.79%) · holds {'SPY': 0.907, 'BIL': 0.093}
