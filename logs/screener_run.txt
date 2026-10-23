@@ -1,2 +1,2 @@
-PICK: sell 1 LCID261127P00003000 ~$0.34 ($33.35), edge $22.15, assign 46.0%
-11 screened, 0 with earnings before expiry, 25 skipped
+PICK: sell 1 ITUB261120P00009000 ~$0.44 ($43.35), edge $21.71, assign 41.3%
+12 screened, 0 with earnings before expiry, 24 skipped
