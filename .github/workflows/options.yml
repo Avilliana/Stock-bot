@@ -1,15 +1,8 @@
 name: Options lane
 
+# Paused 2026-10-23 at Andrew's request: schedules and push triggers removed.
+# Restore them from git history (commit before this one) to resume. Manual runs still work.
 on:
-  schedule:
-    # 18:35 UTC on weekdays = 2:35 PM New York in summer, 1:35 PM in winter:
-    # mid-afternoon, market open, quotes settled.
-    - cron: "35 18 * * 1-5"
-    # Saturdays: refresh data, re-calibrate, re-run the options backtest.
-    - cron: "30 13 * * 6"
-  push:
-    branches: [main]
-    paths: ["options.py", "config.json"]
   workflow_dispatch:
     inputs:
       what:

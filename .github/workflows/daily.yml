@@ -1,14 +1,8 @@
 name: Slow lane (daily)
 
+# Paused 2026-10-23 at Andrew's request: schedules and push triggers removed.
+# Restore them from git history (commit before this one) to resume. Manual runs still work.
 on:
-  schedule:
-    # 22:05 UTC on weekdays: after the close (and after the end-of-day job) in
-    # both summer and winter time.
-    - cron: "5 22 * * 1-5"
-  push:
-    # Re-gate every change to the slow lane.
-    branches: [main]
-    paths: ["daily.py", "config.json"]
   workflow_dispatch:
 
 permissions:

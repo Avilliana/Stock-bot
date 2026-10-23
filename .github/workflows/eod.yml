@@ -1,9 +1,8 @@
 name: End of day
 
+# Paused 2026-10-23 at Andrew's request: schedules and push triggers removed.
+# Restore them from git history (commit before this one) to resume. Manual runs still work.
 on:
-  schedule:
-    # 21:20 UTC = 4:20 PM New York in winter, 5:20 PM in summer - after the close either way.
-    - cron: "20 21 * * 1-5"
   workflow_dispatch:
     inputs:
       date:

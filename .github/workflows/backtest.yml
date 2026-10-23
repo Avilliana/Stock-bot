@@ -1,13 +1,8 @@
 name: Backtest and gauntlet
 
+# Paused 2026-10-23 at Andrew's request: schedules and push triggers removed.
+# Restore them from git history (commit before this one) to resume. Manual runs still work.
 on:
-  schedule:
-    # Saturdays 12:00 UTC: refresh data, re-test everything, re-score.
-    - cron: "0 12 * * 6"
-  push:
-    # Re-gate every change: editing a strategy or its settings re-runs the gauntlet.
-    branches: [main]
-    paths: ["config.json", "strategies.py", "backtest.py", "gate.py"]
   workflow_dispatch:
 
 permissions:

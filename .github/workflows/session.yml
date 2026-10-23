@@ -1,13 +1,8 @@
 name: Trading session
 
+# Paused 2026-10-23 at Andrew's request: schedules and push triggers removed.
+# Restore them from git history (commit before this one) to resume. Manual runs still work.
 on:
-  schedule:
-    # Every 30 min on weekdays 13:05-20:35 UTC. The bot asks Alpaca's clock whether
-    # the market is open (handles daylight saving and holidays): too early -> waits
-    # up to 40 min for the open, closed -> exits in seconds. A run lasts at most
-    # 345 min (GitHub's limit is 360), so the next queued run picks up the rest of
-    # the day. Only one session runs at a time.
-    - cron: "5,35 13-20 * * 1-5"
   workflow_dispatch:
     inputs:
       minutes:
