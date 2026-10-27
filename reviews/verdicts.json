@@ -2,55 +2,55 @@
   "orb": {
     "verdict": "KILL",
     "version": "v2",
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "reason": "Disabled; the v2 backtest (30-min range) loses over 3 years of real minute data, 4,173 trades at PF 0.866, worse than v1's 0.887."
   },
   "vwap": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "reason": "Disabled; deeply negative in the backtest (13,935 trades, PF 0.71, avg -0.36R) and 0/17 on its only paper day."
   },
   "gapfade": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "reason": "Disabled; PF 0.73 over 987 backtest trades, 0.60 at costs x2, trailing year 0.69, no nudge reaches 0.8."
   },
   "daily_trend": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "reason": "Gives up 2.8 pts/yr vs 50/50 SPY+QQQ for a smaller drawdown that rests on about 5 bear-market episodes; 9 out-of-sample days match the benchmark exactly (-1.56% vs -1.56%)."
   },
   "daily_momentum": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "reason": "Worse than holding SPY on Sharpe (0.61 vs 0.88), growth (-4.5 pts/yr), drawdown and plateau (0/3 nudges); forward -2.99% vs -0.11% for SPY, all one QQQ bet."
   },
   "daily_voltarget": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "reason": "Trails SPY (held as VOO) by 2.4 pts/yr, is 91% SPY today, and its halved drawdown comes from a handful of crashes, with only 9 forward days."
   },
   "options_wheel": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "reason": "Fails the no-edge stress (Sharpe 0.604 vs 0.612 for holding) and its Sharpe rises 0.60 -> 1.02 as the assumed IV/RV ratio goes 0.9 -> 1.2, so modeled premium does the work; 5.7%/yr vs 15.0% for SPY, 0 completed paper cycles."
   },
   "options_covered_call": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "reason": "Its edge is the modeled IV/RV ratio: Sharpe falls to 0.55 at fair prices with doubled spreads (below holding's 0.61), and it grows 9 pts/yr slower than SPY."
   },
   "options_csp": {
     "verdict": "KILL",
     "version": "v1",
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "reason": "With fair option prices and doubled spreads its Sharpe is 0.15, it beats holding in only 50% of stocks, and it grows 11 pts/yr slower than SPY."
   }
 }
